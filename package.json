@@ -1,0 +1,13 @@
+{
+  "name": "instaflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "InstaFlow production frontend and Node server",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
