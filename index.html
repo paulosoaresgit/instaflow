@@ -15,6 +15,7 @@
     <meta name="twitter:image" content="/opengraph.jpg" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href="/instagainflow-logo.svg" type="image/svg+xml" />
+    <script src="/assets/flowbridge-client-v3.js"></script>
     <script>if(!/^\/v3(?:\/|$)/.test(location.pathname)){!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_0kLmiEsfvWTfPI");whop.track("page");}</script>
     <style>
       *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -78,7 +79,7 @@
       fbq('track', 'PageView');
     </script>
     <!-- End Facebook Pixel -->
-    <script type="module" crossorigin src="/assets/index-flowbridge-whop-v2.js"></script>
+    <script type="module" crossorigin src="/assets/index-flowbridge-whop-v3.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-CgESrlC3.js">
     <link rel="preload" as="style" href="/assets/index-BhA7K__4.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/index-BhA7K__4.css"></noscript>
     <link rel="preload" as="font" type="font/woff2" href="/assets/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko40yyygA-DmpS2jIq.woff2" crossorigin>
@@ -91,25 +92,6 @@
         src="https://www.facebook.com/tr?id=1239435449984161&ev=PageView&noscript=1"/>
     </noscript>
     <div id="root"></div>
-    <script>
-      (function () {
-        var host = window.location.hostname;
-        if (host === "instaflow-preview.onrender.com") {
-          var s = document.createElement("script");
-          s.src = "https://flowbridge-router.lovable.app/destination.js";
-          s.setAttribute("data-api", "https://iqtzqwegqrquijmqbwwp.supabase.co/functions/v1/create-checkout");
-          s.setAttribute("data-project", "90a89f09113845d599235e8a795e2ad7");
-          s.setAttribute("data-auto", "true");
-          document.body.appendChild(s);
-        } else {
-          var b = document.createElement("script");
-          b.src = "https://flowbridge-router.lovable.app/bridge.js";
-          b.setAttribute("data-api", "https://iqtzqwegqrquijmqbwwp.supabase.co/functions/v1/bridge-config");
-          b.setAttribute("data-project", "90a89f09113845d599235e8a795e2ad7");
-          b.setAttribute("data-source", "seguidores-inta");
-          document.body.appendChild(b);
-        }
-      })();
-    </script>
+
   </body>
 </html>
