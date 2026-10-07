@@ -91,11 +91,25 @@
         src="https://www.facebook.com/tr?id=1239435449984161&ev=PageView&noscript=1"/>
     </noscript>
     <div id="root"></div>
-    <script
-      src="https://flowbridge-router.lovable.app/bridge.js"
-      data-api="https://iqtzqwegqrquijmqbwwp.supabase.co/functions/v1/bridge-config"
-      data-project="90a89f09113845d599235e8a795e2ad7"
-      data-source="seguidores-inta">
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        if (host === "instaflow-preview.onrender.com") {
+          var s = document.createElement("script");
+          s.src = "https://flowbridge-router.lovable.app/destination.js";
+          s.setAttribute("data-api", "https://iqtzqwegqrquijmqbwwp.supabase.co/functions/v1/create-checkout");
+          s.setAttribute("data-project", "90a89f09113845d599235e8a795e2ad7");
+          s.setAttribute("data-auto", "true");
+          document.body.appendChild(s);
+        } else {
+          var b = document.createElement("script");
+          b.src = "https://flowbridge-router.lovable.app/bridge.js";
+          b.setAttribute("data-api", "https://iqtzqwegqrquijmqbwwp.supabase.co/functions/v1/bridge-config");
+          b.setAttribute("data-project", "90a89f09113845d599235e8a795e2ad7");
+          b.setAttribute("data-source", "seguidores-inta");
+          document.body.appendChild(b);
+        }
+      })();
     </script>
   </body>
 </html>
