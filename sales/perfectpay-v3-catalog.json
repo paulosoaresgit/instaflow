@@ -28,9 +28,9 @@
       "sourceOffer": "https://instagainflow.com/v3/?front=v3&lang=en",
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=starter-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=starter-standard",
-      "liveCheckoutLink": "",
+      "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGSPG",
       "perfectPayProductCode": "",
-      "productStatus": "draft_not_created_on_perfectpay",
+      "productStatus": "registered_links_generated_pending_checkout_verification",
       "advertisedFollowers": 2000,
       "basePlusBonus": 2000,
       "quantityMismatch": false,
@@ -39,7 +39,9 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
+      "perfectPaySalesLink": "https://go.centerpag.com/PPU38CQGSPF",
+      "checkoutLinkReviewStatus": "captured_from_perfectpay_screenshot_pending_purchase_test"
     },
     {
       "internalSlug": "starter-niche",
