@@ -1,0 +1,8 @@
+{
+  "supabaseUrl": "",
+  "publishableKey": "",
+  "edgeFunction": "members-portal",
+  "siteUrl": "https://instaflow-preview.onrender.com/membros/",
+  "status": "pending_supabase_project_connection",
+  "notice": "Publishable key only. Do not place secrets here."
+}
