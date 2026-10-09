@@ -136,7 +136,8 @@ Deno.serve(async req=>{
   const lessons=(dbError(allLessonsResult,"lessons")||[]).filter(l=>!l.upsell_slug||skus.has(l.upsell_slug)).map(l=>({...l,completed:doneSet.has(l.id)}));
   const active=claims.find(c=>c.request_day===day&&c.status!=="failed");
   const used=active?active.quantity:0;
-  const configured=!!(Deno.env.get("WORLDSMM_API_KEY")&&Deno.env.get("WORLDSMM_SERVICE_ID")&&Deno.env.get("WORLDSMM_MIN_QTY_VERIFIED"));
+  const minConfigured=Number(Deno.env.get("WORLDSMM_MIN_QTY_VERIFIED")||0);
+  const configured=!!(Deno.env.get("WORLDSMM_API_KEY")&&Deno.env.get("WORLDSMM_SERVICE_ID")&&minConfigured>=1&&minConfigured<=profile.daily_limit);
   return result(200,{ok:true,hasAccess:true,email,
    profile:{instagram_username:profile.instagram_username,handle_verified:profile.handle_verified,auto_delivery_enabled:profile.auto_delivery_enabled,daily_limit:profile.daily_limit},
    quota:{limit:profile.daily_limit,used,remaining:Math.max(0,profile.daily_limit-used),day},
