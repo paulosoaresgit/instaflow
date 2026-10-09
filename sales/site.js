@@ -17,6 +17,13 @@ const currentProduct=here==="product"?products.find(p=>p.id===productId):product
 const fmtSupport=cfg.supportEmail?'<a href="mailto:'+encodeURIComponent(cfg.supportEmail)+'">'+esc(cfg.supportEmail)+'</a>':"Email support not configured.";
 setHtml("support",fmtSupport);
 setText("guarantee",String(cfg.guaranteeDays||7));
+const lead=document.querySelector(".grid .hero .lead");
+if(lead)lead.textContent="GainFlow is a digital members-area experience, with a complete Reels Academy and access to eligible online tools. Each purchase unlocks access after payment approval.";
+const delivery=document.querySelector(".smallcard p.mini");
+if(delivery)delivery.textContent="Digital delivery: access to the member dashboard after approved payment. Includes 24 Reels classes across eight modules, with optional extra lessons unlocked by purchased add-ons. Daily requests begin at 10, configurable up to 15 after technical/provider validation.";
+const memberLink=document.querySelector(".smallcard");
+if(memberLink&&here==="product"){const a=document.createElement("a");a.href="/membros/";a.textContent="Open my digital member area →";a.className="mini";memberLink.appendChild(a)}
+
 if(here==="product"){
 if(!currentProduct)throw Error("Unknown product page");
 document.title=currentProduct.name+" | GainFlow";setText("tag",currentProduct.mode==="niche"?"NICHE FOLLOWERS PLAN":"STANDARD FOLLOWERS PLAN");setText("product-name",currentProduct.name);setText("product-title","Choose the "+currentProduct.planName+" package");
