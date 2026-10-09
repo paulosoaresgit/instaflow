@@ -5,7 +5,23 @@ const hide = (id, yes) => $(id)?.classList.toggle("hidden", yes);
 const safe = s => String(s ?? "").replace(/[&<>"']/g, ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 let config=null, session=null, model=null, selectedLesson=null, busy=false;
 const storage="gf_member_session_v1";
-const flash=(id,s)=>{if($(id))$(id).textContent=s||""};
+const english=document.documentElement.lang.startsWith("en");
+const dictionary={
+ "Não foi possível completar a solicitação.":"Unable to complete this request.",
+ "Configuração da área de membros indisponível.":"Members area configuration is unavailable.",
+ "A conexão da área de membros ainda não foi ativada. Entre em contato com o suporte.":"Member login has not been activated yet. Contact support.",
+ "Sua sessão expirou. Entre novamente.":"Your session has expired. Please sign in again.",
+ "Enviando código...":"Sending login code...",
+ "Código enviado. Confira o e-mail (inclusive spam).":"Code sent. Check inbox and spam.",
+ "Validando seu código...":"Verifying code...",
+ "Salvando perfil...":"Saving profile...",
+ "Processando solicitação...":"Processing your request...",
+ "Solicitação registrada.":"Request recorded.",
+ "Entrega diária automática solicitada. Ela depende da aprovação da conta e do provedor.":"Automatic daily delivery selected, pending verification and provider availability.",
+ "Entrega automática desativada.":"Automatic delivery disabled."
+};
+const translate=s=>english?(dictionary[s]||s):s;
+const flash=(id,s)=>{if($(id))$(id).textContent=translate(s)||""};
 const showing=name=>["login-view","app-view","pending-view"].forEach(id=>hide(id,id!==name));
 const supa=(path)=>config.supabaseUrl.replace(/\/$/,"")+path;
 const authHeaders=()=>({"Content-Type":"application/json","apikey":config.publishableKey,"Authorization":"Bearer "+(session?.access_token||config.publishableKey)});
@@ -45,20 +61,20 @@ async function renderDashboard(){
  const q=model.quota||{limit:10,remaining:0,used:0};
  $("stat-limit").textContent=q.limit;$("stat-remaining").textContent=q.remaining;
  $("quota-left").textContent=q.remaining;
- $("quota-max").textContent="de "+q.limit+" disponíveis";
+ $("quota-max").textContent=english?"out of "+q.limit+" available":"de "+q.limit+" disponíveis";
  $("quota-bar").style.width=Math.min(100,Math.max(0,100*(q.used||0)/(q.limit||10)))+"%";
  $("instagram-user").value=model.profile?.instagram_username||"";
  const verified=model.profile?.handle_verified===true;
  $("auto-switch").checked=model.profile?.auto_delivery_enabled===true;
  const providerReady=model.providerReady===true;
- $("profile-status").textContent=model.profile?.instagram_username?(verified?"✓ Perfil validado para solicitações.":"Perfil cadastrado; aguardando validação de titularidade."):"Cadastre seu perfil para começar.";
+ $("profile-status").textContent=model.profile?.instagram_username?(verified?(english?"✓ Profile verified for requests.":"✓ Perfil validado para solicitações."):(english?"Profile saved; awaiting ownership verification.":"Perfil cadastrado; aguardando validação de titularidade.")):(english?"Enter your profile to get started.":"Cadastre seu perfil para começar.");
  $("request-btn").disabled=!(verified&&providerReady&&q.remaining>0);
- $("request-btn").textContent=!providerReady?"Integração de entrega em configuração":!verified?"Aguardando validação do perfil":q.remaining<1?"Limite diário atingido":"Solicitar "+q.remaining+" seguidores hoje";
+ $("request-btn").textContent=!providerReady?(english?"Delivery integration not configured":"Integração de entrega em configuração"):!verified?(english?"Waiting for profile verification":"Aguardando validação do perfil"):q.remaining<1?(english?"Daily limit reached":"Limite diário atingido"):(english?"Request "+q.remaining+" followers today":"Solicitar "+q.remaining+" seguidores hoje");
  const claims=model.claims||[];
  $("claim-list").innerHTML=claims.length?claims.map(c=>'<div class="history-row"><div><strong>'+safe(c.quantity)+' seguidores</strong><div><span>'+safe(c.request_day)+' · '+safe(c.status)+'</span></div></div><span>'+safe(c.provider_order_id?"#"+c.provider_order_id:"—")+'</span></div>').join(""):'<p class="muted">Nenhuma solicitação registrada.</p>';
  const lessons=model.lessons||[],done=lessons.filter(l=>l.completed).length;
  $("stat-lessons").textContent=done+" / "+lessons.length;
- $("account-summary").textContent="Acesso confirmado. "+(model.purchases||[]).length+" produto(s) ativo(s). A entrega digital é separada da aprovação das solicitações do fornecedor.";
+ $("account-summary").textContent=english?"Access confirmed. "+(model.purchases||[]).length+" active product(s). Digital access does not guarantee external delivery.":"Acesso confirmado. "+(model.purchases||[]).length+" produto(s) ativo(s). A entrega digital é separada da aprovação das solicitações do fornecedor.";
  drawLessons(lessons);drawExtras(model.extras||[]);
  showing("app-view");tab("home");
 }
@@ -88,7 +104,7 @@ function drawLessons(list){
 }
 function showLesson(l){
  selectedLesson=l;
- $("lesson-meta").textContent=(l.upsell_slug?"AULA EXTRA":"CURSO PRINCIPAL")+" · "+(l.module_title||"");
+ $("lesson-meta").textContent=(l.upsell_slug?(english?"BONUS LESSON":"AULA EXTRA"):(english?"MAIN COURSE":"CURSO PRINCIPAL"))+" · "+(l.module_title||"");
  $("lesson-title").textContent=l.title;
  $("lesson-content").textContent=l.body;
  $("done-btn").classList.toggle("hidden",!!l.completed);
@@ -96,7 +112,7 @@ function showLesson(l){
 function drawExtras(extras){
  $("extras-grid").innerHTML=extras.map(x=>{
  const locked=!x.unlocked;
- return '<div class="extra"><div class="'+(locked?"locked":"unlocked")+'">'+(locked?"🔒 Não adquirido":"✓ Liberado")+'</div><h3>'+safe(x.title)+'</h3><p>'+safe(x.description)+'</p>'+(locked?'<a class="secondary" href="/offer/'+encodeURIComponent(x.slug)+'.html">Conhecer adicional →</a>':'<span class="smallinfo">O conteúdo está disponível na Academia de Reels.</span>')+'</div>';
+ return '<div class="extra"><div class="'+(locked?"locked":"unlocked")+'">'+(locked?(english?"🔒 Not purchased":"🔒 Não adquirido"):(english?"✓ Unlocked":"✓ Liberado"))+'</div><h3>'+safe(x.title)+'</h3><p>'+safe(x.description)+'</p>'+(locked?'<a class="secondary" href="/offer/'+encodeURIComponent(x.slug)+'.html">Conhecer adicional →</a>':'<span class="smallinfo">O conteúdo está disponível na Academia de Reels.</span>')+'</div>';
  }).join("");
 }
 async function boot(){
