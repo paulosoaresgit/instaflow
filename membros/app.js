@@ -37,7 +37,7 @@ function logout(refresh=true){session=null;sessionStorage.removeItem(storage);hi
 async function call(action, extra={}){
  if(!session?.access_token)throw Error("Sua sessão expirou. Entre novamente.");
  return jsonRequest(supa("/functions/v1/members-portal"),{
- method:"POST",headers:authHeaders(),body:JSON.stringify({action,...extra})});
+ method:"POST",headers:authHeaders(),body:JSON.stringify({action,lang:document.documentElement.lang.startsWith("en")?"en":"pt",...extra})});
 }
 async function renderDashboard(){
  model=await call("overview");
@@ -117,7 +117,7 @@ async function boot(){
 $("email-form").addEventListener("submit",async e=>{
  e.preventDefault();const email=$("email").value.trim().toLowerCase();
  if(busy)return;busy=true;flash("login-msg","Enviando código...");
- try{await jsonRequest(supa("/auth/v1/otp"),{method:"POST",headers:{"apikey":config.publishableKey,"Content-Type":"application/json"},body:JSON.stringify({email,create_user:true,email_redirect_to:location.origin+"/membros/"})});
+ try{await jsonRequest(supa("/auth/v1/otp"),{method:"POST",headers:{"apikey":config.publishableKey,"Content-Type":"application/json"},body:JSON.stringify({email,create_user:true,email_redirect_to:location.origin+location.pathname})});
  hide("email-form",true);hide("otp-form",false);flash("login-msg","Código enviado. Confira o e-mail (inclusive spam).");}
  catch(err){flash("login-msg",err.message)}finally{busy=false}
 });
