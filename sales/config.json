@@ -24,7 +24,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "starter-niche",
@@ -45,7 +45,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "growth-standard",
@@ -66,7 +66,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "growth-niche",
@@ -87,7 +87,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "pro-standard",
@@ -108,7 +108,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "pro-niche",
@@ -129,7 +129,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "authority-standard",
@@ -150,7 +150,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "authority-niche",
@@ -171,7 +171,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "influencer-standard",
@@ -192,7 +192,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "influencer-niche",
@@ -213,7 +213,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "scale-standard",
@@ -234,7 +234,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "scale-niche",
@@ -255,7 +255,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "dominance-standard",
@@ -276,7 +276,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "dominance-niche",
@@ -297,7 +297,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "ultimate-standard",
@@ -318,7 +318,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "id": "ultimate-niche",
@@ -339,7 +339,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     }
   ],
   "upsells": [
@@ -358,7 +358,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "slug": "downsell-1",
@@ -375,7 +375,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "slug": "upsell-2",
@@ -392,7 +392,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "slug": "upsell-3",
@@ -409,7 +409,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "slug": "upsell-4",
@@ -426,7 +426,7 @@
       "supportPhone": "557398289401",
       "guaranteeDays": 7,
       "audience": "general_public",
-      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
+      "loginUrl": "https://instaflow-preview.onrender.com/members/"
     }
   ],
   "supportPhone": "557398289401",
@@ -434,5 +434,6 @@
   "deliveryType": "Digital membership access with educational courses and an optional online follower request service",
   "defaultDailyLimit": 10,
   "maxDailyLimit": 15,
-  "memberLoginUrl": "https://instaflow-preview.onrender.com/membros/"
+  "memberLoginUrl": "https://instaflow-preview.onrender.com/members/",
+  "memberLoginUrlPt": "https://instaflow-preview.onrender.com/membros/"
 }
