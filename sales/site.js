@@ -22,7 +22,7 @@ if(lead)lead.textContent="GainFlow is a digital members-area experience, with a 
 const delivery=document.querySelector(".smallcard p.mini");
 if(delivery)delivery.textContent="Digital delivery: access to the member dashboard after approved payment. Includes 24 Reels classes across eight modules, with optional extra lessons unlocked by purchased add-ons. Daily requests begin at 10, configurable up to 15 after technical/provider validation.";
 const memberLink=document.querySelector(".smallcard");
-if(memberLink&&here==="product"){const a=document.createElement("a");a.href="/membros/";a.textContent="Open my digital member area →";a.className="mini";memberLink.appendChild(a)}
+if(memberLink&&here==="product"){const a=document.createElement("a");a.href="/members/";a.textContent="Open my digital member area →";a.className="mini";memberLink.appendChild(a)}
 
 if(here==="product"){
 if(!currentProduct)throw Error("Unknown product page");
