@@ -4,7 +4,7 @@ const el=id=>document.getElementById(id), qs=new URLSearchParams(location.search
 const here=document.body.dataset.kind, productId=document.body.dataset.offer, upsellId=document.body.dataset.step;
 const money=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(n);
 const esc=s=>String(s).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[x]));
-const validCheckout=url=>{try{const u=new URL(url);return u.protocol==="https:"&&u.hostname==="go.perfectpay.com.br"&&!u.username&&!u.password&&u.pathname!=="/"}catch{return false}};
+const validCheckout=url=>{try{const u=new URL(url);return u.protocol==="https:"&&["go.perfectpay.com.br","go.centerpag.com"].includes(u.hostname)&&!u.username&&!u.password&&u.pathname!=="/"}catch{return false}};
 const urlStep=(step,product)=>step==="complete"?"/obrigado/?produto="+encodeURIComponent(product):"/offer/"+encodeURIComponent(step)+".html?produto="+encodeURIComponent(product);
 const load=async url=>{const response=await fetch(url,{cache:"no-store"});if(!response.ok)throw Error("Configuration not available");return response.json()};
 const note=text=>{el("status").textContent=text};
