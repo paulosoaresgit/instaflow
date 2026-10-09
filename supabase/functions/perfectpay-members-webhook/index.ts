@@ -29,12 +29,8 @@ Deno.serve(async req=>{
  // Reject mismatches between the item code and a specifically pinned product in the map.
  if(entry.productCode && entry.productCode!==productCode)return respond(422,{ok:false,error:"product_code_mismatch"});
  if(entry.planCode && entry.planCode!==planCode)return respond(422,{ok:false,error:"plan_code_mismatch"});
- if(Number.isFinite(Number(entry.priceUSD)) && entry.priceUSD!==undefined && Number(payload.sale_amount)>0){
-  // Do not block valid coupons automatically, but never grant an item sold at a price ABOVE its configured normal amount.
-  // More detailed currency/discount reconciliation belongs to the producer's payment control.
-  const got=Number(payload.sale_amount),max=Number(entry.priceUSD);
-  if(got>max*1.1)return respond(422,{ok:false,error:"price_inconsistent"});
- }
+ // Amounts can be converted or discounted in the payment provider; verify exact SKU against mapped codes.
+ // Do not reject legitimate paid events by comparing currencies with the site's display price.
  const saleCode=String(payload?.code||"").trim();
  const email=String(payload?.customer?.email||"").trim().toLowerCase();
  if(!saleCode||saleCode.length>255||!productCode||!email||email.length>254||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return respond(422,{ok:false,error:"incomplete_sale"});
