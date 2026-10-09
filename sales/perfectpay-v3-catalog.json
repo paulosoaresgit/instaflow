@@ -116,9 +116,9 @@
       "sourceOffer": "https://instagainflow.com/v3/?front=v3&lang=en",
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=growth-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=growth-niche",
-      "liveCheckoutLink": "",
+      "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGSRU",
       "perfectPayProductCode": "",
-      "productStatus": "draft_not_created_on_perfectpay",
+      "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 6000,
       "basePlusBonus": 6000,
       "quantityMismatch": false,
@@ -127,7 +127,8 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
     },
     {
       "internalSlug": "pro-standard",
