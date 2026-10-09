@@ -127,7 +127,7 @@ begin
  where
    -- Never reactivate an order after a refund/chargeback/cancellation, even if old notifications arrive.
    public.gf_orders.payment_status not in ('refunded','chargeback','cancelled')
-   and (excluded.payment_status <> 'pending' or public.gf_orders.payment_status <> 'approved');
+   and (public.gf_orders.payment_status <> 'approved' or excluded.payment_status in ('approved','refunded','chargeback','cancelled'));
 end
 $body$;
 revoke all on function public.gf_ingest_sale(text,text,text,text,text,text,timestamptz) from public,anon,authenticated;
