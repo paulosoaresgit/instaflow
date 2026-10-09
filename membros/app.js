@@ -49,6 +49,7 @@ async function renderDashboard(){
  $("quota-bar").style.width=Math.min(100,Math.max(0,100*(q.used||0)/(q.limit||10)))+"%";
  $("instagram-user").value=model.profile?.instagram_username||"";
  const verified=model.profile?.handle_verified===true;
+ $("auto-switch").checked=model.profile?.auto_delivery_enabled===true;
  const providerReady=model.providerReady===true;
  $("profile-status").textContent=model.profile?.instagram_username?(verified?"✓ Perfil validado para solicitações.":"Perfil cadastrado; aguardando validação de titularidade."):"Cadastre seu perfil para começar.";
  $("request-btn").disabled=!(verified&&providerReady&&q.remaining>0);
@@ -134,6 +135,11 @@ $("username-form").addEventListener("submit",async e=>{
  e.preventDefault();const instagram_username=$("instagram-user").value.trim().replace(/^@/,"");
  flash("profile-status","Salvando perfil...");
  try{await call("set_profile",{instagram_username});await renderDashboard();tab("growth");}catch(err){flash("profile-status",err.message)}
+});
+$("auto-switch").addEventListener("change",async e=>{
+ const enabled=e.target.checked; e.target.disabled=true;
+ try{await call("set_auto",{enabled});flash("profile-status",enabled?"Entrega diária automática solicitada. Ela depende da aprovação da conta e do provedor.":"Entrega automática desativada.");}
+ catch(err){e.target.checked=!enabled;flash("profile-status",err.message)}finally{e.target.disabled=false;}
 });
 $("request-btn").addEventListener("click",async()=>{
  if(busy)return;busy=true;$("request-btn").disabled=true;flash("claim-status","Processando solicitação...");
