@@ -14,7 +14,7 @@ const setText=(id,s)=>{if(el(id))el(id).textContent=s};
 try{
 const cfg=await load("/sales/config.json");const products=cfg.products||[];
 const currentProduct=here==="product"?products.find(p=>p.id===productId):products.find(p=>p.id===qs.get("produto"));
-const fmtSupport=cfg.supportEmail?'<a href="mailto:'+encodeURIComponent(cfg.supportEmail)+'">'+esc(cfg.supportEmail)+'</a>':"The customer support email will be shown after setup.";
+const fmtSupport=cfg.supportEmail?'<a href="mailto:'+encodeURIComponent(cfg.supportEmail)+'">'+esc(cfg.supportEmail)+'</a>':"Email support not configured.";
 setHtml("support",fmtSupport);
 setText("guarantee",String(cfg.guaranteeDays||7));
 if(here==="product"){
@@ -26,7 +26,7 @@ setText("quantity-note",currentProduct.quantityReviewRequired?"Package quantitie
 const buy=el("buy");buy.textContent="Continue to PerfectPay";
 const links=await load("/perfectpay-checkouts.json");
 const raw=links?.[currentProduct.productKey]?.[currentProduct.mode];
-if(!validCheckout(raw)){buy.disabled=true;buy.textContent="Checkout not configured yet";note("This plan is not accepting orders yet.");}
+if(!validCheckout(raw)){buy.disabled=true;buy.textContent="Checkout not configured yet";note("Digital membership: 7-day guarantee. Checkout not yet configured.");}
 else{buy.addEventListener("click",()=>{const u=new URL(raw);u.searchParams.set("upsell","true");const keys=["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"];for(const k of keys){const v=qs.get(k);if(v&&!u.searchParams.has(k))u.searchParams.set(k,v.slice(0,160))}location.assign(u.toString())})}
 }
 else if(here==="upsell"){
