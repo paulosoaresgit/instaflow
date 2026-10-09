@@ -1,6 +1,6 @@
 import http from "node:http";
 import { createReadStream } from "node:fs";
-import { stat } from "node:fs/promises";
+import { stat, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -71,6 +71,45 @@ async function serveFile(req, res, filePath) {
   }
 }
 
+
+const PERFECTPAY_PLANS = ["starter","growth","pro","authority","influencer","scale","dominance","ultimate"];
+let perfectPayLinks = {};
+try {
+  const file = await readFile(path.join(__dirname, "perfectpay-checkouts.json"), "utf8");
+  perfectPayLinks = JSON.parse(file);
+  if (process.env.PERFECTPAY_CHECKOUTS_JSON) {
+    const overrides = JSON.parse(process.env.PERFECTPAY_CHECKOUTS_JSON);
+    for (const [plan, options] of Object.entries(overrides)) {
+      perfectPayLinks[plan] = { ...(perfectPayLinks[plan] || {}), ...options };
+    }
+  }
+} catch (error) {
+  console.warn("PerfectPay checkout configuration unavailable:", error.message);
+}
+
+function isPerfectPayLink(link) {
+  if (typeof link !== "string" || !link.trim()) return false;
+  try {
+    const url = new URL(link);
+    return url.protocol === "https:" && url.hostname === "go.perfectpay.com.br" &&
+      !url.username && !url.password && url.pathname !== "/";
+  } catch { return false; }
+}
+
+async function parseJsonBody(req) {
+  let raw = "";
+  for await (const chunk of req) {
+    raw += chunk.toString("utf8");
+    if (raw.length > 12000) throw new Error("payload_too_large");
+  }
+  return JSON.parse(raw);
+}
+
+function getPlanUrl(plan, mode) {
+  const value = perfectPayLinks[plan]?.[mode];
+  return isPerfectPayLink(value) ? value : null;
+}
+
 const server = http.createServer(async (req, res) => {
   const requestUrl = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
   const pathname = requestUrl.pathname;
@@ -82,6 +121,53 @@ const server = http.createServer(async (req, res) => {
       runtime: "node",
       timestamp: new Date().toISOString()
     });
+  }
+
+
+  if (pathname === "/api/perfectpay/status") {
+    if (req.method !== "GET") return sendJson(res, 405, { ok: false, message: "Method not allowed" });
+    return sendJson(res, 200, {
+      ok: true, gateway: "perfectpay",
+      plans: Object.fromEntries(PERFECTPAY_PLANS.map(plan => [plan, {
+        standard: Boolean(getPlanUrl(plan, "standard")), niche: Boolean(getPlanUrl(plan, "niche"))
+      }]))
+    });
+  }
+
+  if (pathname === "/api/perfectpay/checkout") {
+    if (req.method !== "POST") return sendJson(res, 405, { ok: false, message: "Method not allowed" });
+    let input;
+    try { input = await parseJsonBody(req); }
+    catch { return sendJson(res, 400, { ok: false, message: "Invalid request" }); }
+    const plan = String(input?.plan || "").toLowerCase();
+    const mode = String(input?.mode || "");
+    const username = String(input?.instagramUsername || "").replace(/^@+/, "").trim();
+    const email = String(input?.email || "").trim().toLowerCase();
+    const customerName = String(input?.customerName || "").trim().slice(0, 100);
+    if (!PERFECTPAY_PLANS.includes(plan) || !["standard","niche"].includes(mode) ||
+        !/^[a-zA-Z0-9._]{1,30}$/.test(username) ||
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
+      return sendJson(res, 400, { ok: false, message: "Please check your Instagram username and email." });
+    }
+    const base = getPlanUrl(plan, mode);
+    if (!base) return sendJson(res, 503, {
+      ok: false, message: "PerfectPay checkout isn't configured for this plan yet. Please contact support."
+    });
+    const url = new URL(base);
+    if (!url.searchParams.has("email")) url.searchParams.set("email", email);
+    if (customerName && !url.searchParams.has("name")) url.searchParams.set("name", customerName);
+    if (!url.searchParams.has("src")) url.searchParams.set("src", "instaflow");
+    if (!url.searchParams.has("sck")) url.searchParams.set("sck", "ig_" + plan + "_" + mode + "_" + username);
+    const tracking = input?.tracking;
+    if (tracking && typeof tracking === "object" && !Array.isArray(tracking)) {
+      for (const key of ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"]) {
+        const value = tracking[key];
+        if (typeof value === "string" && value.length <= 250 && !url.searchParams.has(key)) {
+          url.searchParams.set(key, value);
+        }
+      }
+    }
+    return sendJson(res, 200, { ok: true, redirectUrl: url.toString() });
   }
 
   if (pathname.startsWith("/api/")) {
