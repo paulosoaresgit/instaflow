@@ -2,7 +2,7 @@
   "brand": "GainFlow",
   "currency": "USD",
   "guaranteeDays": 7,
-  "supportEmail": "",
+  "supportEmail": "flowinsta@outlook.com",
   "salesDomainPending": "https://followergrowth.site",
   "products": [
     {
@@ -17,7 +17,14 @@
       "quantityReviewRequired": false,
       "priceUSD": 14.9,
       "landingUrl": "/p/starter-standard.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "starter-niche",
@@ -31,7 +38,14 @@
       "quantityReviewRequired": false,
       "priceUSD": 22.35,
       "landingUrl": "/p/starter-niche.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "growth-standard",
@@ -45,7 +59,14 @@
       "quantityReviewRequired": false,
       "priceUSD": 29.9,
       "landingUrl": "/p/growth-standard.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "growth-niche",
@@ -59,7 +80,14 @@
       "quantityReviewRequired": false,
       "priceUSD": 44.85,
       "landingUrl": "/p/growth-niche.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "pro-standard",
@@ -73,7 +101,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 39.9,
       "landingUrl": "/p/pro-standard.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "pro-niche",
@@ -87,7 +122,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 59.85,
       "landingUrl": "/p/pro-niche.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "authority-standard",
@@ -101,7 +143,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 69.9,
       "landingUrl": "/p/authority-standard.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "authority-niche",
@@ -115,7 +164,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 104.85,
       "landingUrl": "/p/authority-niche.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "influencer-standard",
@@ -129,7 +185,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 119.9,
       "landingUrl": "/p/influencer-standard.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "influencer-niche",
@@ -143,7 +206,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 179.85,
       "landingUrl": "/p/influencer-niche.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "scale-standard",
@@ -157,7 +227,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 199.9,
       "landingUrl": "/p/scale-standard.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "scale-niche",
@@ -171,7 +248,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 299.85,
       "landingUrl": "/p/scale-niche.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "dominance-standard",
@@ -185,7 +269,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 299.9,
       "landingUrl": "/p/dominance-standard.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "dominance-niche",
@@ -199,7 +290,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 449.85,
       "landingUrl": "/p/dominance-niche.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "ultimate-standard",
@@ -213,7 +311,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 499.9,
       "landingUrl": "/p/ultimate-standard.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "id": "ultimate-niche",
@@ -227,7 +332,14 @@
       "quantityReviewRequired": true,
       "priceUSD": 749.85,
       "landingUrl": "/p/ultimate-niche.html",
-      "nextUpsell": "/offer/upsell-1.html"
+      "nextUpsell": "/offer/upsell-1.html",
+      "format": "digital",
+      "delivery": "Members portal with Reels Viral Academy and limited daily follower requests, subject to payment verification and service availability",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     }
   ],
   "upsells": [
@@ -239,7 +351,14 @@
       "description": "Additional account-service option. Product details, scope and fulfillment must be confirmed before this offer can be sold.",
       "next": "upsell-2",
       "decline": "downsell-1",
-      "status": "pending_validation"
+      "status": "pending_validation",
+      "format": "digital",
+      "delivery": "Additional members-area course and educational tools unlocked only after approved payment of this add-on",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "slug": "downsell-1",
@@ -249,7 +368,14 @@
       "description": "Alternative option linked to Upsell 1. The deliverable and special pricing require confirmation before checkout activation.",
       "next": "upsell-2",
       "decline": "upsell-2",
-      "status": "pending_validation"
+      "status": "pending_validation",
+      "format": "digital",
+      "delivery": "Additional members-area course and educational tools unlocked only after approved payment of this add-on",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "slug": "upsell-2",
@@ -259,7 +385,14 @@
       "description": "Optional verification-related service concept from the previous funnel. Its necessity, deliverables and any refund promises require validation before selling.",
       "next": "upsell-3",
       "decline": "upsell-3",
-      "status": "pending_validation"
+      "status": "pending_validation",
+      "format": "digital",
+      "delivery": "Additional members-area course and educational tools unlocked only after approved payment of this add-on",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "slug": "upsell-3",
@@ -269,7 +402,14 @@
       "description": "Optional protection-related service concept from the previous funnel. Do not promise safety against bans or restrictions without verifiable evidence.",
       "next": "upsell-4",
       "decline": "upsell-4",
-      "status": "pending_validation"
+      "status": "pending_validation",
+      "format": "digital",
+      "delivery": "Additional members-area course and educational tools unlocked only after approved payment of this add-on",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     },
     {
       "slug": "upsell-4",
@@ -279,7 +419,20 @@
       "description": "Optional retention-support concept. Define the replacement and support conditions before activating payments.",
       "next": "complete",
       "decline": "complete",
-      "status": "pending_validation"
+      "status": "pending_validation",
+      "format": "digital",
+      "delivery": "Additional members-area course and educational tools unlocked only after approved payment of this add-on",
+      "supportEmail": "flowinsta@outlook.com",
+      "supportPhone": "557398289401",
+      "guaranteeDays": 7,
+      "audience": "general_public",
+      "loginUrl": "https://instaflow-preview.onrender.com/membros/"
     }
-  ]
+  ],
+  "supportPhone": "557398289401",
+  "audience": "Público geral / General public",
+  "deliveryType": "Digital membership access with educational courses and an optional online follower request service",
+  "defaultDailyLimit": 10,
+  "maxDailyLimit": 15,
+  "memberLoginUrl": "https://instaflow-preview.onrender.com/membros/"
 }
