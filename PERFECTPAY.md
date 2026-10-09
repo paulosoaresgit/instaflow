@@ -1,15 +1,17 @@
-# PerfectPay checkout (InstaFlow)
+# InstaFlow: checkout direto PerfectPay
 
-The frontend now goes directly to the PerfectPay checkout endpoint. FlowBridge and Whop are not used.
+O InstaFlow está publicado como **site estático no Render**. O checkout funciona diretamente na página: a seleção do plano abre o formulário de @ e e-mail; o navegador carrega `/perfectpay-checkouts.json` e redireciona exclusivamente para o link de checkout cadastrado da PerfectPay.
 
-## Configure plans
+## Como ativar os planos
 
-Create the checkout URLs in PerfectPay for each plan and paste the real `https://go.perfectpay.com.br/...` checkout link in `perfectpay-checkouts.json`, or set the Render environment variable `PERFECTPAY_CHECKOUTS_JSON` to a JSON object with the same keys. The environment variable overrides nonempty fields in the file.
+No GitHub, branch `main`, edite `perfectpay-checkouts.json` para inserir os links verdadeiros criados em **PerfectPay → Produtos → Meus Produtos → Planos → Links de Checkout**. Não é necessário script, FlowBridge, Whop, token ou API externa. O deploy automático do Render acompanha o commit.
 
-Keys: starter, growth, pro, authority, influencer, scale, dominance, ultimate. Each plan has a `standard` and an optional distinct `niche` checkout. Configure the correct USD price for every option in PerfectPay. Without a configured link, that option returns HTTP 503 (no old checkout fallback).
+Para cada plano configure `standard` (seguidores gerais) e `niche` (seguidores de nicho): `starter`, `growth`, `pro`, `authority`, `influencer`, `scale`, `dominance`, `ultimate`. Os dois modos podem exigir preços diferentes. Nunca configure o checkout de uma oferta com o preço de outra.
 
-Main standard prices: Starter $14.90, Growth $29.90, Pro $39.90, Authority $69.90, Influencer $119.90, Scale $199.90, Dominance $299.90, Ultimate $499.90. Niche prices shown by the frontend may be higher; verify them against the links before enabling.
+Preços padrão exibidos no site, em USD: Starter $14.90, Growth $29.90, Pro $39.90, Authority $69.90, Influencer $119.90, Scale $199.90, Dominance $299.90, Ultimate $499.90. Cadastre os preços em USD na PerfectPay antes de colar os links. Sem link configurado, o site mostra erro informativo e **não redireciona** para checkout antigo.
 
-The website posts a validated customer email, Instagram username and selected plan to `POST /api/perfectpay/checkout`. The server chooses a configured PerfectPay URL and attaches source and campaign tracking. Status of plan checkout configuration: `GET /api/perfectpay/status`.
+A página preserva a coleta do @ e e-mail, preenche o checkout com e-mail/nome quando informado e adiciona parâmetros `src`, `sck`, e UTMs ao link. A referência `sck` inclui plano, modalidade e @ para ajudar a conciliar a venda.
 
-**Important:** this migration configures *checkout redirects only*. It does not verify paid orders, deliver followers or authorize upsell access. Configure and verify a PerfectPay sales webhook (approval, refund, chargeback) with a durable order database before automating fulfillment, and separately migrate upsells. Never treat a redirect or thank-you page as payment confirmation.
+**Limites:** este código configura apenas redirecionamento. Não confirma venda ou entrega seguidores. Para pós-pagamento e upsells, configurar separadamente o webhook de vendas da PerfectPay, com validação e persistência segura, antes de automatizar entrega e acesso. Nem um redirecionamento nem uma página de obrigado equivalem a pagamento aprovado.
+
+O arquivo `server.js` também possui um resolver opcional para implantações Node, mas **não é executado pelo Render estático atual**. A forma ativa da integração é o JSON estático.
