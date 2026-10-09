@@ -128,12 +128,17 @@ Deno.serve(async req=>{
   const day=utcDate();
   const [claimsResult,allLessonsResult,progressResult]=await Promise.all([
    admin.from("gf_claims").select("request_day,quantity,status,provider_order_id").eq("user_id",user.id).order("request_day",{ascending:false}).limit(30),
-   admin.from("gf_lessons").select("id,module_title,position,title,body,upsell_slug").order("id"),
+   admin.from("gf_lessons").select("id,module_title,module_title_en,position,title,title_en,body,body_en,upsell_slug").order("id"),
    admin.from("gf_lesson_progress").select("lesson_id").eq("user_id",user.id)
   ]);
   const claims=dbError(claimsResult,"claims")||[];
   const doneSet=new Set((dbError(progressResult,"progress")||[]).map(x=>x.lesson_id));
-  const lessons=(dbError(allLessonsResult,"lessons")||[]).filter(l=>!l.upsell_slug||skus.has(l.upsell_slug)).map(l=>({...l,completed:doneSet.has(l.id)}));
+  const lessons=(dbError(allLessonsResult,"lessons")||[]).filter(l=>!l.upsell_slug||skus.has(l.upsell_slug)).map(l=>{
+   const lang=body?.lang==="en"?"en":"pt";
+   return {id:l.id,module_title:lang==="en"?(l.module_title_en||l.module_title):l.module_title,
+    position:l.position,title:lang==="en"?(l.title_en||l.title):l.title,
+    body:lang==="en"?(l.body_en||l.body):l.body,upsell_slug:l.upsell_slug,completed:doneSet.has(l.id)};
+  });
   const active=claims.find(c=>c.request_day===day&&c.status!=="failed");
   const used=active?active.quantity:0;
   const minConfigured=Number(Deno.env.get("WORLDSMM_MIN_QTY_VERIFIED")||0);
