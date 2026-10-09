@@ -22,6 +22,7 @@ create table if not exists public.gf_profiles (
  email text not null,
  instagram_username text,
  handle_verified boolean not null default false,
+ auto_delivery_enabled boolean not null default false,
  verified_at timestamptz,
  daily_limit smallint not null default 10 check (daily_limit in (10,15)),
  created_at timestamptz not null default now(),
