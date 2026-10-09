@@ -70,7 +70,7 @@ alter table public.gf_claims enable row level security;
 alter table public.gf_lessons enable row level security;
 alter table public.gf_lesson_progress enable row level security;
 revoke all on table public.gf_orders, public.gf_profiles, public.gf_claims, public.gf_lessons, public.gf_lesson_progress from anon, authenticated;
-revoke all on all sequences in schema public from anon, authenticated;
+-- Identity sequences have no anon/authenticated privileges by default; do not revoke unrelated sequences.
 
 -- Both sensitive mutations below are accessible only by the service_role.
 create or replace function public.gf_reserve_daily(p_user_id uuid,p_quantity int)
@@ -78,8 +78,8 @@ returns public.gf_claims
 language plpgsql security definer set search_path=''
 as $body$
 declare v_profile public.gf_profiles%rowtype;
-declare v_claim public.gf_claims%rowtype;
-declare v_day date := (now() at time zone 'UTC')::date;
+v_claim public.gf_claims%rowtype;
+v_day date := (now() at time zone 'UTC')::date;
 begin
  select * into v_profile from public.gf_profiles where user_id=p_user_id for update;
  if not found then raise exception 'profile_not_found'; end if;
