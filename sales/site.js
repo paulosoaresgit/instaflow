@@ -20,7 +20,7 @@ setText("guarantee",String(cfg.guaranteeDays||7));
 const lead=document.querySelector(".grid .hero .lead");
 if(lead)lead.textContent="GainFlow is a digital members-area experience, with a complete Reels Academy and access to eligible online tools. Each purchase unlocks access after payment approval.";
 const delivery=document.querySelector(".smallcard p.mini");
-if(delivery)delivery.textContent="Digital delivery: access to the member dashboard after approved payment. Includes 24 Reels classes across eight modules, with optional extra lessons unlocked by purchased add-ons. Daily requests begin at 10, configurable up to 15 after technical/provider validation.";
+if(delivery&&here==="product")delivery.textContent="Digital delivery: access to the member dashboard after approved payment. Includes 24 Reels classes across eight modules, with optional extra lessons unlocked by purchased add-ons. Daily requests begin at 10, configurable up to 15 after technical/provider validation.";
 const memberLink=document.querySelector(".smallcard");
 if(memberLink&&here==="product"){const a=document.createElement("a");a.href="/members/";a.textContent="Open my digital member area →";a.className="mini";memberLink.appendChild(a)}
 
