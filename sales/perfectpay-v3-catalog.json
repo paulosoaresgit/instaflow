@@ -39,7 +39,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "starter-niche",
@@ -67,7 +67,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "growth-standard",
@@ -95,7 +95,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "growth-niche",
@@ -123,7 +123,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "pro-standard",
@@ -151,7 +151,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "pro-niche",
@@ -179,7 +179,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "authority-standard",
@@ -207,7 +207,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "authority-niche",
@@ -235,7 +235,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "influencer-standard",
@@ -263,7 +263,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "influencer-niche",
@@ -291,7 +291,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "scale-standard",
@@ -319,7 +319,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "scale-niche",
@@ -347,7 +347,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "dominance-standard",
@@ -375,7 +375,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "dominance-niche",
@@ -403,7 +403,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "ultimate-standard",
@@ -431,7 +431,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "ultimate-niche",
@@ -459,7 +459,7 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
     }
   ],
   "upsells": [
@@ -482,7 +482,7 @@
       "productStatus": "draft_requires_deliverable_verification",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/",
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401"
@@ -506,7 +506,7 @@
       "productStatus": "draft_requires_deliverable_verification",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/",
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401"
@@ -530,7 +530,7 @@
       "productStatus": "draft_requires_deliverable_verification",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/",
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401"
@@ -554,7 +554,7 @@
       "productStatus": "draft_requires_deliverable_verification",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/",
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401"
@@ -578,7 +578,7 @@
       "productStatus": "draft_requires_deliverable_verification",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
-      "deliveryUrl": "https://instaflow-preview.onrender.com/membros/",
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401"
@@ -741,7 +741,8 @@
   "supportPhone": "557398289401",
   "audience": "general_public",
   "deliveryType": "digital_members_area",
-  "deliveryUrl": "https://instaflow-preview.onrender.com/membros/",
+  "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
   "dailyLimitDefault": 10,
-  "dailyLimitMax": 15
+  "dailyLimitMax": 15,
+  "deliveryUrlPt": "https://instaflow-preview.onrender.com/membros/"
 }
