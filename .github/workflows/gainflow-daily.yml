@@ -1,0 +1,31 @@
+name: GainFlow daily follower queue
+on:
+  schedule:
+    # Retry pending approved members hourly; SQL unique(user_id,request_day) enforces once a day.
+    - cron: "15 * * * *"
+  workflow_dispatch:
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Dispatch verified opt-in members
+        shell: bash
+        env:
+          GF_MEMBERS_CRON_URL: ${{ secrets.GF_MEMBERS_CRON_URL }}
+          GF_CRON_SECRET: ${{ secrets.GF_CRON_SECRET }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${GF_MEMBERS_CRON_URL}" || -z "${GF_CRON_SECRET}" ]]; then
+            echo "Members backend is not configured. No deliveries were attempted."
+            exit 0
+          fi
+          case "${GF_MEMBERS_CRON_URL}" in
+            https://*.supabase.co/functions/v1/members-daily-cron) ;;
+            *) echo "Unexpected URL. Refusing to send secret."; exit 1;;
+          esac
+          curl --fail-with-body --silent --show-error --max-time 300 --retry 0 \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "x-gf-cron-secret: ${GF_CRON_SECRET}" \
+            "${GF_MEMBERS_CRON_URL}"
