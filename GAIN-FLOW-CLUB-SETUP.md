@@ -4,7 +4,8 @@ Atualizado em 09/10/2026. Área de membros construída neste repositório.
 
 ## Acessos e dados comerciais
 
-- **Login de alunos:** https://instaflow-preview.onrender.com/membros/
+- **Login de alunos (EUA/inglês):** https://instaflow-preview.onrender.com/members/
+- **Login de alunos (Brasil/português):** https://instaflow-preview.onrender.com/membros/
 - **Suporte:** flowinsta@outlook.com
 - **Telefone informado:** 557398289401 (verificar a quantidade de dígitos antes de criar link WhatsApp ou discagem)
 - **Garantia:** 7 dias para todos os produtos, conforme as condições de reembolso e de compra
@@ -25,7 +26,7 @@ Não use o projeto FLOW, que estava relacionado ao FlowBridge, nem bancos perten
 1. Crie um projeto exclusivo (por exemplo, `gainflow-club`).
 2. Execute uma única vez o arquivo `database/gainflow_members.sql` usando SQL Editor do projeto, em ambiente apropriado e após revisão do esquema.
 3. Confira no SQL Editor: existem as tabelas `gf_orders`, `gf_profiles`, `gf_claims`, `gf_lessons`, `gf_lesson_progress`. As tabelas devem ter RLS ativada e nenhuma permissão ampla de leitura/escrita para os clientes.
-4. O curso deve ter **29 aulas**: 24 para qualquer compra e 5 restritas a compras dos upsells. A instrução SQL pode ser reaplicada para atualizar as aulas.
+4. O curso deve ter **29 aulas (24 principais + 5 extras), em português e inglês**: 24 para qualquer compra e 5 restritas a compras dos upsells. A instrução SQL pode ser reaplicada para atualizar as aulas.
 5. Ative autenticação de e-mail por código ou magic link. Configure os Redirect URLs autorizados para `https://instaflow-preview.onrender.com/membros/` e o domínio principal quando publicado.
 6. A página `membros/app.js` aceita código por e-mail; personalize o template de OTP para exibir `{{ .Token }}` ou permita o link de login.
 7. Obtenha a **URL do projeto** e uma **publishable key** (chave pública). Coloque APENAS esses dois valores em `membros/config.json`; nunca cole `service_role` ou segredo nessa pasta.
@@ -81,7 +82,9 @@ Cadastrar TODOS os planos normais, nichados e 5 upsells. Para cada produto princ
 
 Na PerfectPay, configure **Público Geral**, **Digital**, **Garantia 7 dias**, contato acima e entrega por **Área de Membros Externa / Webhook**.
 
-**URL de entrega digital:** https://instaflow-preview.onrender.com/membros/
+**URL de entrega digital para EUA:** https://instaflow-preview.onrender.com/members/
+
+**URL de entrega digital para Brasil:** https://instaflow-preview.onrender.com/membros/
 
 **Webhook:** `https://SEU_PROJETO.supabase.co/functions/v1/perfectpay-members-webhook`
 
