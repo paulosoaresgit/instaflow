@@ -61,7 +61,7 @@ async function submitOrder(provider,handle,quantity){
 }
 Deno.serve(async req=>{
  const origin=req.headers.get("origin")||"";
- if(req.method==="OPTIONS")return result(204,{},origin);
+ if(req.method==="OPTIONS")return new Response(null,{status:204,headers:{"Access-Control-Allow-Origin":allowedOrigins.includes(origin)?origin:allowedOrigins[0],"Access-Control-Allow-Headers":"authorization, apikey, content-type","Access-Control-Allow-Methods":"POST, OPTIONS"}});
  if(req.method!=="POST")return result(405,{message:"Method not allowed"},origin);
  if(origin&&!allowedOrigins.includes(origin))return result(403,{message:"Origem não autorizada"},origin);
  if(!supabaseUrl||!serviceKey)return result(503,{message:"Servidor ainda não configurado"},origin);
@@ -87,6 +87,12 @@ Deno.serve(async req=>{
    }).eq("user_id",user.id).select("*").single();
    const p=dbError(update,"profile");
    return result(200,{ok:true,profile:{instagram_username:p.instagram_username,handle_verified:p.handle_verified}},origin);
+  }
+  if(action==="set_auto"){
+   if(typeof body.enabled!=="boolean")return result(400,{message:"Opção inválida"},origin);
+   if(!profile.instagram_username)return result(400,{message:"Cadastre seu @ antes de ativar"},origin);
+   dbError(await admin.from("gf_profiles").update({auto_delivery_enabled:body.enabled,updated_at:new Date().toISOString()}).eq("user_id",user.id),"auto");
+   return result(200,{ok:true,auto_delivery_enabled:body.enabled},origin);
   }
   if(action==="complete_lesson"){
    const id=Number(body.lesson_id);
@@ -132,7 +138,7 @@ Deno.serve(async req=>{
   const used=active?active.quantity:0;
   const configured=!!(Deno.env.get("WORLDSMM_API_KEY")&&Deno.env.get("WORLDSMM_SERVICE_ID")&&Deno.env.get("WORLDSMM_MIN_QTY_VERIFIED"));
   return result(200,{ok:true,hasAccess:true,email,
-   profile:{instagram_username:profile.instagram_username,handle_verified:profile.handle_verified,daily_limit:profile.daily_limit},
+   profile:{instagram_username:profile.instagram_username,handle_verified:profile.handle_verified,auto_delivery_enabled:profile.auto_delivery_enabled,daily_limit:profile.daily_limit},
    quota:{limit:profile.daily_limit,used,remaining:Math.max(0,profile.daily_limit-used),day},
    providerReady:configured,claims,lessons,extras:extras.map(e=>({...e,unlocked:skus.has(e.slug)})),
    purchases:orders.map(x=>({sku:x.sku,status:x.payment_status}))},origin);
