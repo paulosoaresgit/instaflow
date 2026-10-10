@@ -1,47 +1,43 @@
-# GainFlow — dois Order Bumps na PerfectPay
+# GainFlow — Order Bumps na PerfectPay
 
-**Status: planejados no catálogo, ainda não cadastrados/ativados na conta.**
+**Catálogo:** `sales/perfectpay-v3-catalog.json` → `orderBumps`.
 
-Essas ofertas são **Order Bumps exibidos no checkout**, não upsells One Click após o pagamento. Não altere os 16 checkouts já cadastrados enquanto não houver produtos/planos e entrega validada. O catálogo central é `sales/perfectpay-v3-catalog.json`, chave `orderBumps`.
+**Status:** os dois checkouts individuais foram informados pelo proprietário e registrados no GitHub. A seleção como Order Bump dentro de cada um dos 16 checkouts principais, a configuração de webhooks e os testes de entrega **ainda não foram confirmados**. Não marcar vendas ou entregas como concluídas somente pelo link.
 
-| Item | Produto adicional | Plano | Preço em USD | SKU interno |
-|---|---|---|---:|---|
-| 1 | GainFlow — VIP Express Delivery | VIP Express Delivery | US$ 7,00 | `order-bump-vip-express` |
-| 2 | 200 Likes | 200 Likes + 50 Saves | US$ 9,90 | `order-bump-likes-saves` |
+| Item | Produto e plano oficial | Preço USD | Checkout informado | Sales Page |
+|---|---|---:|---|---|
+| 1 | GainFlow — VIP Express Delivery | 7,00 | https://go.centerpag.com/PPU38CQGT5E | https://instaflow-preview.onrender.com/offer/order-bump-vip-express.html |
+| 2 | GainFlow Engagement Toolkit | 9,90 | https://go.centerpag.com/PPU38CQGT6J | https://instaflow-preview.onrender.com/offer/order-bump-engagement-toolkit.html |
 
-## Cópias curtas em inglês
+## Oferta 1: VIP Express Delivery
 
-**Bump 1 — VIP Express Delivery**
+**Texto curto (EN):** `Priority processing for your follower order. Add express handling for just $7.00.`
 
-- Texto de venda: `VIP Express Delivery`
-- Texto auxiliar: `Priority processing for your follower order. Add express handling for just $7.00.`
-- Referência enviada pelo dono: entrega em 3 horas em vez de 24 horas. **Não publicar esse prazo como garantido até o fornecedor confirmar o serviço e SLA.**
+É um serviço de processamento prioritário sujeito a disponibilidade. **Não prometer entrega em 3 horas** sem confirmação técnica de prazo pelo fornecedor e testes reais. Validar o processamento e a associação ao pedido principal antes de ativar.
 
-**Bump 2 — 200 Likes + 50 Saves**
+## Oferta 2: Engagement Toolkit
 
-- Texto de venda: `200 Likes + 50 Saves`
-- Texto auxiliar: `200 likes and 50 saves in total across up to 5 eligible posts. Add for just $9.90.`
-- Não alegar garantia de alcance ou melhoria do algoritmo. Confirmar se o fornecedor suporta curtidas e salvamentos em URLs elegíveis; esclarecer que 200+50 são **totais**, não por postagem.
+**Texto curto (EN):** `Get an actionable Reels engagement guide, content templates and a 7-day organic audience plan for only $9.90.`
 
-## Etapas dentro da PerfectPay
+**Entregável:** arquivo `GainFlow_Engagement_Toolkit.pdf` (3 páginas, inglês): estratégias de Reels, modelos/checklists e plano de ação para engajamento orgânico. **Não inclui** compra de curtidas, salvamentos nem interação artificial. O produto anterior "200 Likes / 200 Likes + 50 Saves" foi substituído; não utilizar sua descrição, entregáveis, promessa ou checkout hipotético. URL antiga `/offer/order-bump-likes-saves.html` redireciona para a nova Sales Page.
 
-1. Cadastrar (ou identificar se já existem) os **dois produtos adicionais** e seus planos com valores em USD; manter garantia, suporte e entrega consistentes com os termos e com a capacidade real de atendimento. Produtos adicionais devem representar serviços realmente entregues.
-2. Em cada um dos **16 produtos principais**, abrir **Configuração checkout → editar pelo lápis → aba Ferramentas → Order Bump → ativar → Adicionar**.
-3. Selecionar **Produto adicional** e o **Plano** correspondente; completar opcionalmente imagem, texto de venda e texto auxiliar conforme as cópias acima.
-4. Conferir se ambos aparecem com **checkboxes desmarcados** por padrão, os valores USD 7,00 e USD 9,90, e se o total aumenta corretamente **apenas quando o comprador seleciona**.
-5. Validar ao menos um checkout Standard e um Niche; depois percorrer os 16. Verificar imposto/taxa, conversão de moeda, e opções de pagamento. O comprador deve ver claramente o preço adicional e a natureza da entrega.
-6. Após pagamento aprovado, o webhook deve identificar **cada item**, relacioná-lo ao pedido principal e entregar cada um **exatamente uma vez**. Não marcar bump como entregue só pela visita à página de obrigado; tratar reembolsos/cancelamentos.
-7. Somente então considerar a ativação comercial.
+## Como configurar na PerfectPay
 
-**Documentação oficial:** https://help.perfectpay.com.br/article/151-order-bump e https://help.perfectpay.com.br/article/183-order-bump-o-que-e-como-e-feita-a-cobranca
+1. Confira os dois produtos e planos já criados, nomes, moeda USD, valor, entrega e política de garantia. Recupere os códigos reais de **produto** e **plano** e registre-os no catálogo; não invente IDs.
+2. Em um checkout principal de teste, abra `Produtos → Meus Produtos → Configuração checkout → editar (lápis) → Ferramentas → Order Bump`.
+3. Selecione o primeiro produto e seu plano; preencha os textos e mantenha opcional. Adicione o segundo produto e seu plano. Confira os totais quando ambos estiverem marcados e quando nenhum estiver.
+4. Verifique um pedido aprovado com e sem cada item, o webhook, a entrega correta do PDF do Toolkit e a execução do serviço VIP sem duplicações. Valide cancelamento/reembolso.
+5. Repita para os 16 checkouts principais, caso tenham configurações separadas. Não ative todos automaticamente sem antes conferir o teste.
+6. Os **4 upsells + 1 downsell pós-compra** continuam separados desses dois Order Bumps.
 
-## Checklist de publicação
+**Documentação PerfectPay:** https://help.perfectpay.com.br/article/151-order-bump
 
-- [ ] Fornecedor confirma prazo para entrega prioritária
-- [ ] Fornecedor confirma disponibilidade de curtidas e salvamentos e regras de posts
-- [ ] Dois produtos/planos adicionais cadastrados e aprovados
-- [ ] IDs e códigos reais anotados no catálogo central
-- [ ] Ambos vinculados aos 16 checkouts, com verificação de totais
-- [ ] Webhook/payment reconciliation validado com itens separados
-- [ ] Pedido teste revisado em Standard e Niche
-- [ ] Publicação autorizada
+## Checklist
+
+- [ ] Confirmar nomes/preços dos planos na PerfectPay
+- [ ] Confirmar fornecedor e SLA do VIP Express Delivery
+- [ ] Configurar entrega digital do Engagement Toolkit PDF mediante compra aprovada
+- [ ] Associar ambos os Order Bumps aos checkouts elegíveis
+- [ ] Verificar o total cobrado e seleção opcional dos dois extras
+- [ ] Validar evento de pagamento/webhook e entrega por item
+- [ ] Validar compras de teste, reembolsos e suporte
