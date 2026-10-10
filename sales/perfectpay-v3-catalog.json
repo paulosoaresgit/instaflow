@@ -368,7 +368,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=scale-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=scale-standard",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTET",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIHI",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 100000,
       "basePlusBonus": 60000,
@@ -379,10 +379,13 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "user_provided_new_checkout_link_pending_live_price_and_payment_verification",
-      "perfectPayPlanCode": "",
-      "productCodeReviewRequired": true,
-      "productCodeReviewReason": "Screenshots display two different PPP codes labeled GainFlow Influencer Niche and no product labeled GainFlow Scale (standard). Do not assign without verifying product details."
+      "checkoutLinkReviewStatus": "user_provided_new_checkout_link_pending_live_purchase_test",
+      "perfectPayPlanCode": "PPLQQQOIS",
+      "productCodeReviewRequired": false,
+      "productCodeReviewReason": "",
+      "productCodeSource": "User-provided PerfectPay product details screenshot (2026-10-10)",
+      "planCodeSource": "User-provided PerfectPay plan screenshot (2026-10-10)",
+      "productCodeVerification": "product_and_plan_codes_confirmed_in_screenshots"
     },
     {
       "internalSlug": "scale-niche",
