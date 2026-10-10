@@ -109,6 +109,7 @@ Deno.serve(async req=>{
    return result(200,{ok:true,profile:{instagram_username:p.instagram_username,handle_verified:p.handle_verified}},origin);
   }
   if(action==="set_auto"){
+   if(!hasGrowthPlan)return result(403,{message:"A entrega diária depende de um plano principal."},origin);
    if(typeof body.enabled!=="boolean")return result(400,{message:"Opção inválida"},origin);
    if(!profile.instagram_username)return result(400,{message:"Cadastre seu @ antes de ativar"},origin);
    dbError(await admin.from("gf_profiles").update({auto_delivery_enabled:body.enabled,updated_at:new Date().toISOString()}).eq("user_id",user.id),"auto");
