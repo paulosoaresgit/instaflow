@@ -825,10 +825,14 @@
       "requiresApprovedPayment": true,
       "perfectPayProductCode": "",
       "perfectPayPlanCode": "",
-      "status": "planned_not_created_or_enabled",
+      "status": "registered_checkout_link_pending_validation",
       "supportEmail": "flowinsta@outlook.com",
       "salesPage": "https://instaflow-preview.onrender.com/offer/order-bump-vip-express.html",
-      "salesPageStatus": "published_information_page_not_a_payment_checkout"
+      "salesPageStatus": "published_information_page_not_a_payment_checkout",
+      "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT5E",
+      "checkoutLinkReviewStatus": "provided_by_user_pending_price_and_payment_verification",
+      "orderBumpEnabledInCheckout": false,
+      "fulfillmentVerified": false
     },
     {
       "internalSlug": "order-bump-likes-saves",
