@@ -45,7 +45,8 @@ Deno.serve(async request=>{
    const daily=await supa.from("gf_claims").select("status").eq("user_id",p.user_id).eq("request_day",date).maybeSingle();
    if(daily.error){skipped++;continue}
    if(daily.data&&daily.data.status!=="failed"){skipped++;continue}
-   const approved=await supa.from("gf_orders").select("sale_code").eq("email",p.email.toLowerCase()).eq("payment_status","approved").limit(1);
+   const primarySkus=["starter","growth","pro","authority","influencer","scale","dominance","ultimate"].flatMap(plan=>[plan+"-standard",plan+"-niche"]);
+   const approved=await supa.from("gf_orders").select("sale_code").eq("email",p.email.toLowerCase()).eq("payment_status","approved").in("sku",primarySkus).limit(1);
    if(approved.error||!approved.data?.length){skipped++;continue}
    const reserved=await supa.rpc("gf_reserve_daily",{p_user_id:p.user_id,p_quantity:p.daily_limit});
    if(reserved.error){skipped++;continue}
