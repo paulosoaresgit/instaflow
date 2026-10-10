@@ -5,6 +5,8 @@ import { execFileSync, spawn } from 'node:child_process';
 import net from 'node:net';
 import { once } from 'node:events';
 import vm from 'node:vm';
+import { stripTypeScriptTypes } from 'node:module';
+import { webcrypto } from 'node:crypto';
 
 const root = new URL('../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
@@ -137,63 +139,102 @@ test('all four included-offer decline and continue paths retain attribution and 
 });
 
 async function webhookFixture(overrides = {}, mapOverride) {
-  const calls = [], logs = [];
-  const env = { SUPABASE_URL: 'https://test.supabase.co', SUPABASE_SERVICE_ROLE_KEY: 'test-only-key', GF_PERFECTPAY_POSTBACK_TOKEN: 'test-only-token',
-    GF_PERFECTPAY_PRODUCT_MAP: JSON.stringify(mapOverride || {
-      'test-starter-plan': { sku: 'starter-niche', productCode: 'test-product', planCode: 'test-starter-plan' },
-      'test-growth-plan': { sku: 'growth-standard', productCode: 'test-product', planCode: 'test-growth-plan' }
-    }), ...overrides };
+  const calls = [], mapQueries = [];
+  const env = {
+    SUPABASE_URL: 'https://test.supabase.co',
+    SUPABASE_SERVICE_ROLE_KEY: 'test-only-key',
+    GF_MEMBERS_WEBHOOK_ENABLED: 'true',
+    GF_PERFECTPAY_POSTBACK_TOKEN: 'a-long-test-token-123456',
+    ...overrides
+  };
+  const authorizedPairs = mapOverride || {
+    'test-product:test-starter-plan': 'starter-niche',
+    'test-product:test-growth-plan': 'growth-standard'
+  };
   let handler;
-  const source = (await read('supabase/functions/perfectpay-members-webhook/index.ts')).replace(/^import .*;\r?\n/m, '');
+  const ts = (await read('supabase/functions/perfectpay-members-webhook/index.ts'))
+    .replace(/^import .*;\\r?\\n/m, '');
+  const source = stripTypeScriptTypes(ts, { mode: 'strip' });
+  const createClient = () => ({
+    from: table => {
+      const conditions = {};
+      const query = {
+        select: () => query,
+        eq: (key, value) => { conditions[key] = value; return query; },
+        maybeSingle: async () => {
+          mapQueries.push({ table, conditions: { ...conditions } });
+          const sku = table === 'gf_authorized_plans' && conditions.is_active === true
+            ? authorizedPairs[conditions.product_code + ':' + conditions.plan_code] : null;
+          return { data: sku ? { sku } : null, error: null };
+        }
+      };
+      return query;
+    },
+    rpc: async (name, args) => { calls.push({ name, args }); return { error: null }; }
+  });
   vm.runInNewContext(source, {
     Deno: { env: { get: key => env[key] }, serve: fn => { handler = fn; } },
-    createClient: () => ({ rpc: async (name, args) => { calls.push({ name, args }); return { error: null }; } }),
-    Response, TextEncoder, console: { error: value => logs.push(value) }
+    createClient, crypto: webcrypto, Response, TextEncoder, Uint8Array, console
   });
   const send = async patch => {
-    const payload = { token: 'test-only-token', code: 'test-sale', product: { code: 'test-product' }, plan: { code: 'test-starter-plan' }, customer: { email: 'test@example.com' }, sale_status_enum: 2, ...patch };
-    const response = await handler(new Request('https://test.invalid/webhook', { method: 'POST', body: JSON.stringify(payload) }));
+    const payload = {
+      token: 'a-long-test-token-123456',
+      code: 'test-sale-0001',
+      product: { code: 'test-product' },
+      plan: { code: 'test-starter-plan' },
+      customer: { email: 'test@example.com' },
+      sale_status_enum: 2, ...patch
+    };
+    const response = await handler(new Request('https://test.invalid/webhook', {
+      method: 'POST', body: JSON.stringify(payload)
+    }));
     return { status: response.status, body: await response.json() };
   };
-  return { send, calls, logs };
+  return { send, calls, mapQueries };
 }
 
-test('approved/completed/refunded/cancelled/chargeback events normalize the official statuses', async () => {
+test('approved/completed/refunded/cancelled/chargeback events map to official statuses', async () => {
   for (const [code, status] of [[2, 'approved'], [10, 'approved'], [7, 'refunded'], [6, 'cancelled'], [9, 'chargeback']]) {
     const fixture = await webhookFixture();
     assert.equal((await fixture.send({ sale_status_enum: code })).status, 200);
     assert.equal(fixture.calls[0].args.p_status, status);
     assert.equal(fixture.calls[0].args.p_sku, 'starter-niche');
+    assert.equal(fixture.calls[0].name, 'gf_ingest_sale');
   }
 });
 
-test('two plans on the same product map to distinct SKUs and mismatches are rejected', async () => {
+test('different verified plan pairs map to distinct SKUs; unknown pairs never grant access', async () => {
   const fixture = await webhookFixture();
   await fixture.send({});
   await fixture.send({ plan: { code: 'test-growth-plan' } });
   assert.equal(fixture.calls[0].args.p_sku, 'starter-niche');
   assert.equal(fixture.calls[1].args.p_sku, 'growth-standard');
-  assert.equal((await fixture.send({ product: { code: 'other-product' } })).status, 422);
+  const unknown = await fixture.send({ product: { code: 'other-product' } });
+  assert.equal(unknown.status, 202);
+  assert.equal(unknown.body.ignored, true);
   assert.equal(fixture.calls.length, 2);
+  assert.ok(fixture.mapQueries.every(q => q.table === 'gf_authorized_plans'));
 });
 
-test('unauthorized, incomplete, and unknown-status events cannot write membership orders', async () => {
+test('unauthorized and incomplete webhooks cannot write membership orders', async () => {
   const fixture = await webhookFixture();
   assert.equal((await fixture.send({ token: 'wrong-token' })).status, 401);
   assert.equal((await fixture.send({ plan: {} })).status, 422);
-  assert.equal((await fixture.send({ sale_status_enum: 999 })).status, 422);
+  assert.equal((await fixture.send({ sale_status_enum: 999 })).status, 202);
   assert.equal((await fixture.send({ sale_status_enum: null })).status, 422);
   assert.equal((await fixture.send({ customer: { email: 'invalid' } })).status, 422);
   assert.deepEqual(fixture.calls, []);
 });
 
-test('ambiguous product-only mapping is rejected and an unconfigured project returns 503', async () => {
-  const ambiguous = await webhookFixture({}, { 'test-product': { sku: 'growth-standard' } });
-  assert.equal((await ambiguous.send({})).status, 503);
-  assert.deepEqual(ambiguous.calls, []);
+test('product-only mapping is not enough; missing configuration or disabled webhook blocks access', async () => {
+  const productOnly = await webhookFixture({}, { 'test-product': 'growth-standard' });
+  const unapproved = await productOnly.send({});
+  assert.equal(unapproved.status, 202);
+  assert.deepEqual(productOnly.calls, []);
   const missing = await webhookFixture({ SUPABASE_URL: '' });
   assert.equal((await missing.send({})).status, 503);
-  assert.deepEqual(missing.calls, []);
+  const disabled = await webhookFixture({ GF_MEMBERS_WEBHOOK_ENABLED: 'false' });
+  assert.equal((await disabled.send({})).status, 503);
 });
 
 test('all included offers stay non-charging and the front One Click policy remains disabled', async () => {
