@@ -610,9 +610,9 @@
       "parentFunnel": "all 16 primary products, after confirmed approved payment",
       "nextOfferPage": "https://instaflow-preview.onrender.com/obrigado/",
       "declineTo": "https://instaflow-preview.onrender.com/obrigado/",
-      "liveCheckoutLink": "",
+      "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDE",
       "perfectPayProductCode": "",
-      "productStatus": "draft_ready_for_provider_registration_pending_delivery_setup",
+      "productStatus": "checkout_link_registered_pending_checkout_and_delivery_validation",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
@@ -625,7 +625,10 @@
         "GainFlow_Audience_Tracker.xlsx"
       ],
       "requiresPaymentWebhook": true,
-      "softwareAccessPending": false
+      "softwareAccessPending": false,
+      "checkoutLinkReviewStatus": "user_provided_price_not_independently_verified",
+      "officialOneClickActivated": false,
+      "fulfillmentVerified": false
     }
   ],
   "registrationRoutes": [
@@ -776,7 +779,7 @@
   ],
   "checkoutConstraints": {
     "requireOfficialLinks": true,
-    "linksMissing": 2,
+    "linksMissing": 1,
     "doNotMarkOrdersPaidFromPageVisits": true,
     "oneClickSetupOnlyInPerfectPay": true,
     "webhookRequiredForFulfillment": true,
