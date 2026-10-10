@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-10-gainflow-distinct-paid-services-draft-1",
+  "version": "2026-10-10-universal-gainflow-club-access-1",
   "referenceWebsite": "https://instagainflow.com/v3/?front=v3&lang=en",
   "inspectionStatus": "Live reference page could not be retrieved; amounts and routes derived from linked InstaFlow GitHub source and prior prepared funnel, so reference-page parity is not verified.",
   "originalSiteModified": false,
@@ -1090,12 +1090,12 @@
   "funnelRevision": {
     "date": "2026-10-10",
     "name": "Distinct-service post-purchase offers — configuration draft only",
-    "status": "draft_blocked_pending_service_fulfillment_perfectpay_setup_and_payment_QA",
+    "status": "universal_club_access_confirmed_paid_addons_inactive_pending_distinct_service_validation",
     "originalCheckoutLinksUnchanged": true,
     "oneClickEnabled": false,
     "personaLabAccessVerified": false,
     "retiredPostPurchaseSlug": "upsell-4",
-    "note": "The existing 4 digital-only upsell/downsell SKUs and educational bump are included in GainFlow Club, so they must not be promoted or charged separately. New paid-service drafts require separate approved product/plan mappings, actual fulfillment capacity, exact PerfectPay One Click validation, and payment/refund/cancellation QA. Existing URLs and identifiers retained solely for audit; no live checkout or routing changes made.",
+    "note": "User confirms all buyers of any approved primary GainFlow plan receive identical complete digital library regardless of bump/upsell acceptance. Old digital add-on SKUs must not be presented as exclusive digital unlocks. Draft distinct services remain unactivated until service fulfillment, approval, one-click and payment/refund QA.",
     "personaLabBackend": {
       "project": "efrgcnlraqrylfvxkstn",
       "entitlementTable": "gf_personalab_orders",
@@ -1127,7 +1127,13 @@
     "oneClickRequested": true,
     "oneClickEnabled": false,
     "orderBumpsEnabled": false,
-    "activationBlockedUntilVerified": true
+    "activationBlockedUntilVerified": true,
+    "universalMemberLibrary": true,
+    "accessRule": "Any approved purchase of an authorized GainFlow primary plan grants identical access to the entire GainFlow Club digital library; neither order bumps nor upsells are required.",
+    "declinedUpsellRetainsFullClubAccess": true,
+    "declinedOrderBumpRetainsFullClubAccess": true,
+    "paidAddOnsDoNotChangeClubLibraryAccess": true,
+    "additionalPaidOffersMustDeliverDistinctRealService": true
   },
   "productCodeAudit": {
     "date": "2026-10-10",
