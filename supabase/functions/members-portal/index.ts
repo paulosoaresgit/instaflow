@@ -8,12 +8,24 @@ const serviceKey=Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")||"";
 const admin=createClient(supabaseUrl,serviceKey,{auth:{persistSession:false,autoRefreshToken:false}});
 const allowedOrigins=(Deno.env.get("GF_ALLOWED_ORIGINS")||"https://instaflow-preview.onrender.com,https://followergrowth.site").split(",").map(x=>x.trim()).filter(Boolean);
 const extras=[
- {slug:"upsell-1",title:"Account Safety Academy",description:"Guia completo de segurança e autenticação em duas etapas."},
- {slug:"downsell-1",title:"Account Safety Essentials",description:"Checklist compacto de proteção da conta."},
- {slug:"upsell-2",title:"Profile Verification Toolkit",description:"Guias de titularidade e procedimentos oficiais."},
- {slug:"upsell-3",title:"Advanced Profile Protection",description:"Treinamento de prevenção a phishing, backups e recuperação."},
- {slug:"upsell-4",title:"Follower Retention Playbook",description:"Acompanhamento de métricas e plano de 30 dias."}
+ {slug:"upsell-1",title:"Viral Content Factory",description:"30 Reels briefs and an editable 30-day publishing calendar."},
+ {slug:"downsell-1",title:"Prompt Vault+",description:"18 editable creative prompts for ideas, hooks and reviews."},
+ {slug:"upsell-2",title:"PersonaLab AI Studio",description:"Create original AI characters and videos with your own compatible API key."},
+ {slug:"upsell-3",title:"Follower Retention Playbook",description:"A 30-day analytics and audience tracking toolkit."}
 ];
+const studioUrl="https://personalab-ai-gainflow.vercel.app/";
+const assetFiles={
+ "viral-kit-pdf":"GainFlow_Viral_Content_Factory_30_Day_Kit.pdf",
+ "viral-calendar-xlsx":"GainFlow_Viral_Content_Calendar.xlsx",
+ "viral-calendar-csv":"GainFlow_Viral_Content_30_Day_Calendar.csv",
+ "prompts-pdf":"GainFlow_Prompt_Vault_Plus_Mini_Pack.pdf",
+ "prompts-editable":"GainFlow_Prompt_Vault_Plus_Editable_Prompts.md",
+ "retention-pdf":"GainFlow_Follower_Retention_Playbook.pdf",
+ "retention-xlsx":"GainFlow_Audience_Tracker.xlsx",
+ "studio-guide":"GainFlow_PersonaLab_AI_Studio_Onboarding_Guide.pdf",
+ "studio-brief":"GainFlow_PersonaLab_Creative_Brief_Template.md"
+};
+const isMainSku=(sku:string)=>/^(starter|growth|pro|authority|influencer|scale|dominance|ultimate)-(standard|niche)$/.test(sku);
 const result=(status,data,origin)=>new Response(JSON.stringify(data),{status,headers:{
  "Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store",
  "Access-Control-Allow-Origin":allowedOrigins.includes(origin)?origin:allowedOrigins[0],
@@ -24,8 +36,15 @@ const dbError=(r,label)=>{if(r.error)throw Error(label+": "+r.error.message);ret
 const validHandle=s=>/^[A-Za-z0-9._]{1,30}$/.test(s||"");
 const utcDate=()=>new Date().toISOString().slice(0,10);
 async function getActiveOrders(email){
- const result=await admin.from("gf_orders").select("sale_code,sku,payment_status").eq("email",email).eq("payment_status","approved");
- return dbError(result,"orders")||[];
+ // Isolated storefront orders + verified PersonaLab PerfectPay payments.
+ // Both tables are writable only by server-side authenticated payment handlers.
+ const [main,studio]=await Promise.all([
+  admin.from("gf_orders").select("sale_code,sku,payment_status").eq("email",email).eq("payment_status","approved"),
+  admin.from("gf_personalab_orders").select("provider_order_id").eq("purchaser_email",email).eq("status","approved")
+ ]);
+ const orders=dbError(main,"GainFlow orders")||[];
+ const studioOrders=dbError(studio,"PersonaLab orders")||[];
+ return [...orders,...studioOrders.map(o=>({sale_code:o.provider_order_id,sku:"upsell-2",payment_status:"approved"}))];
 }
 async function ensureProfile(userId,email){
  const r=await admin.from("gf_profiles").select("*").eq("user_id",userId).maybeSingle();
@@ -76,7 +95,8 @@ Deno.serve(async req=>{
   const action=String(body?.action||"overview");
   const orders=await getActiveOrders(email);
   if(!orders.length)return result(200,{ok:true,hasAccess:false,email},origin);
-  const skus=new Set(orders.map(x=>x.sku)),profile=await ensureProfile(user.id,email);
+  const hasGrowthPlan=orders.some(o=>isMainSku(o.sku));
+  const profile=await ensureProfile(user.id,email);
   if(action==="set_profile"){
    const username=String(body.instagram_username||"").replace(/^@+/,"").trim();
    if(!validHandle(username))return result(400,{message:"Use um @ válido com até 30 caracteres"},origin);
@@ -94,15 +114,25 @@ Deno.serve(async req=>{
    dbError(await admin.from("gf_profiles").update({auto_delivery_enabled:body.enabled,updated_at:new Date().toISOString()}).eq("user_id",user.id),"auto");
    return result(200,{ok:true,auto_delivery_enabled:body.enabled},origin);
   }
+  if(action==="library_download"){
+   const asset=String(body?.asset||"");
+   const filename=Object.prototype.hasOwnProperty.call(assetFiles,asset)?assetFiles[asset as keyof typeof assetFiles]:null;
+   if(!filename)return result(400,{message:"Arquivo não autorizado"},origin);
+   const signed=await admin.storage.from("gf-club-files").createSignedUrl(filename,120,{download:filename});
+   if(signed.error||!signed.data?.signedUrl)
+    return result(409,{message:"Este material ainda está sendo disponibilizado. Entre em contato com o suporte."},origin);
+   return result(200,{ok:true,url:signed.data.signedUrl,expiresIn:120},origin);
+  }
   if(action==="complete_lesson"){
    const id=Number(body.lesson_id);
    if(!Number.isSafeInteger(id)||id<1)return result(400,{message:"Aula inválida"},origin);
    const l=dbError(await admin.from("gf_lessons").select("id,upsell_slug").eq("id",id).maybeSingle(),"lesson");
-   if(!l||(l.upsell_slug&&!skus.has(l.upsell_slug)))return result(403,{message:"Aula não liberada"},origin);
+   if(!l||l.upsell_slug)return result(403,{message:"Aula não disponível neste curso"},origin);
    dbError(await admin.from("gf_lesson_progress").upsert({user_id:user.id,lesson_id:id},{onConflict:"user_id,lesson_id"}),"progress");
    return result(200,{ok:true},origin);
   }
   if(action==="claim"){
+   if(!hasGrowthPlan)return result(403,{message:"As solicitações de seguidores dependem de um plano principal contratado."},origin);
    if(!profile.instagram_username||!profile.handle_verified)return result(403,{message:"Seu perfil precisa passar pela verificação de titularidade"},origin);
    const qty=profile.daily_limit;
    const today=utcDate();
@@ -133,7 +163,7 @@ Deno.serve(async req=>{
   ]);
   const claims=dbError(claimsResult,"claims")||[];
   const doneSet=new Set((dbError(progressResult,"progress")||[]).map(x=>x.lesson_id));
-  const lessons=(dbError(allLessonsResult,"lessons")||[]).filter(l=>!l.upsell_slug||skus.has(l.upsell_slug)).map(l=>{
+  const lessons=(dbError(allLessonsResult,"lessons")||[]).filter(l=>!l.upsell_slug).map(l=>{
    const lang=body?.lang==="en"?"en":"pt";
    return {id:l.id,module_title:lang==="en"?(l.module_title_en||l.module_title):l.module_title,
     position:l.position,title:lang==="en"?(l.title_en||l.title):l.title,
@@ -144,9 +174,12 @@ Deno.serve(async req=>{
   const minConfigured=Number(Deno.env.get("WORLDSMM_MIN_QTY_VERIFIED")||0);
   const configured=!!(Deno.env.get("WORLDSMM_API_KEY")&&Deno.env.get("WORLDSMM_SERVICE_ID")&&minConfigured>=1&&minConfigured<=profile.daily_limit);
   return result(200,{ok:true,hasAccess:true,email,
+   accessPolicy:"all_digital_content_with_any_approved_gainflow_purchase",
+   hasGrowthPlan,studioUrl,
+   library: Object.entries(assetFiles).map(([id,name])=>({id,name})),
    profile:{instagram_username:profile.instagram_username,handle_verified:profile.handle_verified,auto_delivery_enabled:profile.auto_delivery_enabled,daily_limit:profile.daily_limit},
    quota:{limit:profile.daily_limit,used,remaining:Math.max(0,profile.daily_limit-used),day},
-   providerReady:configured,claims,lessons,extras:extras.map(e=>({...e,unlocked:skus.has(e.slug)})),
+   providerReady:configured&&hasGrowthPlan,claims,lessons,extras:extras.map(e=>({...e,unlocked:true})),
    purchases:orders.map(x=>({sku:x.sku,status:x.payment_status}))},origin);
  } catch(e){
   console.error("members-portal",e instanceof Error?e.message:"unexpected");
