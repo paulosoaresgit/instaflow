@@ -1,0 +1,66 @@
+/* GainFlow dedicated post-purchase sales pages. All purchases remain disabled until verified. */
+.gf-sales-page{background:radial-gradient(ellipse at 62% -6%,#4c2678a0,transparent 42%),radial-gradient(ellipse at -7% 32%,#46215b64,transparent 37%),#0d0918}
+.gf-topline{height:4px;background:linear-gradient(90deg,#8143fa,#ed4ea3,#fa843d)}
+.gf-layout{max-width:1150px}
+.gf-header{padding:18px 0 38px}
+.gf-header-meta{display:flex;align-items:center;gap:10px;color:#dac9ed;font-size:12px}
+.gf-status-dot{width:7px;height:7px;border-radius:50%;background:#6ee7b7;box-shadow:0 0 12px #4beba16c}
+.gf-step{margin-left:12px;background:#fff1;border:1px solid #ffffff25;border-radius:40px;padding:6px 11px;font-weight:800;letter-spacing:.6px}
+.gf-hero{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(335px,.88fr);gap:50px;align-items:start;padding:27px 0 18px}
+.gf-hero-copy{padding:16px 0 0}
+.gf-eyebrow{font-size:11px;font-weight:900;letter-spacing:2px;color:#f0b7e1}
+.gf-mini-context{font-size:13px;color:#a895bf;margin-top:16px}
+.gf-headline{font-weight:950;font-size:clamp(39px,5.2vw,65px);line-height:1.06;letter-spacing:-2.5px;margin:22px 0 20px}
+.gf-headline em{font-style:normal;color:#ff99cd;background:linear-gradient(100deg,#a88cff,#ff95c5,#ffbd7a);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.gf-hero-lead{font-size:19px;line-height:1.65;color:#cfc1de;margin:0;max-width:610px}
+.gf-benefit-pill{display:inline-flex;align-items:center;gap:9px;border:1px solid #e4b3fc52;background:#ba77fa18;border-radius:50px;color:#fae7fc;font-weight:800;letter-spacing:.5px;font-size:11px;padding:10px 15px;margin:25px 0}
+.gf-benefit-pill span{color:#f9a9e8}
+.gf-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px;max-width:560px}
+.gf-stat{padding:15px 12px;border:1px solid #ffffff21;border-radius:16px;background:#ffffff06;min-height:106px}
+.gf-stat strong{display:block;font-size:28px;line-height:1.1;background:linear-gradient(100deg,#dba5ff,#ffb9cf);background-clip:text;color:transparent}
+.gf-stat span{display:block;font-size:12px;color:#c8b4d5;margin-top:8px;line-height:1.35}
+.gf-checkout{position:relative;padding:27px;background:linear-gradient(150deg,#291737,#150f24);border:1px solid #b875e26f;border-radius:25px;box-shadow:0 25px 80px #05030ab0;overflow:hidden}
+.gf-checkout:before{content:"";height:5px;position:absolute;left:0;right:0;top:0;background:linear-gradient(90deg,#925bf3,#eb509e,#f68e4b)}
+.gf-checkout-top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:10px;letter-spacing:.9px;color:#e6cbea;font-weight:900}
+.gf-one-time{border:1px solid #ffffff2b;background:#ffffff10;border-radius:7px;padding:5px 7px;white-space:nowrap}
+.gf-promo-name{font-size:24px;line-height:1.25;margin:24px 0 9px;font-weight:900;letter-spacing:-.5px}
+.gf-purchase-row{display:flex;align-items:baseline;gap:9px;margin:5px 0}
+.gf-price{font-size:clamp(43px,5vw,57px);font-weight:950;line-height:1.1;letter-spacing:-1.8px;color:white}
+.gf-currency{font-weight:700;font-size:14px;color:#bfb0d3}
+.gf-checkout-desc{color:#cbb8d8;font-size:13px;line-height:1.6;margin:12px 0 18px}
+.gf-price-divider{height:1px;background:#ffffff26;margin:21px 0}
+.gf-files-title{font-size:11px;font-weight:900;letter-spacing:1.3px;color:#dbb7f4}
+.gf-includes{padding:0;list-style:none;display:grid;gap:16px;margin:17px 0 22px}
+.gf-includes li{display:flex;gap:10px;font-size:14px;line-height:1.48;color:#fff3fc}
+.gf-check{color:#70e8b9;font-weight:900;flex:0 0 auto}
+.gf-files-note{font-size:12px;color:#d0b9e2;background:#ffffff09;border:1px solid #ffffff22;padding:12px;border-radius:11px}
+.gf-accept{margin:20px 0 0;font-size:16px;box-shadow:0 12px 35px #e658a639}
+.gf-skip{display:block;text-align:center;font-size:13px;color:#d3c2e4;padding:13px 0 8px;text-underline-offset:4px}
+.gf-skip:hover{color:white}
+.gf-status{font-size:12px;text-align:center;min-height:18px;color:#ffcfb4;margin-top:8px}
+.gf-disclosure{font-size:11px;line-height:1.5;color:#c1aacd;text-align:center;margin:10px 0 0}
+.gf-main-section{margin:84px 0 0}
+.gf-section-top{max-width:710px}
+.gf-small-label{color:#dca8ff;font-size:11px;letter-spacing:1.8px;font-weight:950}
+.gf-main-section h2,.gf-fit h2,.gf-faq h2{font-size:clamp(26px,3.2vw,35px);letter-spacing:-.7px;line-height:1.2;margin:12px 0}
+.gf-section-top>p,.gf-fit>p{font-size:16px;color:#cdbbdf}
+.gf-demo{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:27px}
+.gf-demo-row{border:1px solid #ffffff24;border-radius:17px;background:linear-gradient(145deg,#251633,#1b1129);padding:21px;min-height:157px}
+.gf-demo-index{font-size:11px;letter-spacing:1.2px;color:#f3aadc;font-weight:950}
+.gf-demo-row p{margin:13px 0 0;color:#fff5fb;font-size:15px;line-height:1.5}
+.gf-fit{border:1px solid #b874f342;background:linear-gradient(110deg,#36204a55,#23142935);padding:31px 34px;border-radius:22px;margin-top:58px}
+.gf-fit p{max-width:830px;line-height:1.7}
+.gf-faq{max-width:840px;margin-top:68px}
+.gf-faq h2{margin-bottom:22px}
+.gf-faq details{border-bottom:1px solid #ffffff23;padding:18px 0}
+.gf-faq summary{cursor:pointer;font-weight:800;font-size:15px;line-height:1.5;list-style:none}
+.gf-faq summary::-webkit-details-marker{display:none}
+.gf-faq summary:after{content:"+";float:right;color:#f8ace7;font-size:22px;margin-left:16px;line-height:1}
+.gf-faq details[open] summary:after{content:"−"}
+.gf-faq details p{font-size:14px;color:#d0bfdf;line-height:1.7;max-width:700px;margin:12px 0 3px}
+.gf-fineprint{border-top:1px solid #ffffff24;margin:55px 0 0;padding-top:18px;color:#b9a4c7;font-size:12px;line-height:1.6}
+.gf-fineprint a{text-decoration:underline}
+.gf-footer{margin-top:20px}
+[data-accent="green"] .gf-checkout:before{background:linear-gradient(90deg,#55e4b9,#a18cf7,#f19ed1)}
+@media(max-width:850px){.gf-hero{grid-template-columns:1fr;gap:25px;padding-top:0}.gf-hero-copy{padding-top:0}.gf-header{padding-bottom:26px}.gf-demo{grid-template-columns:1fr 1fr}.gf-headline{letter-spacing:-1.7px}.gf-checkout{max-width:590px;width:100%;margin:auto}.gf-main-section{margin-top:60px}}
+@media(max-width:550px){.gf-layout{padding:15px 15px 44px}.gf-header-meta{gap:6px;font-size:10px}.gf-step{margin-left:3px;font-size:10px}.gf-headline{font-size:clamp(38px,10vw,49px)}.gf-hero-lead{font-size:16px}.gf-stat{padding:12px 10px;min-height:93px}.gf-stat strong{font-size:23px}.gf-stat span{font-size:10px}.gf-checkout{padding:21px}.gf-demo{grid-template-columns:1fr}.gf-demo-row{min-height:auto}.gf-fit{padding:23px 20px}.gf-main-section{margin-top:50px}}
