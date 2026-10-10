@@ -512,7 +512,7 @@
       "declineTo": "https://instaflow-preview.onrender.com/offer/downsell-1.html",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDA",
       "perfectPayProductCode": "",
-      "productStatus": "checkout_link_registered_pending_checkout_and_delivery_validation",
+      "productStatus": "existing_checkout_retained_digital_content_now_included_in_gainflow_club_do_not_recharge",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
@@ -529,7 +529,11 @@
       "softwareAccessPending": false,
       "checkoutLinkReviewStatus": "user_provided_price_not_independently_verified",
       "officialOneClickActivated": false,
-      "fulfillmentVerified": false
+      "fulfillmentVerified": false,
+      "includedWithAnyVerifiedGainFlowPurchase": true,
+      "additionalPurchaseRequiredForLibrary": false,
+      "oneClickEnabled": false,
+      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "downsell-1",
@@ -547,7 +551,7 @@
       "declineTo": "https://instaflow-preview.onrender.com/offer/upsell-2.html",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDC",
       "perfectPayProductCode": "",
-      "productStatus": "checkout_link_registered_pending_checkout_and_delivery_validation",
+      "productStatus": "existing_checkout_retained_digital_content_now_included_in_gainflow_club_do_not_recharge",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
@@ -563,7 +567,11 @@
       "softwareAccessPending": false,
       "checkoutLinkReviewStatus": "user_provided_price_not_independently_verified",
       "officialOneClickActivated": false,
-      "fulfillmentVerified": false
+      "fulfillmentVerified": false,
+      "includedWithAnyVerifiedGainFlowPurchase": true,
+      "additionalPurchaseRequiredForLibrary": false,
+      "oneClickEnabled": false,
+      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "upsell-2",
@@ -581,7 +589,7 @@
       "declineTo": "https://instaflow-preview.onrender.com/offer/upsell-3.html",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDN",
       "perfectPayProductCode": "PPPBFIHF",
-      "productStatus": "product_and_plan_codes_confirmed_webhook_token_and_paid_delivery_qa_pending",
+      "productStatus": "existing_checkout_retained_digital_content_now_included_in_gainflow_club_do_not_recharge",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
@@ -614,7 +622,11 @@
         "planCode": "not visible",
         "affiliateVisibilityToggle": "enabled (review for exclusive upsell)"
       },
-      "planCodeSource": "User supplied exact code from PerfectPay Plans screen (2026-10-10)"
+      "planCodeSource": "User supplied exact code from PerfectPay Plans screen (2026-10-10)",
+      "includedWithAnyVerifiedGainFlowPurchase": true,
+      "additionalPurchaseRequiredForLibrary": false,
+      "oneClickEnabled": false,
+      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/"
     },
     {
       "internalSlug": "upsell-3",
@@ -632,7 +644,7 @@
       "declineTo": "https://instaflow-preview.onrender.com/obrigado/",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDE",
       "perfectPayProductCode": "",
-      "productStatus": "checkout_link_registered_pending_checkout_and_delivery_validation",
+      "productStatus": "existing_checkout_retained_digital_content_now_included_in_gainflow_club_do_not_recharge",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
@@ -648,7 +660,11 @@
       "softwareAccessPending": false,
       "checkoutLinkReviewStatus": "user_provided_price_not_independently_verified",
       "officialOneClickActivated": false,
-      "fulfillmentVerified": false
+      "fulfillmentVerified": false,
+      "includedWithAnyVerifiedGainFlowPurchase": true,
+      "additionalPurchaseRequiredForLibrary": false,
+      "oneClickEnabled": false,
+      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/"
     }
   ],
   "registrationRoutes": [
@@ -861,7 +877,9 @@
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT5E",
       "checkoutLinkReviewStatus": "provided_by_user_pending_price_and_payment_verification",
       "orderBumpEnabledInCheckout": false,
-      "fulfillmentVerified": false
+      "fulfillmentVerified": false,
+      "includedWithAnyVerifiedGainFlowPurchase": false,
+      "reasonNotIncluded": "Distinct physical/operational priority-handling service, not a library digital asset; requires fulfillment SLA validation"
     },
     {
       "internalSlug": "order-bump-engagement-toolkit",
@@ -890,7 +908,10 @@
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT6J",
       "checkoutLinkReviewStatus": "provided_by_user_pending_price_and_payment_verification",
       "orderBumpEnabledInCheckout": false,
-      "fulfillmentVerified": false
+      "fulfillmentVerified": false,
+      "includedWithAnyVerifiedGainFlowPurchase": true,
+      "purchasePromotionPaused": true,
+      "fulfillmentStatus": "file_upload_and_approved_membership_required"
     }
   ],
   "orderBumpCount": 2,
@@ -952,5 +973,16 @@
       "productCodeConfirmed": "PPPBFIHF",
       "planCodeConfirmed": true
     }
+  },
+  "clubPurchasePolicy": {
+    "scope": "only_confirmed_GainFlow_product_plan_pairs",
+    "sourceOfTruth": "Supabase public.gf_authorized_plans",
+    "ownerConfirmed": "2026-10-10",
+    "allDigitalAssetsIncluded": true,
+    "chargeExtraForSameDigitalAssets": false,
+    "backendGlobalWebhookEnabled": false,
+    "confirmedCodePairs": 1,
+    "totalGainFlowProductsWithCheckouts": 22,
+    "blockedOtherProjects": true
   }
 }
