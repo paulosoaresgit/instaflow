@@ -581,14 +581,14 @@
       "declineTo": "https://instaflow-preview.onrender.com/offer/upsell-3.html",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDN",
       "perfectPayProductCode": "PPPBFIHF",
-      "productStatus": "product_code_confirmed_plan_code_webhook_token_and_end_to_end_QA_pending",
+      "productStatus": "product_and_plan_codes_confirmed_webhook_token_and_paid_delivery_qa_pending",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "perfectPayPlanCode": "",
+      "perfectPayPlanCode": "PPLQQQO1M",
       "deliverableFiles": [
         "GainFlow_PersonaLab_AI_Studio_Onboarding_Guide.pdf",
         "GainFlow_PersonaLab_Creative_Brief_Template.md"
@@ -613,7 +613,8 @@
         "approvedPurchaseEmail": "blank",
         "planCode": "not visible",
         "affiliateVisibilityToggle": "enabled (review for exclusive upsell)"
-      }
+      },
+      "planCodeSource": "User supplied exact code from PerfectPay Plans screen (2026-10-10)"
     },
     {
       "internalSlug": "upsell-3",
@@ -949,7 +950,7 @@
       "checkoutRecorded": true,
       "checkoutCode": "PPU38CQGTDN",
       "productCodeConfirmed": "PPPBFIHF",
-      "planCodeConfirmed": false
+      "planCodeConfirmed": true
     }
   }
 }
