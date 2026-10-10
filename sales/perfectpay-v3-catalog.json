@@ -826,7 +826,9 @@
       "perfectPayProductCode": "",
       "perfectPayPlanCode": "",
       "status": "planned_not_created_or_enabled",
-      "supportEmail": "flowinsta@outlook.com"
+      "supportEmail": "flowinsta@outlook.com",
+      "salesPage": "https://instaflow-preview.onrender.com/offer/order-bump-vip-express.html",
+      "salesPageStatus": "published_information_page_not_a_payment_checkout"
     },
     {
       "internalSlug": "order-bump-likes-saves",
@@ -848,7 +850,9 @@
       "perfectPayProductCode": "",
       "perfectPayPlanCode": "",
       "status": "planned_not_created_or_enabled",
-      "supportEmail": "flowinsta@outlook.com"
+      "supportEmail": "flowinsta@outlook.com",
+      "salesPage": "https://instaflow-preview.onrender.com/offer/order-bump-likes-saves.html",
+      "salesPageStatus": "published_information_page_not_a_payment_checkout"
     }
   ],
   "orderBumpCount": 2,
