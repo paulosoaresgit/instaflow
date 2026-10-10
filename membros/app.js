@@ -75,7 +75,9 @@ async function renderDashboard(){
  $("claim-list").innerHTML=claims.length?claims.map(c=>'<div class="history-row"><div><strong>'+safe(c.quantity)+' seguidores</strong><div><span>'+safe(c.request_day)+' · '+safe(c.status)+'</span></div></div><span>'+safe(c.provider_order_id?"#"+c.provider_order_id:"—")+'</span></div>').join(""):'<p class="muted">Nenhuma solicitação registrada.</p>';
  const lessons=model.lessons||[],done=lessons.filter(l=>l.completed).length;
  $("stat-lessons").textContent=done+" / "+lessons.length;
- $("account-summary").textContent=english?"Access confirmed. "+(model.purchases||[]).length+" active product(s). Digital access does not guarantee external delivery.":"Acesso confirmado. "+(model.purchases||[]).length+" produto(s) ativo(s). A entrega digital é separada da aprovação das solicitações do fornecedor.";
+ $("account-summary").textContent=model.isOperator
+  ?(english?"Operator preview enabled. Do not confuse this with a verified customer purchase.":"Prévia do administrador habilitada. Esse acesso não representa uma compra de cliente.")
+  :(english?"Purchase verified. Your complete digital library is unlocked. External service delivery is governed by your purchased plan.":"Compra verificada. Sua biblioteca digital completa foi liberada. A entrega de serviços externos segue o plano contratado.");
  drawLessons(lessons);drawExtras(model.extras||[]);
  showing("app-view");tab("home");
 }
