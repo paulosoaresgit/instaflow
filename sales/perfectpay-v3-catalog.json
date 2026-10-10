@@ -598,10 +598,11 @@
       "entitlementProject": "efrgcnlraqrylfvxkstn",
       "webhookUrl": "https://efrgcnlraqrylfvxkstn.supabase.co/functions/v1/gainflow-perfectpay-webhook",
       "backendStatus": "student-studio-v5-deployed_receipt_ingest-disabled",
-      "frontendStatus": "restored_in_github_requires_build_and_public_deploy_verification",
+      "frontendStatus": "Vercel_build_READY_browser_and_auth_QA_pending",
       "registrationNotes": "Never set checkout as active or enable One Click until product and plan codes plus webhook token are set, end-to-end paid/refunded tests pass, and live studio domain is confirmed.",
       "officialOneClickActivated": false,
-      "fulfillmentVerified": false
+      "fulfillmentVerified": false,
+      "studioPreviewUrl": "https://personalab-ai-gainflow.vercel.app/"
     },
     {
       "internalSlug": "upsell-3",
@@ -931,8 +932,9 @@
       "edgeVersion": 5,
       "webhook": "gainflow-perfectpay-webhook",
       "webhookEnabled": false,
-      "frontendDeployed": false,
-      "purchaseVerificationCompleted": false
+      "frontendDeployed": true,
+      "purchaseVerificationCompleted": false,
+      "browserQAVerified": false
     }
   }
 }
