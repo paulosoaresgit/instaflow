@@ -45,16 +45,19 @@ setText("product-context",currentProduct?"Optional add-on for "+currentProduct.n
 const buy=el("buy"),skip=el("skip");
 const digitalIncluded=cfg.membershipAccessPolicy?.grantsDigitalLibraryAfterAnyApprovedGainFlowPurchase===true;
 if(digitalIncluded){
-  // All four digital bundles are already available after ANY approved GainFlow purchase.
-  // Do not sell the same educational content again as a separate optional upsell.
-  buy.disabled=true;buy.textContent="Included with your GainFlow purchase";
+  // These materials are included with every approved GainFlow primary purchase.
+  // Preserve the post-purchase navigation for QA without charging for included files.
+  buy.disabled=false;buy.textContent="Continue — no extra charge";
+  buy.addEventListener("click",()=>location.assign(urlStep(offer.next,context)));
   setText("price","Included");
-  setText("product-context","Already included with your verified GainFlow Club membership");
-  setText("offer-note","No additional charge. Open the club and sign in using the verified email of your approved GainFlow purchase.");
-  document.querySelector(".gf-one-time")?.replaceChildren(document.createTextNode("MEMBER BENEFIT"));
+  setText("offer-description","This digital material is already part of the GainFlow Club membership unlocked by an approved main-plan purchase.");
+  setText("product-context","Included with all approved GainFlow primary plans — no additional purchase needed");
+  setText("offer-note","No additional charge for this material. This is a navigation-only preview, not a paid One Click checkout. Paid services require separate, truthful benefits and PerfectPay approval.");
+  document.querySelector(".gf-one-time")?.replaceChildren(document.createTextNode("INCLUDED"));
   setText("tag","INCLUDED IN GAINFLOW CLUB");
-  skip.href="/members/";skip.textContent="Open your digital library →";
-  note("Digital materials are included with your membership. Access is granted after approved payment verification.");
+  skip.href=urlStep(offer.decline,context);
+  skip.textContent=offer.decline==="complete"?"Finish and view order information →":"Skip this page — continue →";
+  note("Full digital library is included after approved payment. Neither button creates an additional payment.");
   return;
 }
 skip.href=urlStep(offer.decline,context);
