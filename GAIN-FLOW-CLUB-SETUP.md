@@ -59,6 +59,8 @@ O ambiente Supabase também fornece `SUPABASE_URL` e `SUPABASE_SERVICE_ROLE_KEY`
 
 Cada código de produto/plano da PerfectPay deve ser substituído pelo código REAL recebido após o cadastro. Os nomes exibidos no site nunca autorizam acesso por si só:
 
+Cada entrada precisa obrigatoriamente de `productCode` e `planCode` reais e exatos. Um mapa apenas pelo produto é ambíguo quando ele tem vários planos e será rejeitado. Códigos de checkout (`PPU...`) não substituem os códigos oficiais do produto e do plano. A auditoria atual está em `docs/RELATORIO_PERFECTPAY_GAINFLOW.md`.
+
 ```json
 {
   "PPL_CODIGO_REAL_STARTER_PADRAO": {

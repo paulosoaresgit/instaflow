@@ -74,6 +74,7 @@ async function serveFile(req, res, filePath) {
 
 const PERFECTPAY_PLANS = ["starter","growth","pro","authority","influencer","scale","dominance","ultimate"];
 let perfectPayLinks = {};
+let oneClickEnabled = false;
 try {
   const file = await readFile(path.join(__dirname, "perfectpay-checkouts.json"), "utf8");
   perfectPayLinks = JSON.parse(file);
@@ -86,12 +87,16 @@ try {
 } catch (error) {
   console.warn("PerfectPay checkout configuration unavailable:", error.message);
 }
+try {
+  const policy = JSON.parse(await readFile(path.join(__dirname, "sales/config.json"), "utf8"));
+  oneClickEnabled = policy.oneClickEnabled === true;
+} catch { /* Remain disabled until the validated configuration is authorized. */ }
 
 function isPerfectPayLink(link) {
   if (typeof link !== "string" || !link.trim()) return false;
   try {
     const url = new URL(link);
-    return url.protocol === "https:" && url.hostname === "go.perfectpay.com.br" &&
+    return url.protocol === "https:" && ["go.perfectpay.com.br", "go.centerpag.com"].includes(url.hostname) &&
       !url.username && !url.password && url.pathname !== "/";
   } catch { return false; }
 }
@@ -127,7 +132,7 @@ const server = http.createServer(async (req, res) => {
   if (pathname === "/api/perfectpay/status") {
     if (req.method !== "GET") return sendJson(res, 405, { ok: false, message: "Method not allowed" });
     return sendJson(res, 200, {
-      ok: true, gateway: "perfectpay",
+      ok: true, gateway: "perfectpay", oneClickEnabled,
       plans: Object.fromEntries(PERFECTPAY_PLANS.map(plan => [plan, {
         standard: Boolean(getPlanUrl(plan, "standard")), niche: Boolean(getPlanUrl(plan, "niche"))
       }]))
@@ -154,6 +159,8 @@ const server = http.createServer(async (req, res) => {
       ok: false, message: "PerfectPay checkout isn't configured for this plan yet. Please contact support."
     });
     const url = new URL(base);
+    if (oneClickEnabled) url.searchParams.set("upsell", "true");
+    else url.searchParams.delete("upsell");
     if (!url.searchParams.has("email")) url.searchParams.set("email", email);
     if (customerName && !url.searchParams.has("name")) url.searchParams.set("name", customerName);
     if (!url.searchParams.has("src")) url.searchParams.set("src", "instaflow");
@@ -183,10 +190,25 @@ const server = http.createServer(async (req, res) => {
   }
 
   const requestedFile = pathname === "/" ? "/index.html" : pathname;
-  const filePath = safePathFromUrl(requestedFile);
+  let filePath;
+  try { filePath = safePathFromUrl(requestedFile); }
+  catch {
+    res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" });
+    return res.end("Invalid path");
+  }
 
-  if (filePath.startsWith(__dirname) && (await serveFile(req, res, filePath))) {
-    return;
+  if (filePath === __dirname || filePath.startsWith(__dirname + path.sep)) {
+    if (await serveFile(req, res, filePath)) return;
+    // Resolve directory pages before the SPA fallback used by the main funnel.
+    try {
+      if ((await stat(filePath)).isDirectory()) {
+        if (!pathname.endsWith("/")) {
+          res.writeHead(308, { Location: pathname + "/" + requestUrl.search });
+          return res.end();
+        }
+        if (await serveFile(req, res, path.join(filePath, "index.html"))) return;
+      }
+    } catch { /* Not a directory; continue to the fallback below. */ }
   }
 
   const indexPath = path.join(__dirname, "index.html");

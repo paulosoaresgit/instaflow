@@ -1,5 +1,6 @@
 {
   "brand": "GainFlow",
+  "oneClickEnabled": false,
   "currency": "USD",
   "guaranteeDays": 7,
   "supportEmail": "flowinsta@outlook.com",

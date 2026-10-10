@@ -2,6 +2,8 @@
 
 Este projeto contém **16 páginas de produto** (8 planos standard + 8 niche) e **cinco páginas de ofertas adicionais** (4 upsells e 1 downsell), além da página final de obrigado.
 
+Atualização de auditoria: consulte `docs/RELATORIO_PERFECTPAY_GAINFLOW.md`. A política `oneClickEnabled` em `sales/config.json` permanece `false`; não adicionar `upsell=true` nem ativar cobranças antes da validação e autorização expressa do proprietário.
+
 ## Limitações e status
 
 As páginas são estrutura inicial até recebermos o modelo visual do proprietário. **Checkout desativado** enquanto os links oficiais e serviços oferecidos não forem verificados. Nem a página de obrigado nem os parâmetros de URL constituem confirmação de pagamento. A cobrança One Click só estará operacional após a configuração dentro da PerfectPay e seu teste de pagamentos.
@@ -45,7 +47,7 @@ Troque `starter-standard` pelo slug da oferta correspondente. Você deverá conf
 
 ## Cadastro PerfectPay
 
-Segundo o suporte oficial (https://help.perfectpay.com.br/article/144-upsell-one-clickbuy), em **Meus Produtos → Upsell → Configurar Upsell** selecione o produto extra, cole **Link do Upsell** para a próxima página e **Página de Obrigado** para a oferta posterior. Para checkout do produto principal, adicione `upsell=true` ao link; a página criada já faz isso quando encontrar um checkout cadastrado. Para a próxima etapa após recusar, use o link explícito da página. O modelo de One Click e evento de cobrança devem ser testados no painel; **nossa página estática não deve simular cobrança One Click nem liberar entrega sem webhook validado**.
+Segundo o suporte oficial (https://help.perfectpay.com.br/article/144-upsell-one-clickbuy), em **Meus Produtos → Upsell → Configurar Upsell** selecione o produto extra, cole **Link do Upsell** para a próxima página e **Página de Obrigado** para a oferta posterior. Prepare a configuração sem ativá-la. Só após validação e autorização expressa, habilite a política `oneClickEnabled`; as páginas então acrescentam `upsell=true`. Para a próxima etapa após recusar, use o link explícito da página. **Nossa página estática não deve simular cobrança One Click nem liberar entrega sem webhook validado**.
 
 Exemplo: Produto Starter Standard usa primeiro `/offer/upsell-1.html?produto=starter-standard` e no próximo produto configurar `/offer/upsell-2.html?produto=starter-standard` como página de obrigado. Não registre uma página de oferta como pagamento confirmado sem integração.
 

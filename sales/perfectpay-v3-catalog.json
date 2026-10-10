@@ -4,7 +4,7 @@
   "inspectionStatus": "Live reference page could not be retrieved; amounts and routes derived from linked InstaFlow GitHub source and prior prepared funnel, so reference-page parity is not verified.",
   "originalSiteModified": false,
   "paymentProvider": "PerfectPay",
-  "perfectPayRegistrationStatus": "not_created",
+  "perfectPayRegistrationStatus": "15_links_recorded_6_items_pending_account_audit",
   "currency": "USD",
   "billing": "one_time",
   "guaranteeDays": 7,
@@ -41,7 +41,8 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "perfectPaySalesLink": "https://go.centerpag.com/PPU38CQGSPF",
-      "checkoutLinkReviewStatus": "captured_from_perfectpay_screenshot_pending_purchase_test"
+      "checkoutLinkReviewStatus": "captured_from_perfectpay_screenshot_pending_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "starter-niche",
@@ -70,7 +71,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "growth-standard",
@@ -99,7 +101,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "growth-niche",
@@ -128,7 +131,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "pro-standard",
@@ -157,7 +161,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "pro-niche",
@@ -186,7 +191,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "authority-standard",
@@ -215,7 +221,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "authority-niche",
@@ -244,7 +251,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "influencer-standard",
@@ -273,7 +281,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "influencer-niche",
@@ -302,7 +311,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "scale-standard",
@@ -331,7 +341,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "scale-niche",
@@ -360,7 +371,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "dominance-standard",
@@ -389,7 +401,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "dominance-niche",
@@ -418,7 +431,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "ultimate-standard",
@@ -447,7 +461,8 @@
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "ultimate-niche",
@@ -475,7 +490,8 @@
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
       "supportPhone": "557398289401",
-      "deliveryUrl": "https://instaflow-preview.onrender.com/members/"
+      "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
+      "perfectPayPlanCode": ""
     }
   ],
   "upsells": [
@@ -501,7 +517,8 @@
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
-      "supportPhone": "557398289401"
+      "supportPhone": "557398289401",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "downsell-1",
@@ -525,7 +542,8 @@
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
-      "supportPhone": "557398289401"
+      "supportPhone": "557398289401",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "upsell-2",
@@ -549,7 +567,8 @@
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
-      "supportPhone": "557398289401"
+      "supportPhone": "557398289401",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "upsell-3",
@@ -573,7 +592,8 @@
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
-      "supportPhone": "557398289401"
+      "supportPhone": "557398289401",
+      "perfectPayPlanCode": ""
     },
     {
       "internalSlug": "upsell-4",
@@ -597,7 +617,8 @@
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "audience": "general_public",
       "supportEmail": "flowinsta@outlook.com",
-      "supportPhone": "557398289401"
+      "supportPhone": "557398289401",
+      "perfectPayPlanCode": ""
     }
   ],
   "registrationRoutes": [
@@ -606,8 +627,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/starter-standard.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=starter-standard",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=starter-standard",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGSPG",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -615,8 +636,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/starter-niche.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=starter-niche",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=starter-niche",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGSPT",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -624,8 +645,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/growth-standard.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=growth-standard",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=growth-standard",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGSQF",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -633,8 +654,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/growth-niche.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=growth-niche",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=growth-niche",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGSRU",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -642,8 +663,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/pro-standard.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=pro-standard",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=pro-standard",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGSUU",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -651,8 +672,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/pro-niche.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=pro-niche",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=pro-niche",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT04",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -660,8 +681,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/authority-standard.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=authority-standard",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=authority-standard",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT06",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -669,8 +690,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/authority-niche.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=authority-niche",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=authority-niche",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT09",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -678,8 +699,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/influencer-standard.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=influencer-standard",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=influencer-standard",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT1N",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -687,8 +708,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/influencer-niche.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=influencer-niche",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=influencer-niche",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT1S",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -696,8 +717,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/scale-standard.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=scale-standard",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=scale-standard",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT22",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -705,8 +726,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/scale-niche.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=scale-niche",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=scale-niche",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT26",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -714,8 +735,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/dominance-standard.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=dominance-standard",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=dominance-standard",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT29",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -723,8 +744,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/dominance-niche.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=dominance-niche",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=dominance-niche",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT4B",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -732,8 +753,8 @@
       "mainSalesPage": "https://instaflow-preview.onrender.com/p/ultimate-standard.html",
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=ultimate-standard",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=ultimate-standard",
-      "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT4G",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
     {
@@ -742,13 +763,13 @@
       "linkDoUpsell": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=ultimate-niche",
       "paginaObrigadoFinal": "https://instaflow-preview.onrender.com/obrigado/?produto=ultimate-niche",
       "perfectPayCheckoutUrl": "",
-      "checkoutAddParameter": "upsell=true",
+      "checkoutAddParameter": "",
       "officialOneClickActivated": false
     }
   ],
   "checkoutConstraints": {
     "requireOfficialLinks": true,
-    "linksMissing": 21,
+    "linksMissing": 6,
     "doNotMarkOrdersPaidFromPageVisits": true,
     "oneClickSetupOnlyInPerfectPay": true,
     "webhookRequiredForFulfillment": true,
@@ -767,5 +788,20 @@
     "updatedBy": "ChatGPT under user instruction",
     "humanReviewRequired": true,
     "publishingAuthority": false
+  },
+  "catalogAudit": {
+    "date": "2026-10-09",
+    "accountAuditStatus": "blocked_by_login_and_recaptcha",
+    "existingCheckoutLinksPreserved": true,
+    "recordedPrimaryCheckoutLinks": 15,
+    "missingCheckoutLinks": 6,
+    "confirmedProductCodes": 0,
+    "confirmedPlanCodes": 0,
+    "starterNicheAssociation": "unverified_preserved_until_product_plan_and_link_impact_are_confirmed",
+    "oneClickAuthorized": false,
+    "oneClickEnabled": false,
+    "liveCheckoutVerification": "unavailable_in_current_environment",
+    "membersBackend": "dedicated_supabase_project_not_found_in_connected_accounts",
+    "timezone": "America/Sao_Paulo"
   }
 }

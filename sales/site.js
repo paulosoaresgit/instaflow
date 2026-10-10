@@ -5,7 +5,7 @@ const here=document.body.dataset.kind, productId=document.body.dataset.offer, up
 const money=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(n);
 const esc=s=>String(s).replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[x]));
 const validCheckout=url=>{try{const u=new URL(url);return u.protocol==="https:"&&["go.perfectpay.com.br","go.centerpag.com"].includes(u.hostname)&&!u.username&&!u.password&&u.pathname!=="/"}catch{return false}};
-const urlStep=(step,product)=>step==="complete"?"/obrigado/?produto="+encodeURIComponent(product):"/offer/"+encodeURIComponent(step)+".html?produto="+encodeURIComponent(product);
+const urlStep=(step,product)=>{const params=new URLSearchParams({produto:product});for(const key of ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid","src","sck"]){const value=qs.get(key);if(value)params.set(key,value.slice(0,250))}return (step==="complete"?"/obrigado/":"/offer/"+encodeURIComponent(step)+".html")+"?"+params.toString()};
 const load=async url=>{const response=await fetch(url,{cache:"no-store"});if(!response.ok)throw Error("Configuration not available");return response.json()};
 const note=text=>{el("status").textContent=text};
 const setHtml=(id,html)=>{if(el(id))el(id).innerHTML=html};
@@ -34,7 +34,7 @@ const buy=el("buy");buy.textContent="Continue to PerfectPay";
 const links=await load("/perfectpay-checkouts.json");
 const raw=links?.[currentProduct.productKey]?.[currentProduct.mode];
 if(!validCheckout(raw)){buy.disabled=true;buy.textContent="Checkout not configured yet";note("Digital membership: 7-day guarantee. Checkout not yet configured.");}
-else{buy.addEventListener("click",()=>{const u=new URL(raw);u.searchParams.set("upsell","true");const keys=["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"];for(const k of keys){const v=qs.get(k);if(v&&!u.searchParams.has(k))u.searchParams.set(k,v.slice(0,160))}location.assign(u.toString())})}
+else{buy.addEventListener("click",()=>{const u=new URL(raw);if(cfg.oneClickEnabled===true)u.searchParams.set("upsell","true");else u.searchParams.delete("upsell");const keys=["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"];for(const k of keys){const v=qs.get(k);if(v&&!u.searchParams.has(k))u.searchParams.set(k,v.slice(0,160))}location.assign(u.toString())})}
 }
 else if(here==="upsell"){
 const offer=(cfg.upsells||[]).find(o=>o.slug===upsellId);
@@ -48,7 +48,7 @@ skip.href=urlStep(offer.decline,context);skip.textContent="No thanks — see nex
 const links=await load("/sales/upsell-checkouts.json");
 const raw=links?.[offer.slug]||"";
 if(offer.status!=="active"||!validCheckout(raw)){buy.disabled=true;buy.textContent="Additional offer not available";note("The checkout for this extra offer is not active yet.");}
-else{buy.textContent="Continue to secure checkout";buy.addEventListener("click",()=>{const u=new URL(raw);u.searchParams.set("upsell","true");location.assign(u.toString())})}
+else{buy.textContent="Continue to secure checkout";buy.addEventListener("click",()=>{const u=new URL(raw);if(cfg.oneClickEnabled===true)u.searchParams.set("upsell","true");else u.searchParams.delete("upsell");location.assign(u.toString())})}
 }
 else if(here==="complete"){
 document.title="Order information | GainFlow";
