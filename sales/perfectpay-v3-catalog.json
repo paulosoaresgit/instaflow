@@ -29,7 +29,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=starter-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=starter-standard",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGSPG",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIEG",
       "productStatus": "registered_links_generated_pending_checkout_verification",
       "advertisedFollowers": 2000,
       "basePlusBonus": 2000,
@@ -42,7 +42,9 @@
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "perfectPaySalesLink": "https://go.centerpag.com/PPU38CQGSPF",
       "checkoutLinkReviewStatus": "captured_from_perfectpay_screenshot_pending_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "starter-niche",
@@ -60,7 +62,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=starter-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=starter-niche",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGSPT",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIEJ",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 2000,
       "basePlusBonus": 2000,
@@ -72,7 +74,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "growth-standard",
@@ -90,7 +94,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=growth-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=growth-standard",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGSQF",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIEL",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 6000,
       "basePlusBonus": 6000,
@@ -102,7 +106,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "growth-niche",
@@ -120,7 +126,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=growth-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=growth-niche",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGSRU",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIEQ",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 6000,
       "basePlusBonus": 6000,
@@ -132,7 +138,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "pro-standard",
@@ -150,7 +158,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=pro-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=pro-standard",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGSUU",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIF4",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 10000,
       "basePlusBonus": 6000,
@@ -162,7 +170,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "pro-niche",
@@ -180,7 +190,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=pro-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=pro-niche",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT04",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIF5",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 10000,
       "basePlusBonus": 6000,
@@ -192,7 +202,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "authority-standard",
@@ -210,7 +222,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=authority-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=authority-standard",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT06",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIF6",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 20000,
       "basePlusBonus": 12000,
@@ -222,7 +234,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "authority-niche",
@@ -240,7 +254,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=authority-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=authority-niche",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT09",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIF7",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 20000,
       "basePlusBonus": 12000,
@@ -252,7 +266,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "influencer-standard",
@@ -270,7 +286,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=influencer-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=influencer-standard",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT1N",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIFA",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 40000,
       "basePlusBonus": 25000,
@@ -282,7 +298,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "influencer-niche",
@@ -312,7 +330,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeReviewRequired": true,
+      "productCodeReviewReason": "Screenshots display two different PPP codes labeled GainFlow Influencer Niche and no product labeled GainFlow Scale (standard). Do not assign without verifying product details."
     },
     {
       "internalSlug": "scale-standard",
@@ -342,7 +362,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeReviewRequired": true,
+      "productCodeReviewReason": "Screenshots display two different PPP codes labeled GainFlow Influencer Niche and no product labeled GainFlow Scale (standard). Do not assign without verifying product details."
     },
     {
       "internalSlug": "scale-niche",
@@ -360,7 +382,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=scale-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=scale-niche",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT26",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIFH",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 100000,
       "basePlusBonus": 60000,
@@ -372,7 +394,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "dominance-standard",
@@ -390,7 +414,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=dominance-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=dominance-standard",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT29",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIFI",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 200000,
       "basePlusBonus": 130000,
@@ -402,7 +426,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "dominance-niche",
@@ -420,7 +446,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=dominance-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=dominance-niche",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT4B",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIFL",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 200000,
       "basePlusBonus": 130000,
@@ -432,7 +458,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "ultimate-standard",
@@ -450,7 +478,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=ultimate-standard",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=ultimate-standard",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT4G",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIFN",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 400000,
       "basePlusBonus": 250000,
@@ -462,7 +490,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": ""
+      "perfectPayPlanCode": "",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "ultimate-niche",
@@ -480,7 +510,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=ultimate-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=ultimate-niche",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT54",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIFS",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 400000,
       "basePlusBonus": 250000,
@@ -492,7 +522,9 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "perfectPayPlanCode": "",
-      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test"
+      "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     }
   ],
   "upsells": [
@@ -511,7 +543,7 @@
       "nextOfferPage": "https://instaflow-preview.onrender.com/offer/upsell-2.html",
       "declineTo": "https://instaflow-preview.onrender.com/offer/downsell-1.html",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDA",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIHC",
       "productStatus": "existing_checkout_retained_digital_content_now_included_in_gainflow_club_do_not_recharge",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
@@ -533,7 +565,9 @@
       "includedWithAnyVerifiedGainFlowPurchase": true,
       "additionalPurchaseRequiredForLibrary": false,
       "oneClickEnabled": false,
-      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/"
+      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "downsell-1",
@@ -550,7 +584,7 @@
       "nextOfferPage": "https://instaflow-preview.onrender.com/offer/upsell-2.html",
       "declineTo": "https://instaflow-preview.onrender.com/offer/upsell-2.html",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDC",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIHD",
       "productStatus": "existing_checkout_retained_digital_content_now_included_in_gainflow_club_do_not_recharge",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
@@ -571,7 +605,9 @@
       "includedWithAnyVerifiedGainFlowPurchase": true,
       "additionalPurchaseRequiredForLibrary": false,
       "oneClickEnabled": false,
-      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/"
+      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "upsell-2",
@@ -612,7 +648,7 @@
       "fulfillmentVerified": false,
       "studioPreviewUrl": "https://personalab-ai-gainflow.vercel.app/",
       "checkoutLinkReviewStatus": "user_provided_price_and_plan_not_independently_verified",
-      "productCodeSource": "Screenshot: PerfectPay > GainFlow — PersonaLab AI Studio > Código do produto (2026-10-10)",
+      "productCodeSource": "Confirmed in producer and plan screenshots",
       "planNameSource": "PerfectPay plan edit screenshots on 2026-10-10. Not the plan code.",
       "planScreenshotStatus": {
         "priceUSDShown": 39.97,
@@ -626,7 +662,8 @@
       "includedWithAnyVerifiedGainFlowPurchase": true,
       "additionalPurchaseRequiredForLibrary": false,
       "oneClickEnabled": false,
-      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/"
+      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "upsell-3",
@@ -643,7 +680,7 @@
       "nextOfferPage": "https://instaflow-preview.onrender.com/obrigado/",
       "declineTo": "https://instaflow-preview.onrender.com/obrigado/",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDE",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIHE",
       "productStatus": "existing_checkout_retained_digital_content_now_included_in_gainflow_club_do_not_recharge",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
@@ -664,7 +701,9 @@
       "includedWithAnyVerifiedGainFlowPurchase": true,
       "additionalPurchaseRequiredForLibrary": false,
       "oneClickEnabled": false,
-      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/"
+      "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     }
   ],
   "registrationRoutes": [
@@ -868,7 +907,7 @@
       "fulfillment": "Attach priority flag to parent order after confirmed payment; validate provider express-service capability and SLA first",
       "requiresProviderSlaValidation": true,
       "requiresApprovedPayment": true,
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIG2",
       "perfectPayPlanCode": "",
       "status": "registered_checkout_link_pending_validation",
       "supportEmail": "flowinsta@outlook.com",
@@ -879,7 +918,9 @@
       "orderBumpEnabledInCheckout": false,
       "fulfillmentVerified": false,
       "includedWithAnyVerifiedGainFlowPurchase": false,
-      "reasonNotIncluded": "Distinct physical/operational priority-handling service, not a library digital asset; requires fulfillment SLA validation"
+      "reasonNotIncluded": "Distinct physical/operational priority-handling service, not a library digital asset; requires fulfillment SLA validation",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     },
     {
       "internalSlug": "order-bump-engagement-toolkit",
@@ -898,7 +939,7 @@
       "fulfillment": "Deliver the 3-page GainFlow_Engagement_Toolkit.pdf via approved digital delivery after confirmed payment. Verify fulfillment route and file access.",
       "requiresProviderAvailabilityValidation": false,
       "requiresApprovedPayment": true,
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIG4",
       "perfectPayPlanCode": "",
       "status": "registered_checkout_link_pending_validation",
       "supportEmail": "flowinsta@outlook.com",
@@ -911,7 +952,9 @@
       "fulfillmentVerified": false,
       "includedWithAnyVerifiedGainFlowPurchase": true,
       "purchasePromotionPaused": true,
-      "fulfillmentStatus": "file_upload_and_approved_membership_required"
+      "fulfillmentStatus": "file_upload_and_approved_membership_required",
+      "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
+      "productCodeVerification": "screenshot_only_plan_pair_pending"
     }
   ],
   "orderBumpCount": 2,
@@ -984,5 +1027,26 @@
     "confirmedCodePairs": 1,
     "totalGainFlowProductsWithCheckouts": 22,
     "blockedOtherProjects": true
+  },
+  "productCodeAudit": {
+    "date": "2026-10-10",
+    "source": "Eight uploaded PerfectPay product-card screenshots",
+    "catalogItems": 22,
+    "unambiguouslyMapped": 20,
+    "ambiguousSkus": [
+      "influencer-niche",
+      "scale-standard"
+    ],
+    "duplicateDisplayedName": "GainFlow Influencer Niche",
+    "duplicateNameCodes": [
+      "PPPBFIFF",
+      "PPPBFIFC"
+    ],
+    "missingDisplayedName": "GainFlow Scale",
+    "verifiedPlanPairs": [
+      "PPPBFIHF/PPLQQQO1M"
+    ],
+    "needsPlanCodeForAuthorization": true,
+    "securityNote": "Never enable webhook payment authorization from a product code alone; exact PPP+PPL still required."
   }
 }
