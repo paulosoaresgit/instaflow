@@ -1,8 +1,9 @@
 {
-  "supabaseUrl": "",
-  "publishableKey": "",
+  "supabaseUrl": "https://efrgcnlraqrylfvxkstn.supabase.co",
+  "publishableKey": "sb_publishable_3R6xuM1YBgG_7Po95C9iEw_xeK15tFp",
   "edgeFunction": "members-portal",
-  "siteUrl": "https://instaflow-preview.onrender.com/membros/",
-  "status": "pending_supabase_project_connection",
-  "notice": "Publishable key only. Do not place secrets here."
+  "siteUrl": "https://instaflow-preview.onrender.com/members/",
+  "status": "member_login_connected_payment_entitlement_verification_required",
+  "notice": "Public publishable key only. No payment, user, provider or service-role secrets belong here.",
+  "accessPolicy": "one_approved_gainflow_purchase_unlocks_shared_digital_library"
 }
