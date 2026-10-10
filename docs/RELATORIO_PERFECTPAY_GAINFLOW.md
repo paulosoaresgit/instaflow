@@ -99,7 +99,7 @@ O projeto FLOW de uma conta conectada pertence a outro aplicativo segundo a docu
 - Webhook simulado: eventos oficiais, planos distintos de um mesmo produto, token inválido, mapeamento ambíguo e configuração ausente.
 - Sintaxe JS e diff verificados.
 - **39 URLs públicas examinadas:** 21 páginas de produto/oferta + 3 páginas de membros/obrigado responderam com conteúdo esperado. Os 15 checkouts retornaram Site Unavailable neste ambiente, mesmo com HTTP 200. Isso não comprova falha para clientes; nome, preço, moeda e plano continuam sem validação.
-- Os testes locais não comprovam a publicação das correções nem que o site publicado execute o servidor Node.
+- Publicação conferida em seguida, em URLs com versão do commit 6e8ff9d: o site entregou a política oneClickEnabled=false, o index apontando para index-perfectpay-v5.js e o novo arquivo JS. URLs sem versão ainda mostraram conteúdo anterior em cache; aguardar a atualização do cache antes da validação comercial. Isso não comprova que o site execute o servidor Node nem a integração de pagamentos.
 - Nenhuma compra real, autorização de cobrança ou ativação One Click foi executada.
 
 ## Problemas adicionais
