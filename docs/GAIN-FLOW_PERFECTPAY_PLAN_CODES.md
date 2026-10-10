@@ -7,13 +7,13 @@
 - Produtos/planos comerciais no catálogo: **22**
 - Códigos de produto PPP registrados sem ambiguidade: **21**
 - Códigos PPP que exigem conferência: **1**
-- Códigos de plano PPL já confirmados: **2**
-- Códigos PPL pendentes: **20**
+- Códigos de plano PPL já confirmados: **3** (mais um plano separado do produto Influencer Niche duplicado)
+- Códigos PPL pendentes: **19**
 
 ## Diferença importante encontrada nas fotos
 
 - **Ambos os produtos confirmados em capturas de detalhe e plano:** `PPPBFIFC` / `PPLQQQNT0` e `PPPBFIFF` / `PPLQQQNT2` são **dois produtos diferentes** chamados GainFlow Influencer Niche, cada um com plano Influencer Niche ativo, preço US$ 179,85 e produto Em análise. Ambos mapeiam ao mesmo SKU de benefícios `influencer-niche`, mas o segundo **não tem checkout associado confirmado**; o checkout original é preservado.
-- Nenhum cartão visível foi identificado como **GainFlow Scale** padrão; aparece apenas **GainFlow Scale Niche**, código `PPPBFIFH`.
+- **GainFlow Scale Niche confirmado em detalhes e plano:** produto `PPPBFIFH`, plano **`PPLQQQNT4`**, preço US$ 299,85, plano Ativo e produto Em análise. O **GainFlow Scale padrão** ainda não apareceu.
 - **Influencer Niche tem agora dois pares PPP+PPL distintos e verificados**, preservados na allowlist; nenhum pertence ao GainFlow Scale padrão. O **Scale padrão** continua com produto/plano não identificados no painel.
 
 ## Códigos capturados
@@ -32,7 +32,7 @@
 | `influencer-niche` | GainFlow Influencer Niche | 179.85 | `PPPBFIFC` | `PPLQQQNT0` | https://go.centerpag.com/PPU38CQGT1S |
 | `influencer-niche` **(produto duplicado)** | GainFlow Influencer Niche | 179.85 | `PPPBFIFF` | `PPLQQQNT2` | **Não confirmado para este produto** |
 | `scale-standard` | GainFlow Scale | 199.90 | `**CONFERIR**` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT22 |
-| `scale-niche` | GainFlow Scale Niche | 299.85 | `PPPBFIFH` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT26 |
+| `scale-niche` | GainFlow Scale Niche | 299.85 | `PPPBFIFH` | `PPLQQQNT4` | https://go.centerpag.com/PPU38CQGT26 |
 | `dominance-standard` | GainFlow Dominance | 299.90 | `PPPBFIFI` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT29 |
 | `dominance-niche` | GainFlow Dominance Niche | 449.85 | `PPPBFIFL` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT4B |
 | `ultimate-standard` | GainFlow Ultimate | 499.90 | `PPPBFIFN` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT4G |
@@ -47,7 +47,7 @@
 ## Regra de autorização em produção
 
 - Banco privado `public.gf_authorized_plans` aceita APENAS o par exato `(product_code,plan_code)` com um SKU GainFlow autorizado; a função de registro também verifica a lista.
-- Há **três pares confirmados na allowlist privada**: PersonaLab `PPPBFIHF` / `PPLQQQO1M`, Influencer Niche original `PPPBFIFC` / `PPLQQQNT0` e Influencer Niche duplicado `PPPBFIFF` / `PPLQQQNT2`. Todos dependem do webhook geral ativado e testado, atualmente desativado.
+- Há **quatro pares confirmados na allowlist privada**: PersonaLab `PPPBFIHF` / `PPLQQQO1M`, Influencer Niche original `PPPBFIFC` / `PPLQQQNT0`, Influencer Niche duplicado `PPPBFIFF` / `PPLQQQNT2` e Scale Niche `PPPBFIFH` / `PPLQQQNT4`. Todos dependem do webhook geral ativado e testado, atualmente desativado.
 - O webhook geral permanece **desabilitado**; ter o código `PPP` e um checkout `PPU` nunca equivale a pagamento aprovado nem substitui o `PPL`.
 - Outros projetos PerfectPay não serão inseridos na lista de códigos autorizados, mesmo que estejam selecionados no webhook da conta.
 - O token compartilhado anteriormente precisa ser rotacionado e guardado apenas no Supabase. Não enviar em capturas ou mensagens.
