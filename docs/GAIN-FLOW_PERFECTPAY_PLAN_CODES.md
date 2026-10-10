@@ -1,56 +1,60 @@
-# GainFlow — códigos oficiais da PerfectPay pendentes
+# GainFlow — inventário de códigos PerfectPay (atualizado)
 
-**Escopo confirmado em 2026-10-10:** somente compras de produtos GainFlow dão acesso ao GainFlow Club. Outros projetos da mesma conta PerfectPay NÃO têm acesso.
+**Data:** 2026-10-10. Escopo confirmado pelo proprietário: SOMENTE produtos GainFlow autorizam GainFlow Club. Outros projetos desta PerfectPay não são elegíveis.
 
-Os códigos `PPU...` dos checkouts NÃO são os códigos oficiais `PPP...` do produto nem `PPL...` do plano. Não adivinhar os códigos ausentes e não ativar processamento automático sem aprovação e testes reais.
+**Fonte:** 8 imagens de cartões de produtos PerfectPay compartilhadas pelo proprietário + telas anteriores de plano PersonaLab.
 
-## Catálogo consolidado
+- Produtos/planos comerciais no catálogo: **22**
+- Códigos de produto PPP registrados sem ambiguidade: **20**
+- Códigos PPP que exigem conferência: **2**
+- Códigos de plano PPL já confirmados: **1**
+- Códigos PPL pendentes: **21**
 
-| Oferta GainFlow | USD | Checkout confirmado | Produto PPP | Plano PPL |
-|---|---:|---|---|---|
-| GainFlow Starter (starter-standard) | 14.90 | https://go.centerpag.com/PPU38CQGSPG | `PENDENTE` | `PENDENTE` |
-| GainFlow Starter Niche (starter-niche) | 22.35 | https://go.centerpag.com/PPU38CQGSPT | `PENDENTE` | `PENDENTE` |
-| GainFlow Growth (growth-standard) | 29.90 | https://go.centerpag.com/PPU38CQGSQF | `PENDENTE` | `PENDENTE` |
-| GainFlow Growth Niche (growth-niche) | 44.85 | https://go.centerpag.com/PPU38CQGSRU | `PENDENTE` | `PENDENTE` |
-| GainFlow Pro (pro-standard) | 39.90 | https://go.centerpag.com/PPU38CQGSUU | `PENDENTE` | `PENDENTE` |
-| GainFlow Pro Niche (pro-niche) | 59.85 | https://go.centerpag.com/PPU38CQGT04 | `PENDENTE` | `PENDENTE` |
-| GainFlow Authority (authority-standard) | 69.90 | https://go.centerpag.com/PPU38CQGT06 | `PENDENTE` | `PENDENTE` |
-| GainFlow Authority Niche (authority-niche) | 104.85 | https://go.centerpag.com/PPU38CQGT09 | `PENDENTE` | `PENDENTE` |
-| GainFlow Influencer (influencer-standard) | 119.90 | https://go.centerpag.com/PPU38CQGT1N | `PENDENTE` | `PENDENTE` |
-| GainFlow Influencer Niche (influencer-niche) | 179.85 | https://go.centerpag.com/PPU38CQGT1S | `PENDENTE` | `PENDENTE` |
-| GainFlow Scale (scale-standard) | 199.90 | https://go.centerpag.com/PPU38CQGT22 | `PENDENTE` | `PENDENTE` |
-| GainFlow Scale Niche (scale-niche) | 299.85 | https://go.centerpag.com/PPU38CQGT26 | `PENDENTE` | `PENDENTE` |
-| GainFlow Dominance (dominance-standard) | 299.90 | https://go.centerpag.com/PPU38CQGT29 | `PENDENTE` | `PENDENTE` |
-| GainFlow Dominance Niche (dominance-niche) | 449.85 | https://go.centerpag.com/PPU38CQGT4B | `PENDENTE` | `PENDENTE` |
-| GainFlow Ultimate (ultimate-standard) | 499.90 | https://go.centerpag.com/PPU38CQGT4G | `PENDENTE` | `PENDENTE` |
-| GainFlow Ultimate Niche (ultimate-niche) | 749.85 | https://go.centerpag.com/PPU38CQGT54 | `PENDENTE` | `PENDENTE` |
-| GainFlow — Viral Content Factory (upsell-1) | 27.00 | https://go.centerpag.com/PPU38CQGTDA | `PENDENTE` | `PENDENTE` |
-| GainFlow — Prompt Vault+ (downsell-1) | 9.90 | https://go.centerpag.com/PPU38CQGTDC | `PENDENTE` | `PENDENTE` |
-| GainFlow — PersonaLab AI Studio (upsell-2) | 39.97 | https://go.centerpag.com/PPU38CQGTDN | `PPPBFIHF` | `PPLQQQO1M` |
-| GainFlow — Follower Retention Playbook (upsell-3) | 19.90 | https://go.centerpag.com/PPU38CQGTDE | `PENDENTE` | `PENDENTE` |
-| GainFlow — VIP Express Delivery (order-bump-vip-express) | 7.00 | https://go.centerpag.com/PPU38CQGT5E | `PENDENTE` | `PENDENTE` |
-| GainFlow Engagement Toolkit (order-bump-engagement-toolkit) | 9.90 | https://go.centerpag.com/PPU38CQGT6J | `PENDENTE` | `PENDENTE` |
+## Diferença importante encontrada nas fotos
 
-## Registro de compras e segurança
+- Dois cartões distintos aparecem com o mesmo título **GainFlow Influencer Niche**, mas com códigos **`PPPBFIFF`** e **`PPPBFIFC`**.
+- Nenhum cartão visível foi identificado como **GainFlow Scale** padrão; aparece apenas **GainFlow Scale Niche**, código `PPPBFIFH`.
+- Não é seguro presumir qual código pertence ao **Influencer Niche** verdadeiro e qual seria o **Scale** padrão; ambas as associações estão propositalmente vazias no catálogo até o proprietário confirmar.
 
-- `public.gf_authorized_plans` no Supabase contém apenas códigos de **produto E plano** confirmados, com SKU único. Atualmente somente `PPPBFIHF` / `PPLQQQO1M` (PersonaLab) está autorizado para reconhecimento quando o webhook for devidamente habilitado.
-- Outras compras PerfectPay, mesmo da mesma conta, retornam `202 ignored` e não são gravadas como GainFlow.
-- A função `gf_ingest_sale` no banco verifica a tabela de autorização novamente. Clientes não têm INSERT em pedidos, nem podem alterar a tabela de códigos.
-- Webhook geral implantado (mas **desligado**): `https://efrgcnlraqrylfvxkstn.supabase.co/functions/v1/perfectpay-members-webhook`.
-- Secrets necessários: `GF_PERFECTPAY_POSTBACK_TOKEN` (token **NOVO e rotacionado**, inserir somente no Supabase) e `GF_MEMBERS_WEBHOOK_ENABLED` (`false`/ausente até QA). Não é mais necessário `GF_PERFECTPAY_PRODUCT_MAP`: os pares autorizados vêm exclusivamente do banco.
-- Webhook antigo do PersonaLab: `gainflow-perfectpay-webhook` continua isolado e inativo; não ativar simultaneamente sem teste de deduplicação.
-- Se a PerfectPay enviar eventos de **39 produtos de vários projetos**, apenas pares desta lista explicitamente autorizados contam. Preferir configurar o webhook da PerfectPay para selecionar apenas os produtos GainFlow, se o painel permitir.
-- O cartão PersonaLab inclui materiais que agora são **benefício de qualquer compra GainFlow**. Os demais quatro checkouts de conteúdo foram preservados para auditoria, porém **não promover nem ativar One Click para cobrar os mesmos conteúdos**.
-- Não confundir os dois order bumps: Engagement Toolkit é material digital e entra no clube após upload; VIP Express é um serviço de prioridade de processamento e exige pagamento separado e prova da capacidade operacional.
+## Códigos capturados
 
-## Como obter os códigos faltantes sem enviar segredos
+| SKU GainFlow | Produto | USD | Código PPP | Código PPL | Checkout |
+|---|---|---:|---|---|---|
+| `starter-standard` | GainFlow Starter | 14.90 | `PPPBFIEG` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGSPG |
+| `starter-niche` | GainFlow Starter Niche | 22.35 | `PPPBFIEJ` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGSPT |
+| `growth-standard` | GainFlow Growth | 29.90 | `PPPBFIEL` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGSQF |
+| `growth-niche` | GainFlow Growth Niche | 44.85 | `PPPBFIEQ` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGSRU |
+| `pro-standard` | GainFlow Pro | 39.90 | `PPPBFIF4` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGSUU |
+| `pro-niche` | GainFlow Pro Niche | 59.85 | `PPPBFIF5` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT04 |
+| `authority-standard` | GainFlow Authority | 69.90 | `PPPBFIF6` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT06 |
+| `authority-niche` | GainFlow Authority Niche | 104.85 | `PPPBFIF7` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT09 |
+| `influencer-standard` | GainFlow Influencer | 119.90 | `PPPBFIFA` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT1N |
+| `influencer-niche` | GainFlow Influencer Niche | 179.85 | `**CONFERIR**` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT1S |
+| `scale-standard` | GainFlow Scale | 199.90 | `**CONFERIR**` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT22 |
+| `scale-niche` | GainFlow Scale Niche | 299.85 | `PPPBFIFH` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT26 |
+| `dominance-standard` | GainFlow Dominance | 299.90 | `PPPBFIFI` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT29 |
+| `dominance-niche` | GainFlow Dominance Niche | 449.85 | `PPPBFIFL` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT4B |
+| `ultimate-standard` | GainFlow Ultimate | 499.90 | `PPPBFIFN` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT4G |
+| `ultimate-niche` | GainFlow Ultimate Niche | 749.85 | `PPPBFIFS` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT54 |
+| `upsell-1` | GainFlow — Viral Content Factory | 27.00 | `PPPBFIHC` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGTDA |
+| `downsell-1` | GainFlow — Prompt Vault+ | 9.90 | `PPPBFIHD` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGTDC |
+| `upsell-2` | GainFlow — PersonaLab AI Studio | 39.97 | `PPPBFIHF` | `PPLQQQO1M` | https://go.centerpag.com/PPU38CQGTDN |
+| `upsell-3` | GainFlow — Follower Retention Playbook | 19.90 | `PPPBFIHE` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGTDE |
+| `order-bump-vip-express` | GainFlow — VIP Express Delivery | 7.00 | `PPPBFIG2` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT5E |
+| `order-bump-engagement-toolkit` | GainFlow Engagement Toolkit | 9.90 | `PPPBFIG4` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT6J |
 
-Na PerfectPay: **Produtos → Meus Produtos → abrir produto** (copiar código `PPP...`) e **Planos → lista** (copiar código `PPL...` do respectivo plano). Envie uma tabela/planilha com esses dois códigos para cada uma das ofertas — nunca chave de API ou token. Valide Starter Niche versus Growth antes de confirmar associação dos planos.
+## Regra de autorização em produção
 
-## Testes antes de habilitar
+- Banco privado `public.gf_authorized_plans` aceita APENAS o par exato `(product_code,plan_code)` com um SKU GainFlow autorizado; a função de registro também verifica a lista.
+- Só está confirmado e autorizado até agora o par PersonaLab `PPPBFIHF` / `PPLQQQO1M`.
+- O webhook geral permanece **desabilitado**; ter o código `PPP` e um checkout `PPU` nunca equivale a pagamento aprovado nem substitui o `PPL`.
+- Outros projetos PerfectPay não serão inseridos na lista de códigos autorizados, mesmo que estejam selecionados no webhook da conta.
+- O token compartilhado anteriormente precisa ser rotacionado e guardado apenas no Supabase. Não enviar em capturas ou mensagens.
+- Como a biblioteca digital está incluída em qualquer compra GainFlow aprovada, os links de checkout das ofertas digitais antigas NÃO devem ser reativados como upsells dos mesmos materiais.
 
-1. Garantir token novo salvo só no Supabase; ativação permanece `false`.
-2. Conferir códigos de todos os produtos GainFlow e inserir pares reais na allowlist; validar diferenças entre standard e niche.
-3. Verificar no painel a configuração dos eventos Aprovado, Completo, Cancelado, Devolvido e Chargeback.
-4. Fazer teste autorizado de compra aprovada, consulta na área de membros, tentativa com produto de outro projeto, compra reembolsada e chegada de eventos duplicados/fora de ordem.
-5. Somente depois habilitar `GF_MEMBERS_WEBHOOK_ENABLED=true` e reconferir relatórios; One Click permanece desligado enquanto benefícios incluídos forem apresentados como upsells pagos.
+## Próxima coleta (somente o necessário)
+
+1. Confirmar por **Detalhes** qual produto corresponde a `PPPBFIFF` e qual corresponde a `PPPBFIFC`, e localizar o **Scale** padrão.
+2. Para cada item elegível, abrir **Planos** e copiar o código da etiqueta cinza iniciado por `PPL`. Não usar código de afiliação `PPA` nem checkout `PPU`.
+3. Após confirmar cada PPP+PPL, inserir o par na allowlist, sem liberar eventos de outros projetos.
+4. Configurar e testar webhook com novo token e uma compra autorizada; validar acesso/reembolso antes de ativar cobrança adicional.
