@@ -94,7 +94,13 @@ Deno.serve(async req=>{
   const body=await req.json().catch(()=>({}));
   const action=String(body?.action||"overview");
   const orders=await getActiveOrders(email);
-  if(!orders.length)return result(200,{ok:true,hasAccess:false,email},origin);
+  // The configured PersonaLab/GainFlow operator can inspect educational
+  // content using their confirmed Supabase account, without fabricating a sale.
+  const {data:operator,error:operatorError}=await admin.from("student_studio_settings")
+   .select("owner_email").eq("id",true).maybeSingle();
+  if(operatorError)throw operatorError;
+  const isOperator=Boolean(operator?.owner_email&&String(operator.owner_email).trim().toLowerCase()===email);
+  if(!orders.length&&!isOperator)return result(200,{ok:true,hasAccess:false,email},origin);
   const hasGrowthPlan=orders.some(o=>isMainSku(o.sku));
   const profile=await ensureProfile(user.id,email);
   if(action==="set_profile"){
@@ -174,7 +180,7 @@ Deno.serve(async req=>{
   const used=active?active.quantity:0;
   const minConfigured=Number(Deno.env.get("WORLDSMM_MIN_QTY_VERIFIED")||0);
   const configured=!!(Deno.env.get("WORLDSMM_API_KEY")&&Deno.env.get("WORLDSMM_SERVICE_ID")&&minConfigured>=1&&minConfigured<=profile.daily_limit);
-  return result(200,{ok:true,hasAccess:true,email,
+  return result(200,{ok:true,hasAccess:true,email,isOperator,
    accessPolicy:"all_digital_content_with_any_approved_gainflow_purchase",
    hasGrowthPlan,studioUrl,
    library: Object.entries(assetFiles).map(([id,name])=>({id,name})),
