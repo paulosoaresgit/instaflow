@@ -7,7 +7,7 @@ Essas ofertas são **Order Bumps exibidos no checkout**, não upsells One Click 
 | Item | Produto adicional | Plano | Preço em USD | SKU interno |
 |---|---|---|---:|---|
 | 1 | GainFlow — VIP Express Delivery | VIP Express Delivery | US$ 7,00 | `order-bump-vip-express` |
-| 2 | GainFlow — Likes & Saves Add-on | 200 Likes + 50 Saves | US$ 9,90 | `order-bump-likes-saves` |
+| 2 | 200 Likes | 200 Likes + 50 Saves | US$ 9,90 | `order-bump-likes-saves` |
 
 ## Cópias curtas em inglês
 
