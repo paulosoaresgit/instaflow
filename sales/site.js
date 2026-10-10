@@ -42,13 +42,31 @@ if(!offer)throw Error("Unknown upsell page");
 const context=currentProduct?.id||"";
 document.title=offer.name+" | GainFlow";setText("tag",offer.label.toUpperCase());setText("offer-name",offer.name);setText("price",money(offer.priceUSD));setText("offer-description",offer.description);
 setText("product-context",currentProduct?"Optional add-on for "+currentProduct.name:"Optional post-purchase offer");
-setText("offer-note","This add-on is pending verification. No payment will be initiated from this page until the product is fully configured.");
 const buy=el("buy"),skip=el("skip");
-skip.href=urlStep(offer.decline,context);skip.textContent="No thanks — see next step";
+skip.href=urlStep(offer.decline,context);
+skip.textContent=offer.decline==="complete"?"No thanks — finish":"No thanks — continue without this add-on";
 const links=await load("/sales/upsell-checkouts.json");
 const raw=links?.[offer.slug]||"";
-if(offer.status!=="active"||!validCheckout(raw)){buy.disabled=true;buy.textContent="Additional offer not available";note("The checkout for this extra offer is not active yet.");}
-else{buy.textContent="Continue to secure checkout";buy.addEventListener("click",()=>{const u=new URL(raw);if(cfg.oneClickEnabled===true)u.searchParams.set("upsell","true");else u.searchParams.delete("upsell");location.assign(u.toString())})}
+const ready=cfg.oneClickEnabled===true&&offer.status==="active"&&validCheckout(raw);
+if(!ready){
+  buy.disabled=true;
+  buy.textContent="Offer checkout not active";
+  setText("offer-note","Preview only: this offer is not accepting payment or unlocking materials yet. Your main purchase is unaffected.");
+  note("PerfectPay setup and approved-payment delivery checks are still pending.");
+}else{
+  buy.disabled=false;
+  buy.textContent="Continue to secure checkout";
+  setText("offer-note","If you accept, PerfectPay will show the additional charge. No charge is made for declining.");
+  note("");
+  buy.addEventListener("click",()=>{
+    const u=new URL(raw);
+    u.searchParams.set("upsell","true");
+    for(const k of ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"]){
+      const v=qs.get(k);if(v&&!u.searchParams.has(k))u.searchParams.set(k,v.slice(0,160));
+    }
+    location.assign(u.toString());
+  });
+}
 }
 else if(here==="complete"){
 document.title="Order information | GainFlow";
