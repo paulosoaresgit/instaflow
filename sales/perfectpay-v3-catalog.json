@@ -579,9 +579,9 @@
       "parentFunnel": "all 16 primary products, after confirmed approved payment",
       "nextOfferPage": "https://instaflow-preview.onrender.com/offer/upsell-3.html",
       "declineTo": "https://instaflow-preview.onrender.com/offer/upsell-3.html",
-      "liveCheckoutLink": "",
+      "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDN",
       "perfectPayProductCode": "",
-      "productStatus": "draft_backend_entitlement_prepared_software_live_QA_blocked",
+      "productStatus": "checkout_link_registered_backend_prepared_live_studio_and_delivery_QA_pending",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
@@ -602,7 +602,8 @@
       "registrationNotes": "Never set checkout as active or enable One Click until product and plan codes plus webhook token are set, end-to-end paid/refunded tests pass, and live studio domain is confirmed.",
       "officialOneClickActivated": false,
       "fulfillmentVerified": false,
-      "studioPreviewUrl": "https://personalab-ai-gainflow.vercel.app/"
+      "studioPreviewUrl": "https://personalab-ai-gainflow.vercel.app/",
+      "checkoutLinkReviewStatus": "user_provided_price_and_plan_not_independently_verified"
     },
     {
       "internalSlug": "upsell-3",
@@ -787,7 +788,7 @@
   ],
   "checkoutConstraints": {
     "requireOfficialLinks": true,
-    "linksMissing": 1,
+    "linksMissing": 0,
     "doNotMarkOrdersPaidFromPageVisits": true,
     "oneClickSetupOnlyInPerfectPay": true,
     "webhookRequiredForFulfillment": true,
@@ -934,7 +935,9 @@
       "webhookEnabled": false,
       "frontendDeployed": true,
       "purchaseVerificationCompleted": false,
-      "browserQAVerified": false
+      "browserQAVerified": false,
+      "checkoutRecorded": true,
+      "checkoutCode": "PPU38CQGTDN"
     }
   }
 }
