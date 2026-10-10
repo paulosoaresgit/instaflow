@@ -835,28 +835,33 @@
       "fulfillmentVerified": false
     },
     {
-      "internalSlug": "order-bump-likes-saves",
+      "internalSlug": "order-bump-engagement-toolkit",
       "type": "order_bump",
-      "perfectPayProductName": "200 Likes",
-      "perfectPayPlanName": "200 Likes + 50 Saves",
+      "perfectPayProductName": "GainFlow Engagement Toolkit",
+      "perfectPayPlanName": "GainFlow Engagement Toolkit",
       "currency": "USD",
       "price": 9.9,
       "billingType": "one_time",
       "guaranteeDays": 7,
-      "displayTitleEN": "200 Likes + 50 Saves",
-      "displayCopyEN": "Add a total of 200 likes and 50 saves, distributed across up to 5 eligible posts, for just $9.90.",
-      "displayAuxiliaryEN": "Totals apply across eligible posts, not per post. Delivery requires a valid profile and eligible public post URLs. No guarantee of reach or algorithmic outcomes.",
-      "sourceReferenceOfferEN": "200 likes + 50 saves spread across your last 5 posts. $9.90.",
-      "deliveryType": "Additional engagement service for eligible public posts; not a PDF",
-      "fulfillment": "Collect/confirm up to five eligible post URLs, then submit 200 likes and 50 saves total after approved payment; validate provider capability, delivery availability and platform restrictions before enabling",
-      "requiresProviderAvailabilityValidation": true,
+      "displayTitleEN": "Engagement Toolkit",
+      "displayCopyEN": "Get an actionable Reels engagement guide, content templates and a 7-day organic audience plan for only $9.90.",
+      "displayAuxiliaryEN": "Educational PDF with practical Reels strategies and checklists. No artificial likes, saves, guaranteed engagement or follower delivery is included.",
+      "sourceReferenceOfferEN": "Replacement digital educational product; retired original proposal for 200 likes and 50 saves.",
+      "deliveryType": "Digital educational PDF guide and templates; not a social media engagement service",
+      "fulfillment": "Deliver the 3-page GainFlow_Engagement_Toolkit.pdf via approved digital delivery after confirmed payment. Verify fulfillment route and file access.",
+      "requiresProviderAvailabilityValidation": false,
       "requiresApprovedPayment": true,
       "perfectPayProductCode": "",
       "perfectPayPlanCode": "",
-      "status": "planned_not_created_or_enabled",
+      "status": "registered_checkout_link_pending_validation",
       "supportEmail": "flowinsta@outlook.com",
-      "salesPage": "https://instaflow-preview.onrender.com/offer/order-bump-likes-saves.html",
-      "salesPageStatus": "published_information_page_not_a_payment_checkout"
+      "salesPage": "https://instaflow-preview.onrender.com/offer/order-bump-engagement-toolkit.html",
+      "salesPageStatus": "new_page_created_pending_deploy",
+      "digitalDeliverableFileName": "GainFlow_Engagement_Toolkit.pdf",
+      "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT6J",
+      "checkoutLinkReviewStatus": "provided_by_user_pending_price_and_payment_verification",
+      "orderBumpEnabledInCheckout": false,
+      "fulfillmentVerified": false
     }
   ],
   "orderBumpCount": 2,
@@ -881,17 +886,17 @@
       "ultimate-standard",
       "ultimate-niche"
     ],
-    "priority": "Show VIP Express Delivery first, Likes & Saves second",
+    "priority": "Show VIP Express Delivery first, Engagement Toolkit second",
     "requiresPerfectPayProductAndPlanIds": true,
     "perfectPayStatus": "not_created_not_enabled",
     "approvedForBilling": false,
     "automaticActivationAllowed": false,
     "verification": [
-      "Provider can meet the 3-hour express target",
-      "Provider can supply 200 likes + 50 saves total across five eligible posts",
+      "Provider can meet the 3-hour VIP Express Delivery target or remove that promise",
+      "Engagement Toolkit PDF and real access method are ready for paid purchasers",
       "Both extra products/plans created and approved on PerfectPay",
-      "Bump pricing and selections verified on each of 16 checkouts",
-      "Payment webhooks associate each bump with its parent order and avoid duplicate fulfillment"
+      "Order bump prices and optional selection verified in each of 16 main checkouts",
+      "Payment webhooks identify each add-on, verify approval and prevent duplicate fulfillment"
     ]
   }
 }
