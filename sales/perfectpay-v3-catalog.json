@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-10-followergrowth-domain-funnel",
+  "version": "2026-10-10-hostinger-oneclick-approval-preflight",
   "referenceWebsite": "https://instagainflow.com/v3/?front=v3&lang=en",
   "inspectionStatus": "Live reference page could not be retrieved; amounts and routes derived from linked InstaFlow GitHub source and prior prepared funnel, so reference-page parity is not verified.",
   "originalSiteModified": false,
@@ -886,7 +886,7 @@
       "mainSalesPage": "https://followergrowth.site/p/scale-standard.html",
       "linkDoUpsell": "https://followergrowth.site/offer/upsell-1.html?produto=scale-standard",
       "paginaObrigadoFinal": "https://followergrowth.site/obrigado/?produto=scale-standard",
-      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGT22",
+      "perfectPayCheckoutUrl": "https://go.centerpag.com/PPU38CQGTET",
       "checkoutAddParameter": "",
       "officialOneClickActivated": false
     },
@@ -1119,7 +1119,11 @@
     },
     "siteBase": "https://followergrowth.site",
     "liveDomainVerification": "not_confirmed",
-    "domainMigrationNote": "Existing upsell/downsell HTML routes in instaflow are now referenced on followergrowth.site. DNS/deployment and PerfectPay routing not independently verified; no charges enabled."
+    "domainMigrationNote": "Existing upsell/downsell HTML routes in instaflow are now referenced on followergrowth.site. DNS/deployment and PerfectPay routing not independently verified; no charges enabled.",
+    "managerApprovalStatus": "all_22_product_approvals_reported_by_user_unverified",
+    "managerOneClickStatus": "4_upsell_products_enabled_reported_by_user_no_popup_html_approval_pending",
+    "htmlReviewRequiresReapprovalAfterEdits": true,
+    "siteOneClickEnabled": false
   },
   "clubPurchasePolicy": {
     "scope": "only_confirmed_GainFlow_product_plan_pairs",
