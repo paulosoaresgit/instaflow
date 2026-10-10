@@ -20,7 +20,7 @@ setText("guarantee",String(cfg.guaranteeDays||7));
 const lead=document.querySelector(".grid .hero .lead");
 if(lead)lead.textContent="GainFlow is a digital members-area experience, with a complete Reels Academy and access to eligible online tools. Each purchase unlocks access after payment approval.";
 const delivery=document.querySelector(".smallcard p.mini");
-if(delivery&&here==="product")delivery.textContent="Digital delivery: access to the member dashboard after approved payment. Includes 24 Reels classes across eight modules, with optional extra lessons unlocked by purchased add-ons. Daily requests begin at 10, configurable up to 15 after technical/provider validation.";
+if(delivery&&here==="product")delivery.textContent="Digital delivery: access to the member dashboard after approved payment. Includes 24 Reels classes across eight modules, plus access to the complete shared digital library and PersonaLab AI Studio. External AI credits are not included. Daily follower requests require an eligible primary plan and verified provider integration.";
 const memberLink=document.querySelector(".smallcard");
 if(memberLink&&here==="product"){const a=document.createElement("a");a.href="/members/";a.textContent="Open my digital member area →";a.className="mini";memberLink.appendChild(a)}
 
@@ -43,6 +43,20 @@ const context=currentProduct?.id||"";
 document.title=offer.name+" | GainFlow";setText("tag",offer.label.toUpperCase());setText("offer-name",offer.name);setText("price",money(offer.priceUSD));setText("offer-description",offer.description);
 setText("product-context",currentProduct?"Optional add-on for "+currentProduct.name:"Optional post-purchase offer");
 const buy=el("buy"),skip=el("skip");
+const digitalIncluded=cfg.membershipAccessPolicy?.grantsDigitalLibraryAfterAnyApprovedGainFlowPurchase===true;
+if(digitalIncluded){
+  // All four digital bundles are already available after ANY approved GainFlow purchase.
+  // Do not sell the same educational content again as a separate optional upsell.
+  buy.disabled=true;buy.textContent="Included with your GainFlow purchase";
+  setText("price","Included");
+  setText("product-context","Already included with your verified GainFlow Club membership");
+  setText("offer-note","No additional charge. Open the club and sign in using the verified email of your approved GainFlow purchase.");
+  document.querySelector(".gf-one-time")?.replaceChildren(document.createTextNode("MEMBER BENEFIT"));
+  setText("tag","INCLUDED IN GAINFLOW CLUB");
+  skip.href="/members/";skip.textContent="Open your digital library →";
+  note("Digital materials are included with your membership. Access is granted after approved payment verification.");
+  return;
+}
 skip.href=urlStep(offer.decline,context);
 skip.textContent=offer.decline==="complete"?"No thanks — finish":"No thanks — continue without this add-on";
 const links=await load("/sales/upsell-checkouts.json");
