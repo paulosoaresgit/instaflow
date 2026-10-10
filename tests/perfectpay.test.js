@@ -33,10 +33,10 @@ after(() => { server?.kill(); });
 test('all previously recorded checkout links are preserved exactly', () => {
   const original = JSON.parse(execFileSync('git', ['show', 'HEAD:perfectpay-checkouts.json'], { cwd: root, encoding: 'utf8' }));
   assert.deepEqual(links, original);
-  assert.equal(Object.values(links).flatMap(Object.values).filter(Boolean).length, 15);
-  assert.equal(catalog.checkoutConstraints.linksMissing, 6);
+  assert.equal(Object.values(links).flatMap(Object.values).filter(Boolean).length, 16);
+  assert.equal(catalog.checkoutConstraints.linksMissing, 0);
   assert.equal(catalog.products.length, 16);
-  assert.equal(catalog.upsells.length, 5);
+  assert.equal(catalog.upsells.length, 4);
   for (const product of catalog.products) {
     const route = catalog.registrationRoutes.find(r => r.product === product.internalSlug);
     const offer = config.products.find(p => p.id === product.internalSlug);
@@ -70,7 +70,7 @@ test('API accepts all recorded CenterPag links, retains attribution, and keeps O
   }
 });
 
-test('all 21 product/extra pages and member/thank-you directory routes serve their own content', async () => {
+test('all 20 product/extra pages and member/thank-you directory routes serve their own content', async () => {
   for (const product of catalog.products) {
     const response = await fetch(origin + new URL(product.salesPage).pathname);
     assert.equal(response.status, 200);
@@ -99,7 +99,7 @@ test('directory redirects retain product context and malformed paths do not stop
   assert.equal((await fetch(origin + '/api/health')).status, 200);
 });
 
-test('all five decline paths retain attribution, omit secrets, and cannot initiate payment', async () => {
+test('all four included-offer decline and continue paths retain attribution and cannot initiate payment', async () => {
   const source = await read('sales/site.js');
   for (const offer of config.upsells) {
     const elements = new Map();
@@ -121,9 +121,18 @@ test('all five decline paths retain attribution, omit secrets, and cannot initia
     assert.equal(skip.searchParams.get('produto'), 'starter-niche');
     assert.equal(skip.searchParams.get('utm_campaign'), 'funnel');
     assert.equal(skip.searchParams.has('token'), false);
-    assert.equal(element('buy').disabled, true);
-    assert.deepEqual(element('buy').listeners, []);
+    assert.equal(element('buy').disabled, false);
+    assert.equal(element('buy').listeners.length, 1);
     assert.deepEqual(assignments, []);
+    const clickHandler = element('buy').listeners[0][1];
+    clickHandler();
+    assert.equal(assignments.length, 1);
+    const nextUrl = new URL(assignments[0], origin);
+    assert.equal(nextUrl.pathname, offer.next === 'complete' ? '/obrigado/' : `/offer/${offer.next}.html`);
+    assert.equal(nextUrl.searchParams.get('produto'), 'starter-niche');
+    assert.equal(nextUrl.searchParams.get('utm_campaign'), 'funnel');
+    assert.equal(nextUrl.searchParams.has('token'), false);
+    assert.equal(nextUrl.origin, origin);
   }
 });
 
@@ -187,7 +196,15 @@ test('ambiguous product-only mapping is rejected and an unconfigured project ret
   assert.deepEqual(missing.calls, []);
 });
 
-test('main funnel uses the disabled One Click policy and immutable assets are versioned', async () => {
+test('all included offers stay non-charging and the front One Click policy remains disabled', async () => {
+  assert.equal(links.scale.standard, 'https://go.centerpag.com/PPU38CQGTET');
+  assert.equal(catalog.registrationRoutes.find(p => p.product === 'scale-standard')?.perfectPayCheckoutUrl, links.scale.standard);
+  assert.equal(config.membershipAccessPolicy.grantsDigitalLibraryAfterAnyApprovedGainFlowPurchase, true);
+  for (const offer of config.upsells) {
+    const html = await read(`offer/${offer.slug}.html`);
+    assert.ok(html.includes('GAINFLOW CLUB — ALREADY INCLUDED'));
+    assert.ok(!html.includes('EXCLUSIVE OPTIONAL ADD-ON'));
+  }
   assert.equal(config.oneClickEnabled, false);
   const index = await read('index.html');
   assert.ok(index.includes('/assets/index-perfectpay-v5.js'));
