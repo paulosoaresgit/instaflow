@@ -440,5 +440,24 @@
   "defaultDailyLimit": 10,
   "maxDailyLimit": 15,
   "memberLoginUrl": "https://instaflow-preview.onrender.com/members/",
-  "memberLoginUrlPt": "https://instaflow-preview.onrender.com/membros/"
+  "memberLoginUrlPt": "https://instaflow-preview.onrender.com/membros/",
+  "membershipAccessPolicy": {
+    "revision": "2026-10-10",
+    "status": "backend_prepared_payment_mapping_pending",
+    "grantsDigitalLibraryAfterAnyApprovedGainFlowPurchase": true,
+    "digitalModules": [
+      "reels-academy",
+      "viral-content-factory",
+      "prompt-vault-plus",
+      "personalab-ai-studio",
+      "follower-retention-playbook"
+    ],
+    "followersFulfillmentControlledByOriginalPrimaryPlan": true,
+    "thirdPartyAiCreditsIncluded": false,
+    "preventChargeForIncludedLibraryWithoutDistinctBenefit": true,
+    "memberPortalURL": "https://instaflow-preview.onrender.com/members/",
+    "memberPortalPtURL": "https://instaflow-preview.onrender.com/membros/",
+    "approvedPaymentRequired": true,
+    "oneClickEnabled": false
+  }
 }
