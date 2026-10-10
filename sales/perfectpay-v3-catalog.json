@@ -580,8 +580,8 @@
       "nextOfferPage": "https://instaflow-preview.onrender.com/offer/upsell-3.html",
       "declineTo": "https://instaflow-preview.onrender.com/offer/upsell-3.html",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGTDN",
-      "perfectPayProductCode": "",
-      "productStatus": "checkout_link_registered_backend_prepared_live_studio_and_delivery_QA_pending",
+      "perfectPayProductCode": "PPPBFIHF",
+      "productStatus": "product_code_confirmed_plan_code_webhook_token_and_end_to_end_QA_pending",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
@@ -603,7 +603,8 @@
       "officialOneClickActivated": false,
       "fulfillmentVerified": false,
       "studioPreviewUrl": "https://personalab-ai-gainflow.vercel.app/",
-      "checkoutLinkReviewStatus": "user_provided_price_and_plan_not_independently_verified"
+      "checkoutLinkReviewStatus": "user_provided_price_and_plan_not_independently_verified",
+      "productCodeSource": "Screenshot: PerfectPay > GainFlow — PersonaLab AI Studio > Código do produto (2026-10-10)"
     },
     {
       "internalSlug": "upsell-3",
@@ -937,7 +938,9 @@
       "purchaseVerificationCompleted": false,
       "browserQAVerified": false,
       "checkoutRecorded": true,
-      "checkoutCode": "PPU38CQGTDN"
+      "checkoutCode": "PPU38CQGTDN",
+      "productCodeConfirmed": "PPPBFIHF",
+      "planCodeConfirmed": false
     }
   }
 }
