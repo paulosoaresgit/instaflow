@@ -59,7 +59,8 @@ async function renderDashboard(){
  model=await call("overview");
  if(!model?.hasAccess){$("pending-email").textContent=model?.email||session?.user?.email||"";showing("pending-view");return;}
  const q=model.quota||{limit:10,remaining:0,used:0};
- $("stat-limit").textContent=q.limit;$("stat-remaining").textContent=q.remaining;
+ const growthAllowed=model.hasGrowthPlan===true;
+ $("stat-limit").textContent=growthAllowed?q.limit:"—";$("stat-remaining").textContent=growthAllowed?q.remaining:"—";
  $("quota-left").textContent=q.remaining;
  $("quota-max").textContent=english?"out of "+q.limit+" available":"de "+q.limit+" disponíveis";
  $("quota-bar").style.width=Math.min(100,Math.max(0,100*(q.used||0)/(q.limit||10)))+"%";
@@ -68,8 +69,8 @@ async function renderDashboard(){
  $("auto-switch").checked=model.profile?.auto_delivery_enabled===true;
  const providerReady=model.providerReady===true;
  $("profile-status").textContent=model.profile?.instagram_username?(verified?(english?"✓ Profile verified for requests.":"✓ Perfil validado para solicitações."):(english?"Profile saved; awaiting ownership verification.":"Perfil cadastrado; aguardando validação de titularidade.")):(english?"Enter your profile to get started.":"Cadastre seu perfil para começar.");
- $("request-btn").disabled=!(verified&&providerReady&&q.remaining>0);
- $("request-btn").textContent=!providerReady?(english?"Delivery integration not configured":"Integração de entrega em configuração"):!verified?(english?"Waiting for profile verification":"Aguardando validação do perfil"):q.remaining<1?(english?"Daily limit reached":"Limite diário atingido"):(english?"Request "+q.remaining+" followers today":"Solicitar "+q.remaining+" seguidores hoje");
+ $("request-btn").disabled=!(growthAllowed&&verified&&providerReady&&q.remaining>0);
+ $("request-btn").textContent=!growthAllowed?(english?"Requires a main follower plan":"Requer plano principal de seguidores"):!providerReady?(english?"Delivery integration not configured":"Integração de entrega em configuração"):!verified?(english?"Waiting for profile verification":"Aguardando validação do perfil"):q.remaining<1?(english?"Daily limit reached":"Limite diário atingido"):(english?"Request "+q.remaining+" followers today":"Solicitar "+q.remaining+" seguidores hoje");
  const claims=model.claims||[];
  $("claim-list").innerHTML=claims.length?claims.map(c=>'<div class="history-row"><div><strong>'+safe(c.quantity)+' seguidores</strong><div><span>'+safe(c.request_day)+' · '+safe(c.status)+'</span></div></div><span>'+safe(c.provider_order_id?"#"+c.provider_order_id:"—")+'</span></div>').join(""):'<p class="muted">Nenhuma solicitação registrada.</p>';
  const lessons=model.lessons||[],done=lessons.filter(l=>l.completed).length;
@@ -109,12 +110,23 @@ function showLesson(l){
  $("lesson-content").textContent=l.body;
  $("done-btn").classList.toggle("hidden",!!l.completed);
 }
+const downloadableResources={
+ "upsell-1":[["viral-kit-pdf","PDF · 30 Reels briefs"],["viral-calendar-xlsx","Excel · Content calendar"],["viral-calendar-csv","CSV · Content calendar"]],
+ "downsell-1":[["prompts-pdf","PDF · 18 prompts"],["prompts-editable","Editable prompts"]],
+ "upsell-2":[["studio-guide","PDF · Getting started"],["studio-brief","Editable creative brief"]],
+ "upsell-3":[["retention-pdf","PDF · Audience playbook"],["retention-xlsx","Excel · Audience tracker"]]
+};
+const resourceIcon={"upsell-1":"🎬","downsell-1":"✦","upsell-2":"🤖","upsell-3":"📈"};
 function drawExtras(extras){
+ const available=new Set((model?.library||[]).map(item=>item.id));
  $("extras-grid").innerHTML=extras.map(x=>{
- const locked=!x.unlocked;
- return '<div class="extra"><div class="'+(locked?"locked":"unlocked")+'">'+(locked?(english?"🔒 Not purchased":"🔒 Não adquirido"):(english?"✓ Unlocked":"✓ Liberado"))+'</div><h3>'+safe(x.title)+'</h3><p>'+safe(x.description)+'</p>'+(locked?'<a class="secondary" href="/offer/'+encodeURIComponent(x.slug)+'.html">Conhecer adicional →</a>':'<span class="smallinfo">O conteúdo está disponível na Academia de Reels.</span>')+'</div>';
+  const links=(downloadableResources[x.slug]||[]).filter(([id])=>available.has(id))
+   .map(([id,title])=>'<button type="button" class="resource-download" data-asset="'+safe(id)+'">↓ '+safe(title)+'</button>').join("");
+  const studio=x.slug==="upsell-2"?'<a class="resource-studio" href="https://personalab-ai-gainflow.vercel.app/" target="_blank" rel="noopener noreferrer">'+(english?"Open PersonaLab Studio ↗":"Abrir PersonaLab AI Studio ↗")+'</a><p class="smallinfo">'+(english?"Sign in with your verified purchase email. Higgsfield provider fees are separate.":"Entre com o e-mail verificado da compra. A API Higgsfield é cobrada separadamente.")+'</p>':"";
+  return '<article class="extra resource-card"><span class="resource-icon">'+safe(resourceIcon[x.slug]||"★")+'</span><div class="unlocked">'+(english?"✓ Included with your GainFlow purchase":"✓ Incluído com sua compra GainFlow")+'</div><h3>'+safe(x.title)+'</h3><p>'+safe(x.description)+'</p><div class="resource-actions">'+links+studio+'</div></article>';
  }).join("");
 }
+
 async function boot(){
  hide("boot",false);
  try{
@@ -161,6 +173,19 @@ $("request-btn").addEventListener("click",async()=>{
  if(busy)return;busy=true;$("request-btn").disabled=true;flash("claim-status","Processando solicitação...");
  try{await call("claim");flash("claim-status","Solicitação registrada.");await renderDashboard();tab("growth");}catch(err){flash("claim-status",err.message)}
  finally{busy=false}
+});
+$("extras-grid").addEventListener("click",async e=>{
+ const button=e.target.closest("[data-asset]");
+ if(!button||!model?.hasAccess)return;
+ button.disabled=true;
+ flash("downloads-msg",english?"Preparing secure download…":"Preparando download protegido…");
+ try{
+  const answer=await call("library_download",{asset:button.dataset.asset});
+  if(typeof answer?.url!=="string"||!answer.url.startsWith("https://"))throw Error("Link indisponível.");
+  flash("downloads-msg","");
+  location.assign(answer.url);
+ }catch(err){flash("downloads-msg",err.message||"Arquivo ainda indisponível.");}
+ finally{button.disabled=false;}
 });
 $("done-btn").addEventListener("click",async()=>{
  if(!selectedLesson)return;
