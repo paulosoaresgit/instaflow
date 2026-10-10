@@ -1,5 +1,7 @@
 # GainFlow Club — entrega digital de todos os produtos
 
+> **ATUALIZAÇÃO (10/10/2026):** Esta é a documentação HISTÓRICA do fluxo antigo de extras separados e backend não conectado. A implementação mais recente está em [docs/GAIN-FLOW-CLUB_ALL_ACCESS.md](docs/GAIN-FLOW-CLUB_ALL_ACCESS.md): compra GainFlow verificada libera toda a biblioteca digital, Supabase conectado e webhook geral protegido/desligado até validação. As seções antigas abaixo são referência histórica e NÃO representam o estado atual.
+
 Atualizado em 09/10/2026. Área de membros construída neste repositório.
 
 ## Acessos e dados comerciais
