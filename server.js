@@ -1,6 +1,6 @@
 import http from "node:http";
-import { createReadStream } from "node:fs";
-import { stat, readFile } from "node:fs/promises";
+import { createReadStream, readFileSync } from "node:fs";
+import { stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -76,7 +76,7 @@ const PERFECTPAY_PLANS = ["starter","growth","pro","authority","influencer","sca
 let perfectPayLinks = {};
 let oneClickEnabled = false;
 try {
-  const file = await readFile(path.join(__dirname, "perfectpay-checkouts.json"), "utf8");
+  const file = readFileSync(path.join(__dirname, "perfectpay-checkouts.json"), "utf8");
   perfectPayLinks = JSON.parse(file);
   if (process.env.PERFECTPAY_CHECKOUTS_JSON) {
     const overrides = JSON.parse(process.env.PERFECTPAY_CHECKOUTS_JSON);
@@ -88,7 +88,7 @@ try {
   console.warn("PerfectPay checkout configuration unavailable:", error.message);
 }
 try {
-  const policy = JSON.parse(await readFile(path.join(__dirname, "sales/config.json"), "utf8"));
+  const policy = JSON.parse(readFileSync(path.join(__dirname, "sales/config.json"), "utf8"));
   oneClickEnabled = policy.oneClickEnabled === true;
 } catch { /* Remain disabled until the validated configuration is authorized. */ }
 
