@@ -12,9 +12,9 @@
 
 ## Diferença importante encontrada nas fotos
 
-- **Confirmado:** no detalhe do produto `PPPBFIFC`, a PerfectPay mostra **GainFlow Influencer Niche**, plano **Influencer Niche**, preço **US$ 179,85**, código de plano **`PPLQQQNT0`** e o selo do produto **Em análise**. Existe outro cartão chamado Influencer Niche, código **`PPPBFIFF`**, ainda sem identificação conclusiva; ele NÃO foi atribuído ao Scale padrão.
+- **Ambos os produtos confirmados em capturas de detalhe e plano:** `PPPBFIFC` / `PPLQQQNT0` e `PPPBFIFF` / `PPLQQQNT2` são **dois produtos diferentes** chamados GainFlow Influencer Niche, cada um com plano Influencer Niche ativo, preço US$ 179,85 e produto Em análise. Ambos mapeiam ao mesmo SKU de benefícios `influencer-niche`, mas o segundo **não tem checkout associado confirmado**; o checkout original é preservado.
 - Nenhum cartão visível foi identificado como **GainFlow Scale** padrão; aparece apenas **GainFlow Scale Niche**, código `PPPBFIFH`.
-- **Influencer Niche já está associado a `PPPBFIFC` + `PPLQQQNT0`.** Permanece sem código o **Scale padrão**; não presumir que o cartão `PPPBFIFF` pertence a ele.
+- **Influencer Niche tem agora dois pares PPP+PPL distintos e verificados**, preservados na allowlist; nenhum pertence ao GainFlow Scale padrão. O **Scale padrão** continua com produto/plano não identificados no painel.
 
 ## Códigos capturados
 
@@ -30,6 +30,7 @@
 | `authority-niche` | GainFlow Authority Niche | 104.85 | `PPPBFIF7` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT09 |
 | `influencer-standard` | GainFlow Influencer | 119.90 | `PPPBFIFA` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT1N |
 | `influencer-niche` | GainFlow Influencer Niche | 179.85 | `PPPBFIFC` | `PPLQQQNT0` | https://go.centerpag.com/PPU38CQGT1S |
+| `influencer-niche` **(produto duplicado)** | GainFlow Influencer Niche | 179.85 | `PPPBFIFF` | `PPLQQQNT2` | **Não confirmado para este produto** |
 | `scale-standard` | GainFlow Scale | 199.90 | `**CONFERIR**` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT22 |
 | `scale-niche` | GainFlow Scale Niche | 299.85 | `PPPBFIFH` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT26 |
 | `dominance-standard` | GainFlow Dominance | 299.90 | `PPPBFIFI` | `**PENDENTE**` | https://go.centerpag.com/PPU38CQGT29 |
@@ -46,7 +47,7 @@
 ## Regra de autorização em produção
 
 - Banco privado `public.gf_authorized_plans` aceita APENAS o par exato `(product_code,plan_code)` com um SKU GainFlow autorizado; a função de registro também verifica a lista.
-- Há **dois pares confirmados/autorizados** na allowlist privada: PersonaLab `PPPBFIHF` / `PPLQQQO1M` e Influencer Niche `PPPBFIFC` / `PPLQQQNT0`. O webhook permanece bloqueado até testes.
+- Há **três pares confirmados na allowlist privada**: PersonaLab `PPPBFIHF` / `PPLQQQO1M`, Influencer Niche original `PPPBFIFC` / `PPLQQQNT0` e Influencer Niche duplicado `PPPBFIFF` / `PPLQQQNT2`. Todos dependem do webhook geral ativado e testado, atualmente desativado.
 - O webhook geral permanece **desabilitado**; ter o código `PPP` e um checkout `PPU` nunca equivale a pagamento aprovado nem substitui o `PPL`.
 - Outros projetos PerfectPay não serão inseridos na lista de códigos autorizados, mesmo que estejam selecionados no webhook da conta.
 - O token compartilhado anteriormente precisa ser rotacionado e guardado apenas no Supabase. Não enviar em capturas ou mensagens.
@@ -54,7 +55,7 @@
 
 ## Próxima coleta (somente o necessário)
 
-1. Abrir o produto de código `PPPBFIFF` e identificar por que aparece também como **Influencer Niche**; localizar o **GainFlow Scale padrão** se estiver cadastrado. Não renomear/mover planos sem auditar seus links.
+1. **Confirmado o `PPPBFIFF` como segundo Influencer Niche**, não como Scale. Localizar o **GainFlow Scale padrão** se cadastrado, conferindo seu checkout de US$ 199,90 antes de qualquer edição. Não renomear/mover produtos/planos sem auditar links e pedidos.
 2. Para cada item elegível, abrir **Planos** e copiar o código da etiqueta cinza iniciado por `PPL`. Não usar código de afiliação `PPA` nem checkout `PPU`.
 3. Após confirmar cada PPP+PPL, inserir o par na allowlist, sem liberar eventos de outros projetos.
 4. Configurar e testar webhook com novo token e uma compra autorizada; validar acesso/reembolso antes de ativar cobrança adicional.
