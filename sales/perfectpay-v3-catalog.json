@@ -568,7 +568,7 @@
     {
       "internalSlug": "upsell-2",
       "perfectPayProductName": "GainFlow — PersonaLab AI Studio",
-      "perfectPayPlanName": "PersonaLab AI Studio Access",
+      "perfectPayPlanName": "PersonaLab AI Studio",
       "currency": "USD",
       "price": 39.97,
       "guaranteeDays": 7,
@@ -604,7 +604,16 @@
       "fulfillmentVerified": false,
       "studioPreviewUrl": "https://personalab-ai-gainflow.vercel.app/",
       "checkoutLinkReviewStatus": "user_provided_price_and_plan_not_independently_verified",
-      "productCodeSource": "Screenshot: PerfectPay > GainFlow — PersonaLab AI Studio > Código do produto (2026-10-10)"
+      "productCodeSource": "Screenshot: PerfectPay > GainFlow — PersonaLab AI Studio > Código do produto (2026-10-10)",
+      "planNameSource": "PerfectPay plan edit screenshots on 2026-10-10. Not the plan code.",
+      "planScreenshotStatus": {
+        "priceUSDShown": 39.97,
+        "uploadedPdf": "PersonaLab AI Studio — Onboarding Guide",
+        "uploadedFileVisibility": "Público (review before active sales)",
+        "approvedPurchaseEmail": "blank",
+        "planCode": "not visible",
+        "affiliateVisibilityToggle": "enabled (review for exclusive upsell)"
+      }
     },
     {
       "internalSlug": "upsell-3",
