@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-09-gainflow-extension-sync-1",
+  "version": "2026-10-10-gainflow-distinct-paid-services-draft-1",
   "referenceWebsite": "https://instagainflow.com/v3/?front=v3&lang=en",
   "inspectionStatus": "Live reference page could not be retrieved; amounts and routes derived from linked InstaFlow GitHub source and prior prepared funnel, so reference-page parity is not verified.",
   "originalSiteModified": false,
@@ -591,7 +591,21 @@
       "oneClickEnabled": false,
       "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/",
       "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
-      "productCodeVerification": "screenshot_only_plan_pair_pending"
+      "productCodeVerification": "screenshot_only_plan_pair_pending",
+      "originalDigitalAssetIncludedInClub": true,
+      "paidOfferDraft": {
+        "name": "Creator Strategy Review",
+        "priceUSD": 27,
+        "descriptionEN": "Personalized review of a buyer-provided profile and a prioritized improvement checklist prepared by a human or verified service workflow; no guaranteed reach or growth.",
+        "fulfillmentMode": "manual_profile_review",
+        "fulfillmentVerified": false,
+        "oneClickRequested": true,
+        "oneClickEnabled": false,
+        "activationBlocked": true,
+        "reason": "Separate deliverable and service capacity, plan mapping, payment event and refund/reversal tests required"
+      },
+      "purchasePromotionPaused": true,
+      "checkoutReuseForDraftForbidden": true
     },
     {
       "internalSlug": "downsell-1",
@@ -631,7 +645,21 @@
       "oneClickEnabled": false,
       "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/",
       "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
-      "productCodeVerification": "screenshot_only_plan_pair_pending"
+      "productCodeVerification": "screenshot_only_plan_pair_pending",
+      "originalDigitalAssetIncludedInClub": true,
+      "paidOfferDraft": {
+        "name": "Mini Profile Review",
+        "priceUSD": 9.9,
+        "descriptionEN": "Limited-scope personalized profile review with three actionable recommendations. Not a downloadable prompt pack.",
+        "fulfillmentMode": "manual_mini_review",
+        "fulfillmentVerified": false,
+        "oneClickRequested": true,
+        "oneClickEnabled": false,
+        "activationBlocked": true,
+        "reason": "Separate deliverable and service capacity, plan mapping, payment event and refund/reversal tests required"
+      },
+      "purchasePromotionPaused": true,
+      "checkoutReuseForDraftForbidden": true
     },
     {
       "internalSlug": "upsell-2",
@@ -687,7 +715,21 @@
       "additionalPurchaseRequiredForLibrary": false,
       "oneClickEnabled": false,
       "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/",
-      "productCodeVerification": "screenshot_only_plan_pair_pending"
+      "productCodeVerification": "screenshot_only_plan_pair_pending",
+      "originalDigitalAssetIncludedInClub": true,
+      "paidOfferDraft": {
+        "name": "PersonaLab AI Studio — Premium Usage",
+        "priceUSD": 39.97,
+        "descriptionEN": "Optional premium studio functionality or included usage credits beyond the standard Club entitlement, only after separate access controls, API cost limits, and actual provisioning have been verified.",
+        "fulfillmentMode": "premium_studio_credits",
+        "fulfillmentVerified": false,
+        "oneClickRequested": true,
+        "oneClickEnabled": false,
+        "activationBlocked": true,
+        "reason": "Separate deliverable and service capacity, plan mapping, payment event and refund/reversal tests required"
+      },
+      "purchasePromotionPaused": true,
+      "checkoutReuseForDraftForbidden": true
     },
     {
       "internalSlug": "upsell-3",
@@ -727,7 +769,21 @@
       "oneClickEnabled": false,
       "memberBenefitUrl": "https://instaflow-preview.onrender.com/members/",
       "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
-      "productCodeVerification": "screenshot_only_plan_pair_pending"
+      "productCodeVerification": "screenshot_only_plan_pair_pending",
+      "originalDigitalAssetIncludedInClub": true,
+      "paidOfferDraft": {
+        "name": "30-Day Personalized Progress Check-in",
+        "priceUSD": 19.9,
+        "descriptionEN": "Optional personalized progress review after 30 days based on buyer-supplied profile metrics, separate from the Club's self-service educational tracker.",
+        "fulfillmentMode": "manual_30_day_review",
+        "fulfillmentVerified": false,
+        "oneClickRequested": true,
+        "oneClickEnabled": false,
+        "activationBlocked": true,
+        "reason": "Separate deliverable and service capacity, plan mapping, payment event and refund/reversal tests required"
+      },
+      "purchasePromotionPaused": true,
+      "checkoutReuseForDraftForbidden": true
     }
   ],
   "registrationRoutes": [
@@ -944,7 +1000,13 @@
       "includedWithAnyVerifiedGainFlowPurchase": false,
       "reasonNotIncluded": "Distinct physical/operational priority-handling service, not a library digital asset; requires fulfillment SLA validation",
       "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
-      "productCodeVerification": "screenshot_only_plan_pair_pending"
+      "productCodeVerification": "screenshot_only_plan_pair_pending",
+      "purchasePromotionPaused": true,
+      "activationPrerequisites": [
+        "Verify provider priority SLA and technical fulfillment",
+        "Verify price and plan code",
+        "Payment, refund and cancellation webhook QA"
+      ]
     },
     {
       "internalSlug": "order-bump-engagement-toolkit",
@@ -978,7 +1040,16 @@
       "purchasePromotionPaused": true,
       "fulfillmentStatus": "file_upload_and_approved_membership_required",
       "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
-      "productCodeVerification": "screenshot_only_plan_pair_pending"
+      "productCodeVerification": "screenshot_only_plan_pair_pending",
+      "originalDigitalAssetIncludedInClub": true,
+      "paidOfferDraft": {
+        "name": "Personalized Reels Caption Feedback",
+        "priceUSD": 9.9,
+        "descriptionEN": "Review of up to three original captions submitted by the customer, with personalized feedback; not the Engagement Toolkit PDF included in Club.",
+        "fulfillmentMode": "manual_caption_feedback",
+        "fulfillmentVerified": false,
+        "activationBlocked": true
+      }
     }
   ],
   "orderBumpCount": 2,
@@ -1018,13 +1089,13 @@
   },
   "funnelRevision": {
     "date": "2026-10-10",
-    "name": "3-upsell AI/content funnel with Prompt Vault downsell",
-    "status": "sales_pages_ready_checkouts_missing",
+    "name": "Distinct-service post-purchase offers — configuration draft only",
+    "status": "draft_blocked_pending_service_fulfillment_perfectpay_setup_and_payment_QA",
     "originalCheckoutLinksUnchanged": true,
     "oneClickEnabled": false,
     "personaLabAccessVerified": false,
     "retiredPostPurchaseSlug": "upsell-4",
-    "note": "Public pages are informational previews; do not enable purchase until product catalog, prices, approved payment webhook and fulfillment are validated",
+    "note": "The existing 4 digital-only upsell/downsell SKUs and educational bump are included in GainFlow Club, so they must not be promoted or charged separately. New paid-service drafts require separate approved product/plan mappings, actual fulfillment capacity, exact PerfectPay One Click validation, and payment/refund/cancellation QA. Existing URLs and identifiers retained solely for audit; no live checkout or routing changes made.",
     "personaLabBackend": {
       "project": "efrgcnlraqrylfvxkstn",
       "entitlementTable": "gf_personalab_orders",
@@ -1051,7 +1122,12 @@
     "confirmedCodePairs": 4,
     "totalGainFlowProductsWithCheckouts": 22,
     "blockedOtherProjects": true,
-    "otherProjectsBlocked": true
+    "otherProjectsBlocked": true,
+    "distinctPaidServicesOnly": true,
+    "oneClickRequested": true,
+    "oneClickEnabled": false,
+    "orderBumpsEnabled": false,
+    "activationBlockedUntilVerified": true
   },
   "productCodeAudit": {
     "date": "2026-10-10",
