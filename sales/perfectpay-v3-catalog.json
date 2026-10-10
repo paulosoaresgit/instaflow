@@ -412,9 +412,12 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": "",
+      "perfectPayPlanCode": "PPLQQQNT4",
       "productCodeSource": "User-provided screenshots of PerfectPay product cards (2026-10-10)",
-      "productCodeVerification": "screenshot_only_plan_pair_pending"
+      "productCodeVerification": "screenshot_only_plan_pair_pending",
+      "planCodeSource": "PerfectPay product+plan screenshot confirmed by owner on 2026-10-10",
+      "officialProductAndPlanConfirmedByScreenshot": true,
+      "paymentEntitlementStatus": "pair_recorded_pending_payment_webhook_validation"
     },
     {
       "internalSlug": "dominance-standard",
@@ -1042,7 +1045,7 @@
     "allDigitalAssetsIncluded": true,
     "chargeExtraForSameDigitalAssets": false,
     "backendGlobalWebhookEnabled": false,
-    "confirmedCodePairs": 3,
+    "confirmedCodePairs": 4,
     "totalGainFlowProductsWithCheckouts": 22,
     "blockedOtherProjects": true,
     "otherProjectsBlocked": true
@@ -1062,13 +1065,17 @@
     ],
     "missingDisplayedName": "GainFlow Scale (standard)",
     "verifiedPlanPairs": [
-      "PPPBFIHF/PPLQQQO1M"
+      "PPPBFIHF/PPLQQQO1M",
+      "PPPBFIFC/PPLQQQNT0",
+      "PPPBFIFF/PPLQQQNT2",
+      "PPPBFIFH/PPLQQQNT4"
     ],
     "needsPlanCodeForAuthorization": true,
     "securityNote": "Never enable webhook payment authorization from a product code alone; exact PPP+PPL still required.",
     "confirmedScreenshotPairs": [
       "PPPBFIFC/PPLQQQNT0",
-      "PPPBFIFF/PPLQQQNT2"
+      "PPPBFIFF/PPLQQQNT2",
+      "PPPBFIFH/PPLQQQNT4"
     ],
     "unresolvedDuplicateCard": {
       "label": "GainFlow Influencer Niche",
