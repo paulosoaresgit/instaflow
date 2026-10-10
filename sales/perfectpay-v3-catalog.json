@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-10-universal-gainflow-club-access-1",
+  "version": "2026-10-10-reuse-existing-perfectpay-addons",
   "referenceWebsite": "https://instagainflow.com/v3/?front=v3&lang=en",
   "inspectionStatus": "Live reference page could not be retrieved; amounts and routes derived from linked InstaFlow GitHub source and prior prepared funnel, so reference-page parity is not verified.",
   "originalSiteModified": false,
@@ -605,7 +605,8 @@
         "reason": "Separate deliverable and service capacity, plan mapping, payment event and refund/reversal tests required"
       },
       "purchasePromotionPaused": true,
-      "checkoutReuseForDraftForbidden": true
+      "checkoutReuseForDraftForbidden": false,
+      "reuseExistingPerfectPayRegistration": true
     },
     {
       "internalSlug": "downsell-1",
@@ -659,7 +660,8 @@
         "reason": "Separate deliverable and service capacity, plan mapping, payment event and refund/reversal tests required"
       },
       "purchasePromotionPaused": true,
-      "checkoutReuseForDraftForbidden": true
+      "checkoutReuseForDraftForbidden": false,
+      "reuseExistingPerfectPayRegistration": true
     },
     {
       "internalSlug": "upsell-2",
@@ -729,7 +731,8 @@
         "reason": "Separate deliverable and service capacity, plan mapping, payment event and refund/reversal tests required"
       },
       "purchasePromotionPaused": true,
-      "checkoutReuseForDraftForbidden": true
+      "checkoutReuseForDraftForbidden": false,
+      "reuseExistingPerfectPayRegistration": true
     },
     {
       "internalSlug": "upsell-3",
@@ -783,7 +786,8 @@
         "reason": "Separate deliverable and service capacity, plan mapping, payment event and refund/reversal tests required"
       },
       "purchasePromotionPaused": true,
-      "checkoutReuseForDraftForbidden": true
+      "checkoutReuseForDraftForbidden": false,
+      "reuseExistingPerfectPayRegistration": true
     }
   ],
   "registrationRoutes": [
@@ -1006,7 +1010,8 @@
         "Verify provider priority SLA and technical fulfillment",
         "Verify price and plan code",
         "Payment, refund and cancellation webhook QA"
-      ]
+      ],
+      "reuseExistingPerfectPayRegistration": true
     },
     {
       "internalSlug": "order-bump-engagement-toolkit",
@@ -1049,7 +1054,8 @@
         "fulfillmentMode": "manual_caption_feedback",
         "fulfillmentVerified": false,
         "activationBlocked": true
-      }
+      },
+      "reuseExistingPerfectPayRegistration": true
     }
   ],
   "orderBumpCount": 2,
@@ -1089,13 +1095,13 @@
   },
   "funnelRevision": {
     "date": "2026-10-10",
-    "name": "Distinct-service post-purchase offers — configuration draft only",
-    "status": "universal_club_access_confirmed_paid_addons_inactive_pending_distinct_service_validation",
+    "name": "Reuse existing PerfectPay upsell/downsell/order bump registrations",
+    "status": "existing_SKUs_retained_oneclick_and_bumps_pending_verification",
     "originalCheckoutLinksUnchanged": true,
     "oneClickEnabled": false,
     "personaLabAccessVerified": false,
     "retiredPostPurchaseSlug": "upsell-4",
-    "note": "User confirms all buyers of any approved primary GainFlow plan receive identical complete digital library regardless of bump/upsell acceptance. Old digital add-on SKUs must not be presented as exclusive digital unlocks. Draft distinct services remain unactivated until service fulfillment, approval, one-click and payment/refund QA.",
+    "note": "User explicitly requests to reuse previously registered PerfectPay products, names, prices and links. Do not create replacement products. All approved primary GainFlow buyers access identical full digital member library even without add-on purchases. Existing add-ons must not be advertised as exclusive access to already-included digital assets. Before activating paid add-ons, verify distinct fulfillment or revise transparent offer copy/terms in existing SKUs and test webhook, pricing, plan pairing, refunds, one-click.",
     "personaLabBackend": {
       "project": "efrgcnlraqrylfvxkstn",
       "entitlementTable": "gf_personalab_orders",
@@ -1133,7 +1139,9 @@
     "declinedUpsellRetainsFullClubAccess": true,
     "declinedOrderBumpRetainsFullClubAccess": true,
     "paidAddOnsDoNotChangeClubLibraryAccess": true,
-    "additionalPaidOffersMustDeliverDistinctRealService": true
+    "additionalPaidOffersMustDeliverDistinctRealService": true,
+    "existingPerfectPayAddOnSkusRetained": true,
+    "newReplacementSkusRequired": false
   },
   "productCodeAudit": {
     "date": "2026-10-10",
