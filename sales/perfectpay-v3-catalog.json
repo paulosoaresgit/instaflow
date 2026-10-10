@@ -318,7 +318,7 @@
       "finalThankYouPage": "https://instaflow-preview.onrender.com/obrigado/?produto=influencer-niche",
       "initialUpsellPage": "https://instaflow-preview.onrender.com/offer/upsell-1.html?produto=influencer-niche",
       "liveCheckoutLink": "https://go.centerpag.com/PPU38CQGT1S",
-      "perfectPayProductCode": "",
+      "perfectPayProductCode": "PPPBFIFC",
       "productStatus": "registered_link_received_pending_checkout_verification",
       "advertisedFollowers": 40000,
       "basePlusBonus": 25000,
@@ -330,9 +330,12 @@
       "supportPhone": "557398289401",
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
       "checkoutLinkReviewStatus": "provided_by_user_pending_live_purchase_test",
-      "perfectPayPlanCode": "",
-      "productCodeReviewRequired": true,
-      "productCodeReviewReason": "Screenshots display two different PPP codes labeled GainFlow Influencer Niche and no product labeled GainFlow Scale (standard). Do not assign without verifying product details."
+      "perfectPayPlanCode": "PPLQQQNT0",
+      "productCodeReviewRequired": false,
+      "productCodeSource": "PerfectPay product detail screenshot (2026-10-10)",
+      "planCodeSource": "PerfectPay plan list screenshot (2026-10-10)",
+      "officialProductAndPlanConfirmedByScreenshot": true,
+      "paymentEntitlementStatus": "pair_recorded_pending_payment_webhook_validation"
     },
     {
       "internalSlug": "scale-standard",
@@ -1032,9 +1035,8 @@
     "date": "2026-10-10",
     "source": "Eight uploaded PerfectPay product-card screenshots",
     "catalogItems": 22,
-    "unambiguouslyMapped": 20,
+    "unambiguouslyMapped": 21,
     "ambiguousSkus": [
-      "influencer-niche",
       "scale-standard"
     ],
     "duplicateDisplayedName": "GainFlow Influencer Niche",
@@ -1047,6 +1049,15 @@
       "PPPBFIHF/PPLQQQO1M"
     ],
     "needsPlanCodeForAuthorization": true,
-    "securityNote": "Never enable webhook payment authorization from a product code alone; exact PPP+PPL still required."
+    "securityNote": "Never enable webhook payment authorization from a product code alone; exact PPP+PPL still required.",
+    "confirmedScreenshotPairs": [
+      "PPPBFIFC/PPLQQQNT0"
+    ],
+    "unresolvedDuplicateCard": {
+      "label": "GainFlow Influencer Niche",
+      "unassignedProductCode": "PPPBFIFF",
+      "realInfluencerNicheCode": "PPPBFIFC",
+      "note": "Owner opened PPPBFIFC and showed US$179.85 plan. PPPBFIFF may be a duplicate product; do not infer it is Scale."
+    }
   }
 }
