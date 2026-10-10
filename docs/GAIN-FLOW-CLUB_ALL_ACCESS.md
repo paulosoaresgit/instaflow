@@ -37,6 +37,12 @@
 - As gerações via Higgsfield consomem a chave e créditos próprios do usuário, salvo contratação adicional explícita com termos claros.
 - Se o conteúdo compartilhado estiver incluído com qualquer compra, **não cobrar por ele novamente como upsell sem oferecer um benefício distinto**, mesmo que links de checkout antigos continuem registrados.
 
+### Preview do administrador e uploads PersonaLab
+
+- O e-mail confirmado já cadastrado em `student_studio_settings.owner_email` pode entrar no GainFlow Club e **visualizar** aulas/biblioteca, sem criar uma compra fictícia. O acesso administrativo não habilita entregas de seguidores.
+- A função `public.student_has_access()` também reconhece compras GainFlow aprovadas e compras PersonaLab verificadas, permitindo que os controles privados de upload/visualização de mídias do PersonaLab respeitem a mesma autorização. Matrículas Characters School antigas continuam válidas.
+- O domínio do painel precisa ser autorizado nos Redirect URLs do Supabase Auth; sem isso, o login OTP pode falhar. Essa configuração ainda não foi comprovada.
+
 ## Arquivos protegidos
 
 - Bucket privado no mesmo Supabase: `gf-club-files` (public=false, 15 MiB por arquivo). Sem leitura pública ou por usuário direto.
