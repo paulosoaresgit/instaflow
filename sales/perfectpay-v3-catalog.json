@@ -335,7 +335,22 @@
       "productCodeSource": "PerfectPay product detail screenshot (2026-10-10)",
       "planCodeSource": "PerfectPay plan list screenshot (2026-10-10)",
       "officialProductAndPlanConfirmedByScreenshot": true,
-      "paymentEntitlementStatus": "pair_recorded_pending_payment_webhook_validation"
+      "paymentEntitlementStatus": "pair_recorded_pending_payment_webhook_validation",
+      "alternatePerfectPayProducts": [
+        {
+          "perfectPayProductCode": "PPPBFIFF",
+          "perfectPayPlanCode": "PPLQQQNT2",
+          "displayName": "GainFlow Influencer Niche",
+          "priceUSD": 179.85,
+          "currency": "USD",
+          "billingType": "one_time",
+          "productReviewStatus": "Em análise",
+          "planStatus": "Ativo",
+          "source": "PerfectPay product details and plan screenshot supplied 2026-10-10",
+          "checkoutLink": "",
+          "reason": "Separate duplicate product, not confirmed as the Scale standard. Preserve original primary checkout and plan."
+        }
+      ]
     },
     {
       "internalSlug": "scale-standard",
@@ -1027,9 +1042,10 @@
     "allDigitalAssetsIncluded": true,
     "chargeExtraForSameDigitalAssets": false,
     "backendGlobalWebhookEnabled": false,
-    "confirmedCodePairs": 1,
+    "confirmedCodePairs": 3,
     "totalGainFlowProductsWithCheckouts": 22,
-    "blockedOtherProjects": true
+    "blockedOtherProjects": true,
+    "otherProjectsBlocked": true
   },
   "productCodeAudit": {
     "date": "2026-10-10",
@@ -1044,20 +1060,24 @@
       "PPPBFIFF",
       "PPPBFIFC"
     ],
-    "missingDisplayedName": "GainFlow Scale",
+    "missingDisplayedName": "GainFlow Scale (standard)",
     "verifiedPlanPairs": [
       "PPPBFIHF/PPLQQQO1M"
     ],
     "needsPlanCodeForAuthorization": true,
     "securityNote": "Never enable webhook payment authorization from a product code alone; exact PPP+PPL still required.",
     "confirmedScreenshotPairs": [
-      "PPPBFIFC/PPLQQQNT0"
+      "PPPBFIFC/PPLQQQNT0",
+      "PPPBFIFF/PPLQQQNT2"
     ],
     "unresolvedDuplicateCard": {
       "label": "GainFlow Influencer Niche",
-      "unassignedProductCode": "PPPBFIFF",
-      "realInfluencerNicheCode": "PPPBFIFC",
-      "note": "Owner opened PPPBFIFC and showed US$179.85 plan. PPPBFIFF may be a duplicate product; do not infer it is Scale."
-    }
+      "alternateProductCode": "PPPBFIFF",
+      "alternatePlanCode": "PPLQQQNT2",
+      "primaryProductCode": "PPPBFIFC",
+      "primaryPlanCode": "PPLQQQNT0",
+      "verifiedResult": "two independent PerfectPay product+plan pairs, same name and USD 179.85 price; neither proves Scale standard."
+    },
+    "duplicateDisplayNameResolved": true
   }
 }
