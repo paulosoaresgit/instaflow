@@ -581,7 +581,7 @@
       "declineTo": "https://instaflow-preview.onrender.com/offer/upsell-3.html",
       "liveCheckoutLink": "",
       "perfectPayProductCode": "",
-      "productStatus": "draft_blocked_until_studio_entitlement_and_frontend_verified",
+      "productStatus": "draft_backend_entitlement_prepared_software_live_QA_blocked",
       "requiresVerifiedSupport": true,
       "complianceReviewNeeded": true,
       "deliveryUrl": "https://instaflow-preview.onrender.com/members/",
@@ -594,7 +594,14 @@
         "GainFlow_PersonaLab_Creative_Brief_Template.md"
       ],
       "requiresPaymentWebhook": true,
-      "softwareAccessPending": true
+      "softwareAccessPending": true,
+      "entitlementProject": "efrgcnlraqrylfvxkstn",
+      "webhookUrl": "https://efrgcnlraqrylfvxkstn.supabase.co/functions/v1/gainflow-perfectpay-webhook",
+      "backendStatus": "student-studio-v5-deployed_receipt_ingest-disabled",
+      "frontendStatus": "restored_in_github_requires_build_and_public_deploy_verification",
+      "registrationNotes": "Never set checkout as active or enable One Click until product and plan codes plus webhook token are set, end-to-end paid/refunded tests pass, and live studio domain is confirmed.",
+      "officialOneClickActivated": false,
+      "fulfillmentVerified": false
     },
     {
       "internalSlug": "upsell-3",
@@ -916,6 +923,16 @@
     "oneClickEnabled": false,
     "personaLabAccessVerified": false,
     "retiredPostPurchaseSlug": "upsell-4",
-    "note": "Public pages are informational previews; do not enable purchase until product catalog, prices, approved payment webhook and fulfillment are validated"
+    "note": "Public pages are informational previews; do not enable purchase until product catalog, prices, approved payment webhook and fulfillment are validated",
+    "personaLabBackend": {
+      "project": "efrgcnlraqrylfvxkstn",
+      "entitlementTable": "gf_personalab_orders",
+      "edgeFunction": "student-studio",
+      "edgeVersion": 5,
+      "webhook": "gainflow-perfectpay-webhook",
+      "webhookEnabled": false,
+      "frontendDeployed": false,
+      "purchaseVerificationCompleted": false
+    }
   }
 }
