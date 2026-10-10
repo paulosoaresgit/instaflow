@@ -63,10 +63,10 @@
 ## Webhooks — DIFERENÇA IMPORTANTE
 
 - `gainflow-perfectpay-webhook`: webhook **isolado** do PersonaLab, existente no Supabase e com `GF_PERSONALAB_WEBHOOK_ENABLED=false` até testes/rotação de token.
-- `perfectpay-members-webhook`: webhook **geral** para o GainFlow Club, implantado com `verify_jwt=false` somente porque valida token interno. Está protegido adicionalmente por `GF_MEMBERS_WEBHOOK_ENABLED` (se não for `true`, responde 503). Requer os Secrets `GF_PERFECTPAY_POSTBACK_TOKEN` e `GF_PERFECTPAY_PRODUCT_MAP` com **todos os códigos verdadeiros de produto e plano** permitidos (não usar códigos do checkout PPU e não aceitar produtos desconhecidos).
+- `perfectpay-members-webhook`: webhook **geral** exclusivo do GainFlow Club, implantado com `verify_jwt=false` porque autentica o token da PerfectPay. Só executa quando `GF_MEMBERS_WEBHOOK_ENABLED=true` **após testes**. Exige `GF_PERFECTPAY_POSTBACK_TOKEN` rotacionado e pesquisa o produto **e plano simultaneamente** na tabela privada `public.gf_authorized_plans`; não usa mais `GF_PERFECTPAY_PRODUCT_MAP` e nunca deduz SKU por nome ou código PPU. Eventos dos demais projetos são ignorados (`202`) sem liberar acesso.
 - URL do webhook geral: `https://efrgcnlraqrylfvxkstn.supabase.co/functions/v1/perfectpay-members-webhook`.
-- O produto PersonaLab já tem código de produto `PPPBFIHF`, plano `PPLQQQO1M`, checkout `https://go.centerpag.com/PPU38CQGTDN`. Os demais checkouts estão identificados mas faltam product/plan codes reais para montar o mapa.
-- O webhook PerfectPay existente foi visto com **39 produtos / 17 eventos** selecionados. Confirme se a regra comercial abrange *somente produtos GainFlow* ou literalmente **todos os 39 produtos da conta**, inclusive de outros negócios. Não ativar sem essa confirmação; use token rotacionado, pois um token anterior foi compartilhado no chat.
+- O produto PersonaLab já tem código de produto `PPPBFIHF`, plano `PPLQQQO1M`, checkout `https://go.centerpag.com/PPU38CQGTDN`, e é o **único par** atualmente autorizado em `gf_authorized_plans`. Outros **21 pares** GainFlow ainda dependem de códigos oficiais PPP/PPL. Inventário: [Códigos PerfectPay pendentes](GAIN-FLOW_PERFECTPAY_PLAN_CODES.md).
+- **Escopo confirmado pelo proprietário em 2026-10-10: SOMENTE produtos GainFlow dão acesso ao clube.** O webhook existente foi visto com **39 produtos de projetos diferentes / 17 eventos**, apontando para a URL *PersonaLab-only*. Não tratar automaticamente esses 39 como GainFlow. O webhook geral tem outra URL (`perfectpay-members-webhook`) e deve receber apenas eventos GainFlow, preferencialmente com filtro no painel da PerfectPay. Mesmo se eventos de outros projetos chegarem, a allowlist de produto+plano no servidor e no banco os ignora. Rotacionar token previamente exposto.
 - Enquanto `GF_MEMBERS_WEBHOOK_ENABLED` e `GF_PERSONALAB_WEBHOOK_ENABLED` não estiverem ativados sob supervisão, compras não provisionam automaticamente novas permissões. Não interpretar criação de Edge Function como funcionamento real do pagamento.
 
 ## Checklist antes de liberar clientes
@@ -79,7 +79,8 @@
 - [x] Bucket privado criado e URL temporária para download implementada.
 - [ ] Upload dos nove entregáveis no bucket (pelo proprietário).
 - [ ] Configurar permissões de redirect do Supabase Auth e testar recebimento de OTP no domínio real.
-- [ ] Rotacionar token compartilhado; configurar mapa e segredos do webhook geral e confirmar o escopo comercial.
+- [x] Confirmar escopo comercial GainFlow-only e implantar dupla proteção de allowlist no webhook e no banco.
+- [ ] Rotacionar token compartilhado; registrar os 21 pares restantes PPP/PPL e configurar o Secret do webhook geral antes dos testes.
 - [ ] Testar pagamento aprovado no PerfectPay e status real no Supabase.
 - [ ] Testar um usuário sem compra, compra cancelada/reembolsada e duas compras com uma estornada.
 - [ ] Testar download privado e que URL expira após 120 s.
