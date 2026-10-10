@@ -8,6 +8,10 @@ const fixedTimeEqual=(one,two)=>{const a=new TextEncoder().encode(one),b=new Tex
 const toStatus=(value)=>{const n=Number(value);if(n===2||n===10)return "approved";if(n===7)return "refunded";if(n===9)return "chargeback";if(n===6)return "cancelled";if(n===5)return "rejected";if([3,4,8,16].includes(n))return "review";return "pending"};
 Deno.serve(async req=>{
  if(req.method!=="POST")return respond(405,{ok:false,error:"method"});
+ // Never activate this general purchase receiver until explicit provider
+ // token rotation, exact product-plan allowlist and end-to-end verification.
+ if(Deno.env.get("GF_MEMBERS_WEBHOOK_ENABLED")!=="true")
+  return respond(503,{ok:false,error:"gainflow_member_webhook_not_enabled"});
  if(!project||!key)return respond(503,{ok:false,error:"server_not_configured"});
  const expected=Deno.env.get("GF_PERFECTPAY_POSTBACK_TOKEN");
  const rawMap=Deno.env.get("GF_PERFECTPAY_PRODUCT_MAP");
