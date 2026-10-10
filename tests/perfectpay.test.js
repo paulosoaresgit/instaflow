@@ -153,7 +153,7 @@ async function webhookFixture(overrides = {}, mapOverride) {
   };
   let handler;
   const ts = (await read('supabase/functions/perfectpay-members-webhook/index.ts'))
-    .replace(/^import .*;\\r?\\n/m, '');
+    .replace(/^import .*;\r?\n/m, '');
   const source = stripTypeScriptTypes(ts, { mode: 'strip' });
   const createClient = () => ({
     from: table => {
